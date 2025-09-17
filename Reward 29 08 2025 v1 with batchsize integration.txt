@@ -1,0 +1,229 @@
+import pickle
+import numpy as np
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import gym
+import random
+import copy
+import matplotlib.pyplot as plt
+
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from cryptography.hazmat.backends import default_backend
+
+# ---------------- Encryption Utilities ----------------
+def generate_aes_key():
+    return np.random.bytes(32)
+
+def encrypt_aes(key, plaintext):
+    iv = np.random.bytes(16)
+    cipher = Cipher(algorithms.AES(key), modes.CFB(iv), backend=default_backend())
+    encryptor = cipher.encryptor()
+    ciphertext = encryptor.update(plaintext) + encryptor.finalize()
+    return iv + ciphertext
+
+def decrypt_aes(key, ciphertext):
+    iv, ct = ciphertext[:16], ciphertext[16:]
+    cipher = Cipher(algorithms.AES(key), modes.CFB(iv), backend=default_backend())
+    decryptor = cipher.decryptor()
+    return decryptor.update(ct) + decryptor.finalize()
+
+# ---------------- Replay Buffer ----------------
+class ReplayBuffer:
+    def __init__(self, max_size=100000):
+        self.buffer = []
+        self.max_size = max_size
+
+    def push(self, transition):
+        if len(self.buffer) >= self.max_size:
+            self.buffer.pop(0)
+        self.buffer.append(transition)
+
+    def sample(self, batch_size):
+        idx = np.random.choice(len(self.buffer), batch_size, replace=False)
+        states, actions, rewards, next_states, dones = zip(*[self.buffer[i] for i in idx])
+        return (
+            torch.tensor(states, dtype=torch.float32),
+            torch.tensor(actions, dtype=torch.float32),
+            torch.tensor(rewards, dtype=torch.float32).unsqueeze(1),
+            torch.tensor(next_states, dtype=torch.float32),
+            torch.tensor(dones, dtype=torch.float32).unsqueeze(1)
+        )
+
+# ---------------- SAC Networks ----------------
+class Actor(nn.Module):
+    def __init__(self, state_dim, action_dim, hidden_dim=256):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(state_dim, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, action_dim), nn.Tanh()
+        )
+    def forward(self, state):
+        return self.net(state)
+
+class Critic(nn.Module):
+    def __init__(self, state_dim, action_dim, hidden_dim=256):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(state_dim + action_dim, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, hidden_dim), nn.ReLU(),
+            nn.Linear(hidden_dim, 1)
+        )
+    def forward(self, state, action):
+        x = torch.cat([state, action], dim=-1)
+        return self.net(x)
+
+# ---------------- SAC Agent ----------------
+class SAC:
+    def __init__(self, state_dim, action_dim, lr=0.005):
+        self.actor = Actor(state_dim, action_dim)
+        self.critic1 = Critic(state_dim, action_dim)
+        self.critic2 = Critic(state_dim, action_dim)
+        self.target1 = copy.deepcopy(self.critic1)
+        self.target2 = copy.deepcopy(self.critic2)
+
+        self.actor_optim = optim.Adam(self.actor.parameters(), lr=lr)
+        self.critic1_optim = optim.Adam(self.critic1.parameters(), lr=lr)
+        self.critic2_optim = optim.Adam(self.critic2.parameters(), lr=lr)
+        self.gamma = 0.99
+        self.tau = 0.005
+
+    def select_action(self, state):
+        state = torch.tensor(state, dtype=torch.float32).unsqueeze(0)
+        return self.actor(state).detach().numpy()[0]
+
+    def update(self, states, actions, rewards, next_states, dones):
+        with torch.no_grad():
+            next_actions = self.actor(next_states)
+            target_q1 = self.target1(next_states, next_actions)
+            target_q2 = self.target2(next_states, next_actions)
+            target_q = rewards + self.gamma * (1 - dones) * torch.min(target_q1, target_q2)
+
+        q1 = self.critic1(states, actions)
+        q2 = self.critic2(states, actions)
+        loss_q1 = ((q1 - target_q) ** 2).mean()
+        loss_q2 = ((q2 - target_q) ** 2).mean()
+
+        self.critic1_optim.zero_grad(); loss_q1.backward(); self.critic1_optim.step()
+        self.critic2_optim.zero_grad(); loss_q2.backward(); self.critic2_optim.step()
+
+        pred_actions = self.actor(states)
+        loss_actor = -self.critic1(states, pred_actions).mean()
+
+        self.actor_optim.zero_grad(); loss_actor.backward(); self.actor_optim.step()
+
+        for target, online in zip([self.target1, self.target2], [self.critic1, self.critic2]):
+            for t_param, o_param in zip(target.parameters(), online.parameters()):
+                t_param.data.copy_(self.tau * o_param.data + (1 - self.tau) * t_param.data)
+
+        return loss_q1.item(), loss_q2.item(), loss_actor.item()
+
+# ---------------- Client ----------------
+class Client:
+    def __init__(self, client_id, env_name, lr, aes_key, batch_size=256):
+        self.env = gym.make(env_name)
+        self.agent = SAC(self.env.observation_space.shape[0], self.env.action_space.shape[0], lr)
+        self.buffer = ReplayBuffer()
+        self.batch_size = batch_size
+        self.key = aes_key
+
+    def local_train(self, episodes=5):
+        rewards = []
+        for _ in range(episodes):
+            state, _ = self.env.reset()
+            episode_reward = 0
+            done = False
+            while not done:
+                action = self.agent.select_action(state)
+                next_state, reward, terminated, truncated, _ = self.env.step(action)
+                done = terminated or truncated
+                self.buffer.push((state, action, reward, next_state, done))
+                state = next_state
+                episode_reward += reward
+
+                if len(self.buffer.buffer) >= self.batch_size:
+                    batch = self.buffer.sample(self.batch_size)
+                    self.agent.update(*batch)
+
+            rewards.append(episode_reward)
+        # return avg reward per episode
+        return np.mean(rewards)
+
+    def get_encrypted_weights(self):
+        weights = pickle.dumps(self.agent.actor.state_dict())
+        return encrypt_aes(self.key, weights)
+
+    def set_weights(self, encrypted_weights):
+        decrypted = decrypt_aes(self.key, encrypted_weights)
+        state_dict = pickle.loads(decrypted)
+        self.agent.actor.load_state_dict(state_dict)
+
+# ---------------- Aggregator ----------------
+class FedProxAggregator:
+    def __init__(self, clients, aes_key):
+        self.clients = clients
+        self.key = aes_key
+
+    def aggregate(self):
+        weights = []
+        for c in self.clients:
+            encrypted = c.get_encrypted_weights()
+            decrypted = decrypt_aes(self.key, encrypted)
+            weights.append(pickle.loads(decrypted))
+
+        new_state = copy.deepcopy(weights[0])
+        for k in new_state.keys():
+            for i in range(1, len(weights)):
+                new_state[k] += weights[i][k]
+            new_state[k] = torch.div(new_state[k], len(weights))
+
+        encrypted = encrypt_aes(self.key, pickle.dumps(new_state))
+        for c in self.clients:
+            c.set_weights(encrypted)
+
+# ---------------- Federated Learning ----------------
+def run_federated_learning(
+    num_clients=3, rounds=100, episodes_per_client=3,
+    env_name="Pendulum-v1", lr=0.005, batch_size=256, seed=42
+):
+    torch.manual_seed(seed); np.random.seed(seed); random.seed(seed)
+
+    aes_key = generate_aes_key()
+    clients = [Client(i, env_name, lr, aes_key, batch_size=batch_size) for i in range(num_clients)]
+    aggregator = FedProxAggregator(clients, aes_key)
+
+    logs = {"FedProx": {"reward": []}}
+
+    for r in range(rounds):
+        round_rewards = []
+        for c in clients:
+            avg_reward = c.local_train(episodes_per_client)
+            round_rewards.append(avg_reward)
+        mean_reward = np.mean(round_rewards)
+
+        logs["FedProx"]["reward"].append(mean_reward)
+        aggregator.aggregate()
+
+        if (r+1) % 10 == 0:
+            print(f"Round {r+1}/{rounds}, Reward={mean_reward:.2f}")
+
+    # Plotting
+    fig, ax = plt.subplots(figsize=(10, 6))
+    for name, values in logs.items():
+        ax.plot(values["reward"], label=f"{name} (lr={lr}, seed={seed}, B={batch_size})")
+    ax.set_xlabel("Rounds"); ax.set_ylabel("Average Reward")
+    ax.set_title("Federated SAC Training with Reward Tracking")
+    ax.legend()
+    plt.show()
+
+if __name__ == "__main__":
+    run_federated_learning(
+        num_clients=2,
+        rounds=50,
+        episodes_per_client=2,
+        env_name="Pendulum-v1",
+        lr=1e-4,
+        batch_size=128,
+        seed=42
+    )

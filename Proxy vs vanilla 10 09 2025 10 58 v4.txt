@@ -1,0 +1,253 @@
+
+
+# sac_fedprox_entropy_sweep.py
+# PyTorch federated SAC (stochastic actor + two critics) with FedProx
+# Sweeps over learning rates and batch sizes
+# Author: ChatGPT
+
+import torch, torch.nn as nn, torch.optim as optim, numpy as np, pandas as pd
+from copy import deepcopy
+import matplotlib.pyplot as plt
+
+torch.manual_seed(42)
+np.random.seed(42)
+device = torch.device("cpu")
+
+# -------------------- Hyperparameters --------------------
+n_clients = 8
+param_dim = 16
+rounds = 300  # reduce for faster experiments
+local_epochs = 3
+mu_fedprox = 0.9
+obs_dim = 256
+act_dim = 2
+alpha = 0.001
+
+#learning_rates = [1e-3, 5e-4, 1e-5]
+learning_rates = [0.005]
+#batch_sizes = [64, 256, 512]
+batch_sizes = [512]
+
+# -------------------- Models --------------------
+class StochasticActor(nn.Module):
+    def __init__(self, obs_dim=256, hidden=256, act_dim=2):
+        super().__init__()
+        self.net = nn.Sequential(nn.Linear(obs_dim, hidden), nn.ReLU(),
+                                 nn.Linear(hidden, hidden), nn.ReLU())
+        self.mu_layer = nn.Linear(hidden, act_dim)
+        self.log_std_layer = nn.Linear(hidden, act_dim)
+        self.log_std_min = -20; self.log_std_max = 2
+
+    def forward(self, x):
+        h = self.net(x)
+        mu = self.mu_layer(h)
+        log_std = torch.clamp(self.log_std_layer(h), self.log_std_min, self.log_std_max)
+        std = log_std.exp()
+        return mu, std
+
+    def sample(self, x):
+        mu, std = self.forward(x)
+        dist = torch.distributions.Normal(mu, std)
+        z = dist.rsample()
+        action = torch.tanh(z)
+        log_prob = dist.log_prob(z) - torch.log(1 - action.pow(2) + 1e-6)
+        log_prob = log_prob.sum(dim=-1, keepdim=True)
+        return action, log_prob
+
+class MLPCritic(nn.Module):
+    def __init__(self, obs_dim=8, act_dim=2, hidden=16):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(obs_dim+act_dim, hidden), nn.ReLU(),
+            nn.Linear(hidden, hidden), nn.ReLU(), nn.Linear(hidden, 1)
+        )
+    def forward(self, s, a):
+        return self.net(torch.cat([s, a], dim=-1)).squeeze(-1)
+
+# -------------------- Synthetic data --------------------
+client_shifts = [np.random.normal(0, 0.6, size=(obs_dim,)) for _ in range(n_clients)]
+def generate_batch(client_idx, batch_size):
+    shift = client_shifts[client_idx]
+    s = np.random.randn(batch_size, obs_dim)*0.5 + shift[np.newaxis,:]
+    a = np.random.randn(batch_size, act_dim)*0.7
+    q_target = -np.sum(s**2,axis=1)-np.sum(a**2,axis=1)+np.random.randn(batch_size)*0.1
+    actor_target = -0.1*s[:,:act_dim] + np.random.randn(batch_size, act_dim)*0.05
+    return (torch.tensor(s,dtype=torch.float32,device=device),
+            torch.tensor(a,dtype=torch.float32,device=device),
+            torch.tensor(q_target,dtype=torch.float32,device=device),
+            torch.tensor(actor_target,dtype=torch.float32,device=device))
+
+# -------------------- Utilities --------------------
+def init_globals():
+    actor = StochasticActor(obs_dim=obs_dim, hidden=param_dim, act_dim=act_dim).to(device)
+    q1 = MLPCritic(obs_dim=obs_dim, act_dim=act_dim, hidden=param_dim).to(device)
+    q2 = MLPCritic(obs_dim=obs_dim, act_dim=act_dim, hidden=param_dim).to(device)
+    return actor, q1, q2
+
+def get_flat_params(model): return torch.cat([p.data.view(-1).cpu() for p in model.parameters()])
+def aggregate_state_dicts(state_dicts):
+    agg = {}
+    for k in state_dicts[0].keys():
+        agg[k] = sum(sd[k].float() for sd in state_dicts)/len(state_dicts)
+    return agg
+
+# -------------------- Local update --------------------
+def local_update(global_actor, global_q1, global_q2, client_idx, use_fedprox, mu, lr_a, lr_c, local_epochs, batch_size):
+    local_actor = deepcopy(global_actor)
+    local_q1 = deepcopy(global_q1)
+    local_q2 = deepcopy(global_q2)
+    local_actor.train(); local_q1.train(); local_q2.train()
+
+    opt_a = optim.Adam(local_actor.parameters(), lr=lr_a)
+    opt_q1 = optim.Adam(local_q1.parameters(), lr=lr_c)
+    opt_q2 = optim.Adam(local_q2.parameters(), lr=lr_c)
+    mse = nn.MSELoss()
+
+    flat_g_actor = get_flat_params(global_actor).to(device)
+    flat_g_q1 = get_flat_params(global_q1).to(device)
+    flat_g_q2 = get_flat_params(global_q2).to(device)
+
+    for epoch in range(local_epochs):
+        for _ in range(4):
+            s, a, q_target, actor_target = generate_batch(client_idx, batch_size)
+            # Q1
+            opt_q1.zero_grad()
+            q1_pred = local_q1(s,a); loss_q1 = mse(q1_pred,q_target)
+            if use_fedprox: loss_q1 += 0.5*mu*torch.sum((torch.cat([p.view(-1) for p in local_q1.parameters()])-flat_g_q1)**2)
+            loss_q1.backward(); opt_q1.step()
+            # Q2
+            opt_q2.zero_grad()
+            q2_pred = local_q2(s,a); loss_q2 = mse(q2_pred,q_target)
+            if use_fedprox: loss_q2 += 0.5*mu*torch.sum((torch.cat([p.view(-1) for p in local_q2.parameters()])-flat_g_q2)**2)
+            loss_q2.backward(); opt_q2.step()
+            # Actor
+            opt_a.zero_grad()
+            actions, log_probs = local_actor.sample(s)
+            q1_val = local_q1(s, actions); q2_val = local_q2(s, actions)
+            q_min = torch.min(q1_val, q2_val)
+            loss_actor = (alpha*log_probs - q_min.unsqueeze(-1)).mean()
+            if use_fedprox: loss_actor += 0.5*mu*torch.sum((torch.cat([p.view(-1) for p in local_actor.parameters()])-flat_g_actor)**2)
+            loss_actor.backward(); opt_a.step()
+
+    s, a, q_target, actor_target = generate_batch(client_idx, batch_size)
+    with torch.no_grad():
+        q1_eval = local_q1(s,a); q2_eval = local_q2(s,a)
+        a_eval, _ = local_actor.sample(s)
+        loss_q1_eval = float(mse(q1_eval,q_target).item())
+        loss_q2_eval = float(mse(q2_eval,q_target).item())
+        loss_actor_eval = float(mse(a_eval,actor_target).item())
+    return local_actor.state_dict(), local_q1.state_dict(), local_q2.state_dict(), loss_q1_eval, loss_q2_eval, loss_actor_eval, -loss_actor_eval
+
+# -------------------- Sweep simulation --------------------
+#results = []
+
+# -------------------- Prepare storage --------------------
+sweep_records = {}  # nested dictionary: sweep_records[(lr, bs)] = {'fp': {...}, 'v': {...}}
+
+for lr in learning_rates:
+    for bs in batch_sizes:
+        print(f"\nTraining with lr={lr}, batch_size={bs}")
+        # Initialize globals
+        global_actor_fp, global_q1_fp, global_q2_fp = init_globals()
+        global_actor_v, global_q1_v, global_q2_v = deepcopy(global_actor_fp), deepcopy(global_q1_fp), deepcopy(
+            global_q2_fp)
+
+        # Store per-round metrics
+        sweep_records[(lr, bs)] = {'fp': {'q1': [], 'q2': [], 'actor': [], 'reward': []},
+                                   'v': {'q1': [], 'q2': [], 'actor': [], 'reward': []}}
+
+        for r in range(rounds):
+            # FedProx local
+            local_actor_sds_fp, local_q1_sds_fp, local_q2_sds_fp = [], [], []
+            q1_losses_fp, q2_losses_fp, actor_losses_fp, actor_rewards_fp = [], [], [], []
+
+            # Vanilla local
+            local_actor_sds_v, local_q1_sds_v, local_q2_sds_v = [], [], []
+            q1_losses_v, q2_losses_v, actor_losses_v, actor_rewards_v = [], [], [], []
+
+            for k in range(n_clients):
+                sd_a_fp, sd_q1_fp, sd_q2_fp, lq1_fp, lq2_fp, la_fp, ar_fp = local_update(
+                    global_actor_fp, global_q1_fp, global_q2_fp, k, True, mu_fedprox, lr, lr, local_epochs, bs)
+                local_actor_sds_fp.append(sd_a_fp)
+                local_q1_sds_fp.append(sd_q1_fp)
+                local_q2_sds_fp.append(sd_q2_fp)
+                q1_losses_fp.append(lq1_fp)
+                q2_losses_fp.append(lq2_fp)
+                actor_losses_fp.append(la_fp)
+                actor_rewards_fp.append(ar_fp)
+
+                sd_a_v, sd_q1_v, sd_q2_v, lq1_v, lq2_v, la_v, ar_v = local_update(
+                    global_actor_v, global_q1_v, global_q2_v, k, False, 0.0, lr, lr, local_epochs, bs)
+                local_actor_sds_v.append(sd_a_v)
+                local_q1_sds_v.append(sd_q1_v)
+                local_q2_sds_v.append(sd_q2_v)
+                q1_losses_v.append(lq1_v)
+                q2_losses_v.append(lq2_v)
+                actor_losses_v.append(la_v)
+                actor_rewards_v.append(ar_v)
+
+            # Aggregate
+            global_actor_fp.load_state_dict(aggregate_state_dicts(local_actor_sds_fp))
+            global_q1_fp.load_state_dict(aggregate_state_dicts(local_q1_sds_fp))
+            global_q2_fp.load_state_dict(aggregate_state_dicts(local_q2_sds_fp))
+            global_actor_v.load_state_dict(aggregate_state_dicts(local_actor_sds_v))
+            global_q1_v.load_state_dict(aggregate_state_dicts(local_q1_sds_v))
+            global_q2_v.load_state_dict(aggregate_state_dicts(local_q2_sds_v))
+
+            # Store per-round averages
+            sweep_records[(lr, bs)]['fp']['q1'].append(np.mean(q1_losses_fp))
+            sweep_records[(lr, bs)]['fp']['q2'].append(np.mean(q2_losses_fp))
+            sweep_records[(lr, bs)]['fp']['actor'].append(np.mean(actor_losses_fp))
+            sweep_records[(lr, bs)]['fp']['reward'].append(np.mean(actor_rewards_fp))
+
+            sweep_records[(lr, bs)]['v']['q1'].append(np.mean(q1_losses_v))
+            sweep_records[(lr, bs)]['v']['q2'].append(np.mean(q2_losses_v))
+            sweep_records[(lr, bs)]['v']['actor'].append(np.mean(actor_losses_v))
+            sweep_records[(lr, bs)]['v']['reward'].append(np.mean(actor_rewards_v))
+
+            # Print per-round
+            print(
+                f"Round {r + 1}/{rounds} | "
+                f"FP Actor={np.mean(actor_losses_fp):.4f}, Reward={np.mean(actor_rewards_fp):.4f} | "
+                f"V Actor={np.mean(actor_losses_v):.4f}, Reward={np.mean(actor_rewards_v):.4f}"
+            )
+
+# -------------------- Plotting with subplots --------------------
+for lr in learning_rates:
+    for bs in batch_sizes:
+        rec = sweep_records[(lr, bs)]
+        rounds_arr = np.arange(1, rounds + 1)
+
+        fig, axes = plt.subplots(1, 2, figsize=(16, 6), sharex=True)
+
+        # ---- Actor Loss subplot ----
+        l1, = axes[0].plot(
+            rounds_arr, rec['fp']['actor'],
+            label=fr'FedProx (1000 Users, $\mu$={mu_fedprox}, lr={lr}, B={bs})'
+        )
+        l2, = axes[0].plot(
+            rounds_arr, rec['v']['actor'],
+            label=fr'Vanilla (lr={lr}, B={bs})'
+        )
+        axes[0].set_xlabel('Round', fontsize=21)
+        axes[0].set_ylabel('Loss', fontsize=21)
+        axes[0].tick_params(axis='both', labelsize=21)
+        axes[0].grid(False, alpha=1)
+
+        # ---- Actor Reward subplot ----
+        axes[1].plot(rounds_arr, rec['fp']['reward'])
+        axes[1].plot(rounds_arr, rec['v']['reward'])
+        axes[1].set_xlabel('Round', fontsize=21)
+        axes[1].set_ylabel('Reward', fontsize=21)
+        axes[1].tick_params(axis='both', labelsize=21)
+        axes[1].grid(False, alpha=1)
+
+        # ---- Shared Legend on Top ----
+        fig.legend([l1, l2],
+                   [fr'FedProx (Seed=42, $\mu$={mu_fedprox}, lr={lr}, B={bs})',
+                    fr'Vanilla (Seed=42, lr={lr}, B={bs})'],
+                   loc="upper center", fontsize=16, ncol=2, frameon=False)
+
+        # ---- Adjust layout ----
+        plt.tight_layout(rect=[0, 0, 1, 0.95])
+        plt.show()

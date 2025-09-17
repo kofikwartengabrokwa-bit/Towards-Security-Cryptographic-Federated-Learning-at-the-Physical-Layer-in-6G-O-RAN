@@ -1,0 +1,1942 @@
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/2
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1257.464, Q1=213994394112.0000, Q2=104509225642.6667, Actor=-32566488405.3333, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=3225648
+
+  Round 2/2
+    Reward=-1268.745, Q1=174609583308800.0000, Q2=244703377926826.6562, Actor=-27289325753685.3320, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=3225648
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/2
+    Reward=-1331.539, Q1=2410710990585856.0000, Q2=3690565861026474.5000, Actor=-386043515764736.0000, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=3247038
+
+  Round 2/2
+    Reward=-1421.553, Q1=15855871426822144.0000, Q2=22923075471977132.0000, Actor=-2322024363283797.5000, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=3247038
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/2
+    Reward=-1206.762, Q1=18573411677984084.0000, Q2=26223719363204436.0000, Actor=-5566032355087701.0000, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=9676944
+
+  Round 2/2
+    Reward=-1254.104, Q1=37319724924665856.0000, Q2=50317379788690776.0000, Actor=-14396784577784490.0000, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=9676944
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/2
+    Reward=-1177.424, Q1=69388403575794344.0000, Q2=94218441305970000.0000, Actor=-30256166267955884.0000, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=3548212
+
+  Round 2/2
+    Reward=-1132.327, Q1=5010251529759403.0000, Q2=7530714634037931.0000, Actor=-4972295718174720.0000, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=3548212
+
+
+
+
+
+
+
+
+
+
+
+
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+    Reward=-1335.274, Q1=57.0012, Q2=55.9235, Actor=0.5514, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=107521600
+
+  Round 2/5
+    Reward=-1184.043, Q1=37.2101, Q2=37.2879, Actor=0.0096, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=107521600
+
+  Round 3/5
+    Reward=-1262.843, Q1=54.7982, Q2=54.8794, Actor=0.0172, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=107521600
+
+  Round 4/5
+    Reward=-1293.313, Q1=52.1452, Q2=52.1956, Actor=0.0261, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=107521600
+
+  Round 5/5
+    Reward=-1224.992, Q1=47.7052, Q2=47.7045, Actor=0.0396, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=107521600
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1259.016, Q1=62.0287, Q2=61.9329, Actor=0.0633, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=108234600
+
+  Round 2/5
+    Reward=-1232.989, Q1=45.3066, Q2=45.1358, Actor=0.0855, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=108234600
+
+  Round 3/5
+    Reward=-1209.340, Q1=49.6434, Q2=49.2907, Actor=0.1318, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=108234600
+
+  Round 4/5
+    Reward=-1199.329, Q1=46.4019, Q2=45.9192, Actor=0.1717, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=108234600
+
+  Round 5/5
+    Reward=-1257.087, Q1=54.1179, Q2=53.3016, Actor=0.2330, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=108234600
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1207.533, Q1=52.4914, Q2=51.3263, Actor=0.3233, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=322564800
+
+  Round 2/5
+    Reward=-1244.811, Q1=47.9543, Q2=46.4414, Actor=0.4313, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=322564800
+
+  Round 3/5
+    Reward=-1192.886, Q1=36.2421, Q2=34.5971, Actor=0.5563, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=322564800
+
+  Round 4/5
+    Reward=-1212.036, Q1=38.6013, Q2=36.4318, Actor=0.7007, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=322564800
+
+  Round 5/5
+    Reward=-1229.073, Q1=33.6468, Q2=31.2430, Actor=0.8435, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=322564800
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1233.830, Q1=34.4733, Q2=31.3396, Actor=1.1123, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=118273760
+
+  Round 2/5
+    Reward=-1235.392, Q1=31.3965, Q2=27.6834, Actor=1.4055, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=118273760
+
+  Round 3/5
+    Reward=-1255.288, Q1=31.6734, Q2=27.3514, Actor=1.6589, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=118273760
+
+  Round 4/5
+    Reward=-1247.113, Q1=22.6243, Q2=18.5935, Actor=1.9361, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=118273760
+
+  Round 5/5
+    Reward=-1217.269, Q1=23.4706, Q2=18.5375, Actor=2.4538, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=118273760
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1108.786, Q1=8.0883, Q2=6.4343, Actor=0.2347, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1524.092, Q1=104.6708, Q2=105.2888, Actor=0.2323, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1030.329, Q1=29.9987, Q2=29.9408, Actor=0.3598, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1193.878, Q1=68.2509, Q2=68.3608, Actor=0.7948, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1263.292, Q1=78.7617, Q2=78.9815, Actor=1.0292, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=3225648
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1551.565, Q1=67.7843, Q2=67.6659, Actor=0.6770, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=3247038
+
+  Round 2/5
+    Reward=-1441.076, Q1=39.1456, Q2=38.3713, Actor=1.0152, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=3247038
+
+  Round 3/5
+    Reward=-1358.832, Q1=27.9295, Q2=26.6676, Actor=0.8633, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=3247038
+
+  Round 4/5
+    Reward=-1358.403, Q1=33.6200, Q2=30.6464, Actor=1.9353, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=3247038
+
+  Round 5/5
+    Reward=-1392.974, Q1=28.2877, Q2=26.2247, Actor=2.2560, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=3247038
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1450.037, Q1=37.8056, Q2=32.9491, Actor=2.1472, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=9676944
+
+  Round 2/5
+    Reward=-1131.459, Q1=2.2111, Q2=2.4975, Actor=3.9909, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=9676944
+
+  Round 3/5
+    Reward=-904.201, Q1=8.0203, Q2=4.7888, Actor=3.1246, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=9676944
+
+  Round 4/5
+    Reward=-1100.085, Q1=8.6214, Q2=9.6881, Actor=4.3766, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=9676944
+
+  Round 5/5
+    Reward=-1227.268, Q1=19.3829, Q2=14.6118, Actor=4.6484, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=9676944
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1541.681, Q1=21.1907, Q2=15.8778, Actor=3.1765, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=3548212
+
+  Round 2/5
+    Reward=-1092.521, Q1=15.6181, Q2=26.8399, Actor=7.0556, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=3548212
+
+  Round 3/5
+    Reward=-850.003, Q1=12.9333, Q2=20.5837, Actor=9.1759, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=3548212
+
+  Round 4/5
+    Reward=-1364.231, Q1=10.6069, Q2=26.8756, Actor=10.3137, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=3548212
+
+  Round 5/5
+    Reward=-1406.710, Q1=22.5088, Q2=30.2558, Actor=6.1076, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=3548212
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1293.887, Q1=47.1820, Q2=43.9557, Actor=0.4431, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1199.172, Q1=90.4243, Q2=90.3930, Actor=0.2879, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1317.196, Q1=45.7380, Q2=46.4136, Actor=0.3688, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1323.907, Q1=49.2227, Q2=50.0997, Actor=0.7156, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1582.558, Q1=48.9185, Q2=48.3422, Actor=0.4872, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=3225648
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1450.194, Q1=44.4865, Q2=42.9408, Actor=0.7095, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=3247038
+
+  Round 2/5
+    Reward=-1001.279, Q1=60.0487, Q2=60.0385, Actor=1.9463, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=3247038
+
+  Round 3/5
+    Reward=-1446.866, Q1=37.0952, Q2=37.2138, Actor=1.3353, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=3247038
+
+  Round 4/5
+    Reward=-1002.462, Q1=15.1411, Q2=14.0731, Actor=2.9471, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=3247038
+
+  Round 5/5
+    Reward=-1390.921, Q1=21.3218, Q2=21.0338, Actor=1.9216, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=3247038
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1248.929, Q1=34.9072, Q2=29.3075, Actor=3.5513, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=9676944
+
+  Round 2/5
+    Reward=-1140.858, Q1=14.7886, Q2=17.3275, Actor=4.1719, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=9676944
+
+  Round 3/5
+    Reward=-1459.466, Q1=28.2176, Q2=25.9329, Actor=3.7441, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=9676944
+
+  Round 4/5
+    Reward=-1379.047, Q1=15.9240, Q2=14.3668, Actor=4.6727, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=9676944
+
+  Round 5/5
+    Reward=-1087.504, Q1=8.3380, Q2=13.1166, Actor=4.9153, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=9676944
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1733.332, Q1=26.9862, Q2=22.5312, Actor=3.5775, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=3548212
+
+  Round 2/5
+    Reward=-1117.043, Q1=9.9212, Q2=11.3146, Actor=3.5473, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=3548212
+
+  Round 3/5
+    Reward=-930.280, Q1=35.2213, Q2=43.5095, Actor=8.8887, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=3548212
+
+  Round 4/5
+    Reward=-937.698, Q1=31.2914, Q2=33.9997, Actor=9.7105, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=3548212
+
+  Round 5/5
+    Reward=-1467.539, Q1=10.4247, Q2=9.2223, Actor=7.3824, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=3548212
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/15
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1480.131, Q1=851816534488645632.0000, Q2=183675092457226240.0000, Actor=-307919957935521792.0000, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=3225648
+
+  Round 2/15
+    Reward=-1117.641, Q1=808515579016817280.0000, Q2=469978706193590976.0000, Actor=-3324064283467885056.0000, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=3225648
+
+  Round 3/15
+    Reward=-1148.130, Q1=536172183813794496.0000, Q2=631928651476806272.0000, Actor=-4212900252045628928.0000, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=3225648
+
+  Round 4/15
+    Reward=-966.790, Q1=438227539119308800.0000, Q2=547606211389467328.0000, Actor=-8425023790752202752.0000, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=3225648
+
+  Round 5/15
+    Reward=-1328.946, Q1=946283664422644352.0000, Q2=428675302788082368.0000, Actor=-106200661178542899200.0000, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=3225648
+
+  Round 6/15
+    Reward=-1490.982, Q1=637902767733604352.0000, Q2=331402654403351872.0000, Actor=-188217613948679782400.0000, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=3225648
+
+  Round 7/15
+    Reward=-1308.121, Q1=389821768771392832.0000, Q2=237653459749306368.0000, Actor=-299544937207728242688.0000, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=3225648
+
+  Round 8/15
+    Reward=-1312.676, Q1=449692398833543872.0000, Q2=232759745379128672.0000, Actor=-503619578842829225984.0000, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=3225648
+
+  Round 9/15
+    Reward=-1343.972, Q1=942356861723257472.0000, Q2=533606129832995520.0000, Actor=-303816789104273653760.0000, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=3225648
+
+  Round 10/15
+    Reward=-1381.195, Q1=532634894561793344.0000, Q2=368072546874032128.0000, Actor=-726499894991472951296.0000, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=3225648
+
+  Round 11/15
+    Reward=-1412.441, Q1=772961163999008128.0000, Q2=551482837417590784.0000, Actor=-236353579169798422528.0000, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=3225648
+
+  Round 12/15
+    Reward=-1544.587, Q1=838369324029007232.0000, Q2=654905798797470336.0000, Actor=-302457318476327092224.0000, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=3225648
+
+  Round 13/15
+    Reward=-1398.376, Q1=635132639813391744.0000, Q2=483006432924052160.0000, Actor=-800461746411685675008.0000, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 14/15
+    Reward=-1187.974, Q1=404794958204807872.0000, Q2=402035103846367232.0000, Actor=-708084328669480615936.0000, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 15/15
+    Reward=-1257.471, Q1=574706767832459968.0000, Q2=601633784690201984.0000, Actor=-213839509954495873024.0000, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/15
+    Reward=-1607.817, Q1=825265229916711552.0000, Q2=505575123128243520.0000, Actor=-1722543611244852543488.0000, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=3247038
+
+  Round 2/15
+    Reward=-1239.407, Q1=433267813965103104.0000, Q2=311858972658586944.0000, Actor=-1791351635317276016640.0000, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=3247038
+
+  Round 3/15
+    Reward=-1336.941, Q1=835009147775047040.0000, Q2=520656230773249344.0000, Actor=-1952110169019180384256.0000, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=3247038
+
+  Round 4/15
+    Reward=-1380.764, Q1=605749107820767872.0000, Q2=362310249814338240.0000, Actor=-2333722542706931007488.0000, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=3247038
+
+  Round 5/15
+    Reward=-1359.994, Q1=831921238087914880.0000, Q2=409426192806969344.0000, Actor=-3199914730300368224256.0000, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=3247038
+
+  Round 6/15
+    Reward=-1263.367, Q1=417114401878485696.0000, Q2=368768463288314560.0000, Actor=-484779244790747955200.0000, Latency=16.39, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-47.02, BER=0.00007, Rate=24.56, CommOv=0.03, BytesUp=3247038
+
+  Round 7/15
+    Reward=-1426.098, Q1=513514227009323008.0000, Q2=319971077822349312.0000, Actor=-2325702757670490996736.0000, Latency=29.28, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-66.37, BER=0.00078, Rate=80.94, CommOv=0.01, BytesUp=3247038
+
+  Round 8/15
+    Reward=-1462.028, Q1=581726267675858304.0000, Q2=322488028873708864.0000, Actor=-3036580430814708760576.0000, Latency=18.72, PktAtk=0.04, SuccAtk=0.03, Drop=0.02, RSSI=-53.55, BER=0.00067, Rate=98.43, CommOv=0.00, BytesUp=3247038
+
+  Round 9/15
+    Reward=-1447.873, Q1=392764983873634304.0000, Q2=296535087692207424.0000, Actor=-1887174484162295627776.0000, Latency=46.24, PktAtk=0.03, SuccAtk=0.03, Drop=0.01, RSSI=-80.49, BER=0.00045, Rate=42.77, CommOv=0.01, BytesUp=3247038
+
+  Round 10/15
+    Reward=-1220.841, Q1=228853289371478688.0000, Q2=211387426905172640.0000, Actor=-1844511081515718803456.0000, Latency=32.48, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-62.48, BER=0.00005, Rate=99.93, CommOv=0.04, BytesUp=3247038
+
+  Round 11/15
+    Reward=-1074.385, Q1=334097540223161664.0000, Q2=246904661822756192.0000, Actor=-3147926548392514682880.0000, Latency=97.21, PktAtk=0.09, SuccAtk=0.09, Drop=0.01, RSSI=-65.72, BER=0.00021, Rate=40.70, CommOv=0.00, BytesUp=3247038
+
+  Round 12/15
+    Reward=-1314.485, Q1=334500230630211584.0000, Q2=228756151527800832.0000, Actor=-1821264590954767056896.0000, Latency=44.11, PktAtk=0.10, SuccAtk=0.06, Drop=0.04, RSSI=-67.25, BER=0.00042, Rate=95.77, CommOv=0.05, BytesUp=3247038
+
+  Round 13/15
+    Reward=-1454.069, Q1=303703247806966464.0000, Q2=163205931159519232.0000, Actor=-3868183002945103069184.0000, Latency=60.02, PktAtk=0.07, SuccAtk=0.04, Drop=0.01, RSSI=-41.56, BER=0.00058, Rate=54.68, CommOv=0.04, BytesUp=3247038
+
+  Round 14/15
+    Reward=-1527.479, Q1=376353759216795648.0000, Q2=299185217089481408.0000, Actor=-1071560810744910970880.0000, Latency=15.14, PktAtk=0.06, SuccAtk=0.04, Drop=0.04, RSSI=-82.13, BER=0.00096, Rate=8.93, CommOv=0.01, BytesUp=3247038
+
+  Round 15/15
+    Reward=-1180.413, Q1=349506050361830080.0000, Q2=202376373633111392.0000, Actor=-3396750416076610207744.0000, Latency=63.55, PktAtk=0.07, SuccAtk=0.04, Drop=0.01, RSSI=-45.49, BER=0.00025, Rate=59.86, CommOv=0.03, BytesUp=3247038
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/15
+    Reward=-1173.162, Q1=445676083289085248.0000, Q2=241901737887487328.0000, Actor=-3622445484924391653376.0000, Latency=47.73, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-79.79, BER=0.00072, Rate=24.63, CommOv=0.02, BytesUp=9676944
+
+  Round 2/15
+    Reward=-1392.623, Q1=257561606692186784.0000, Q2=153439928579347808.0000, Actor=-4092584412799922339840.0000, Latency=70.45, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-86.37, BER=0.00046, Rate=99.85, CommOv=0.05, BytesUp=9676944
+
+  Round 3/15
+    Reward=-1477.907, Q1=400985740256739328.0000, Q2=244237948125096608.0000, Actor=-3293902649636272734208.0000, Latency=16.59, PktAtk=0.02, SuccAtk=0.01, Drop=0.05, RSSI=-45.96, BER=0.00088, Rate=37.58, CommOv=0.01, BytesUp=9676944
+
+  Round 4/15
+    Reward=-1132.265, Q1=183891512995960160.0000, Q2=107033369586783568.0000, Actor=-3811430939153290231808.0000, Latency=85.04, PktAtk=0.07, SuccAtk=0.06, Drop=0.05, RSSI=-57.30, BER=0.00001, Rate=81.89, CommOv=0.01, BytesUp=9676944
+
+  Round 5/15
+    Reward=-1199.289, Q1=180636786779051360.0000, Q2=122768911420271280.0000, Actor=-4443778594995110412288.0000, Latency=69.70, PktAtk=0.09, SuccAtk=0.05, Drop=0.01, RSSI=-84.65, BER=0.00055, Rate=27.96, CommOv=0.03, BytesUp=9676944
+
+  Round 6/15
+    Reward=-1169.567, Q1=266256089378106016.0000, Q2=175943143438767456.0000, Actor=-4742325287061996699648.0000, Latency=74.59, PktAtk=0.02, SuccAtk=0.02, Drop=0.01, RSSI=-65.57, BER=0.00091, Rate=84.76, CommOv=0.00, BytesUp=9676944
+
+  Round 7/15
+    Reward=-966.648, Q1=350633966039990272.0000, Q2=169262516515023520.0000, Actor=-4678117930435474358272.0000, Latency=48.12, PktAtk=0.03, SuccAtk=0.01, Drop=0.04, RSSI=-58.14, BER=0.00026, Rate=74.38, CommOv=0.03, BytesUp=9676944
+
+  Round 8/15
+    Reward=-1308.295, Q1=298500960079751872.0000, Q2=159825834847240192.0000, Actor=-8147072325130088611840.0000, Latency=48.49, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-44.80, BER=0.00055, Rate=83.62, CommOv=0.03, BytesUp=9676944
+
+  Round 9/15
+    Reward=-1351.016, Q1=342301886967884480.0000, Q2=212694677511121568.0000, Actor=-5335539359610494255104.0000, Latency=23.33, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-50.19, BER=0.00086, Rate=89.99, CommOv=0.01, BytesUp=9676944
+
+  Round 10/15
+    Reward=-1243.395, Q1=248078233003272864.0000, Q2=176131874323344032.0000, Actor=-8515145728981807923200.0000, Latency=32.46, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-69.68, BER=0.00062, Rate=16.30, CommOv=0.05, BytesUp=9676944
+
+  Round 11/15
+    Reward=-1446.382, Q1=275049264685864288.0000, Q2=210839107042017280.0000, Actor=-5142562472930598453248.0000, Latency=87.81, PktAtk=0.10, SuccAtk=0.09, Drop=0.04, RSSI=-88.76, BER=0.00074, Rate=33.89, CommOv=0.05, BytesUp=9676944
+
+  Round 12/15
+    Reward=-1377.781, Q1=262634867875206496.0000, Q2=101363611892449280.0000, Actor=-14731745007289952632832.0000, Latency=82.20, PktAtk=0.09, SuccAtk=0.08, Drop=0.01, RSSI=-50.63, BER=0.00011, Rate=87.34, CommOv=0.04, BytesUp=9676944
+
+  Round 13/15
+    Reward=-1086.732, Q1=139330648911030960.0000, Q2=100462267192399184.0000, Actor=-7687361400094865752064.0000, Latency=30.02, PktAtk=0.08, SuccAtk=0.06, Drop=0.02, RSSI=-50.23, BER=0.00023, Rate=3.34, CommOv=0.01, BytesUp=9676944
+
+  Round 14/15
+    Reward=-1303.219, Q1=228500363318831776.0000, Q2=155666788949600928.0000, Actor=-7461596513724736208896.0000, Latency=39.54, PktAtk=0.09, SuccAtk=0.09, Drop=0.01, RSSI=-57.93, BER=0.00040, Rate=98.13, CommOv=0.03, BytesUp=9676944
+
+  Round 15/15
+    Reward=-1535.295, Q1=350047170428141568.0000, Q2=231442221211407712.0000, Actor=-7192674195075468623872.0000, Latency=94.53, PktAtk=0.01, SuccAtk=0.01, Drop=0.01, RSSI=-41.87, BER=0.00027, Rate=11.73, CommOv=0.02, BytesUp=9676944
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/15
+    Reward=-1221.476, Q1=452096194676523008.0000, Q2=219128756132205920.0000, Actor=-14450829978132967063552.0000, Latency=75.57, PktAtk=0.03, SuccAtk=0.03, Drop=0.03, RSSI=-70.74, BER=0.00058, Rate=26.22, CommOv=0.04, BytesUp=3548212
+
+  Round 2/15
+    Reward=-969.427, Q1=323608416905854976.0000, Q2=163552933020609184.0000, Actor=-11290051763156929216512.0000, Latency=10.15, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-52.90, BER=0.00067, Rate=37.06, CommOv=0.00, BytesUp=3548212
+
+  Round 3/15
+    Reward=-1292.942, Q1=432443970518253568.0000, Q2=187208758188485280.0000, Actor=-17276291556953227788288.0000, Latency=69.78, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-54.01, BER=0.00030, Rate=31.62, CommOv=0.02, BytesUp=3548212
+
+  Round 4/15
+    Reward=-1007.404, Q1=277854387999604736.0000, Q2=203999630752830816.0000, Actor=-9984856072605554180096.0000, Latency=46.22, PktAtk=0.03, SuccAtk=0.02, Drop=0.02, RSSI=-42.98, BER=0.00068, Rate=90.38, CommOv=0.03, BytesUp=3548212
+
+  Round 5/15
+    Reward=-1161.844, Q1=268702359584331104.0000, Q2=141397885390072496.0000, Actor=-15956949661216065716224.0000, Latency=37.09, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-68.51, BER=0.00058, Rate=65.82, CommOv=0.02, BytesUp=3548212
+
+  Round 6/15
+    Reward=-1484.461, Q1=354175893856671040.0000, Q2=196884187066662912.0000, Actor=-14554270343224272879616.0000, Latency=49.79, PktAtk=0.02, SuccAtk=0.02, Drop=0.05, RSSI=-50.20, BER=0.00017, Rate=9.39, CommOv=0.03, BytesUp=3548212
+
+  Round 7/15
+    Reward=-1473.759, Q1=293037068757849408.0000, Q2=140845999272405680.0000, Actor=-19630650343752707604480.0000, Latency=66.96, PktAtk=0.03, SuccAtk=0.03, Drop=0.04, RSSI=-56.36, BER=0.00022, Rate=20.71, CommOv=0.00, BytesUp=3548212
+
+  Round 8/15
+    Reward=-1408.631, Q1=292377464860398912.0000, Q2=181236693494398976.0000, Actor=-16060211008222183555072.0000, Latency=32.04, PktAtk=0.05, SuccAtk=0.04, Drop=0.00, RSSI=-69.28, BER=0.00063, Rate=20.25, CommOv=0.03, BytesUp=3548212
+
+  Round 9/15
+    Reward=-1398.662, Q1=260633155417232736.0000, Q2=191433615870001152.0000, Actor=-10374040287360558563328.0000, Latency=54.49, PktAtk=0.02, SuccAtk=0.02, Drop=0.00, RSSI=-52.45, BER=0.00077, Rate=11.55, CommOv=0.02, BytesUp=3548212
+
+  Round 10/15
+    Reward=-1361.349, Q1=263924961518463648.0000, Q2=225523069082752352.0000, Actor=-3852167569351475986432.0000, Latency=25.83, PktAtk=0.10, SuccAtk=0.07, Drop=0.00, RSSI=-77.54, BER=0.00085, Rate=46.19, CommOv=0.04, BytesUp=3548212
+
+  Round 11/15
+    Reward=-1189.677, Q1=400365209108436288.0000, Q2=212546415240063648.0000, Actor=-21607247803670799056896.0000, Latency=70.08, PktAtk=0.10, SuccAtk=0.08, Drop=0.05, RSSI=-45.43, BER=0.00061, Rate=72.21, CommOv=0.03, BytesUp=3548212
+
+  Round 12/15
+    Reward=-1420.403, Q1=297047434340947264.0000, Q2=135762360016743088.0000, Actor=-28220431965830990790656.0000, Latency=84.75, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-66.27, BER=0.00026, Rate=25.48, CommOv=0.03, BytesUp=3548212
+
+  Round 13/15
+    Reward=-1461.229, Q1=290253998669518144.0000, Q2=197678045915163296.0000, Actor=-16492854185325125173248.0000, Latency=78.92, PktAtk=0.05, SuccAtk=0.04, Drop=0.01, RSSI=-86.13, BER=0.00029, Rate=27.90, CommOv=0.02, BytesUp=3548212
+
+  Round 14/15
+    Reward=-1463.998, Q1=364955637567717376.0000, Q2=196969533793457504.0000, Actor=-26006878221381247434752.0000, Latency=58.61, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-54.68, BER=0.00006, Rate=41.35, CommOv=0.03, BytesUp=3548212
+
+  Round 15/15
+    Reward=-1547.230, Q1=382841725360887104.0000, Q2=266155464020983808.0000, Actor=-11459339352225009893376.0000, Latency=47.42, PktAtk=0.02, SuccAtk=0.01, Drop=0.05, RSSI=-60.80, BER=0.00070, Rate=85.82, CommOv=0.04, BytesUp=3548212
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1458.681, Q1=397754819611896512.0000, Q2=228577191693822624.0000, Actor=-142863333242262864.0000, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1274.798, Q1=750066880914041472.0000, Q2=545430632928728384.0000, Actor=-2349674811190061568.0000, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1324.033, Q1=725470164418909568.0000, Q2=41991749403060904.0000, Actor=-8315411598246849536.0000, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1690.868, Q1=1217999582083590912.0000, Q2=89595882537746432.0000, Actor=-8354898771652029440.0000, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1257.849, Q1=812392124872217984.0000, Q2=55392344972023128.0000, Actor=-8712056798741266432.0000, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=3225648
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1350.129, Q1=1050423541743572352.0000, Q2=78598369668235264.0000, Actor=-38519365311721545728.0000, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=3247038
+
+  Round 2/5
+    Reward=-1315.488, Q1=673912346205574528.0000, Q2=54601037334096552.0000, Actor=-101052453068179423232.0000, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=3247038
+
+  Round 3/5
+    Reward=-1063.373, Q1=703012713867684480.0000, Q2=57544290375215784.0000, Actor=-175902168923914272768.0000, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=3247038
+
+  Round 4/5
+    Reward=-1501.009, Q1=572094551543163584.0000, Q2=45075421210170712.0000, Actor=-210206395148851118080.0000, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=3247038
+
+  Round 5/5
+    Reward=-1503.914, Q1=688036764201953920.0000, Q2=51283309673578496.0000, Actor=-173997556765877600256.0000, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=3247038
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1211.142, Q1=574612301458440192.0000, Q2=43778564425078104.0000, Actor=-432622547332774952960.0000, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=9676944
+
+  Round 2/5
+    Reward=-1345.811, Q1=663144611223087744.0000, Q2=49634859707356504.0000, Actor=-304599729344180387840.0000, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=9676944
+
+  Round 3/5
+    Reward=-1171.373, Q1=1197186330912620544.0000, Q2=92653897820842672.0000, Actor=-807980019272433401856.0000, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=9676944
+
+  Round 4/5
+    Reward=-1334.454, Q1=1068912631491854336.0000, Q2=80882059614093312.0000, Actor=-615598730408341667840.0000, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=9676944
+
+  Round 5/5
+    Reward=-1246.110, Q1=323856121986372928.0000, Q2=26537414647698772.0000, Actor=-688821773006110982144.0000, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=9676944
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1383.520, Q1=718901120745515648.0000, Q2=53801557805061464.0000, Actor=-524705514395046051840.0000, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=3548212
+
+  Round 2/5
+    Reward=-1449.043, Q1=490623064933924864.0000, Q2=40255085640417280.0000, Actor=-1129405959152531931136.0000, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=3548212
+
+  Round 3/5
+    Reward=-1199.962, Q1=692398217591696000.0000, Q2=50575262839996416.0000, Actor=-426546867600734093312.0000, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=3548212
+
+  Round 4/5
+    Reward=-1370.264, Q1=544327238650516800.0000, Q2=45761677527176536.0000, Actor=-2240579564338615681024.0000, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=3548212
+
+  Round 5/5
+    Reward=-1277.742, Q1=451789276313550848.0000, Q2=32972881259047596.0000, Actor=-710801534264306958336.0000, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=3548212
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/50
+    Reward=-1383.347, Q1=1147614093260095488.0000, Q2=140406423686217728.0000, Actor=-856474752938672128.0000, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/50
+    Reward=-1073.345, Q1=600763670129016832.0000, Q2=121116291040804864.0000, Actor=-2468225758351327232.0000, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/50
+    Reward=-1288.614, Q1=29749803940315136.0000, Q2=21505184718913536.0000, Actor=-2217476634078871552.0000, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/50
+    Reward=-1728.466, Q1=260597054785454080.0000, Q2=77864733419503616.0000, Actor=-20172372597922594816.0000, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/50
+    Reward=-1162.243, Q1=5659016160083968.0000, Q2=11180626652692480.0000, Actor=-16800438716370780160.0000, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+  Round 6/50
+    Reward=-1316.595, Q1=223245476558798848.0000, Q2=64466509925187584.0000, Actor=-52481299678771544064.0000, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1075216
+
+  Round 7/50
+    Reward=-1377.778, Q1=1213881040590864384.0000, Q2=197657178100727808.0000, Actor=-234784083495752826880.0000, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1075216
+
+  Round 8/50
+    Reward=-1381.052, Q1=1151980116495040512.0000, Q2=185882525258743808.0000, Actor=-391737591549986340864.0000, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1075216
+
+  Round 9/50
+    Reward=-1376.550, Q1=1258846393242484736.0000, Q2=205837527431512064.0000, Actor=-657343572023648976896.0000, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1075216
+
+  Round 10/50
+    Reward=-1374.983, Q1=1372848431734718464.0000, Q2=224363250387517440.0000, Actor=-996858548194553888768.0000, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1075216
+
+  Round 11/50
+    Reward=-1247.432, Q1=1150318616986517504.0000, Q2=214611011745873920.0000, Actor=-1112754181005306232832.0000, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=1075216
+
+  Round 12/50
+    Reward=-1734.126, Q1=98512256119078912.0000, Q2=43886383852421120.0000, Actor=-345717558757700927488.0000, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=1075216
+
+  Round 13/50
+    Reward=-1062.819, Q1=24544264922857472.0000, Q2=20243671219699712.0000, Actor=-144281047205882626048.0000, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=1075216
+
+  Round 14/50
+    Reward=-1078.060, Q1=11942842687553536.0000, Q2=18963603461767168.0000, Actor=-330355147110042566656.0000, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=1075216
+
+  Round 15/50
+    Reward=-1381.699, Q1=1171851109107499008.0000, Q2=188003362929639424.0000, Actor=-1830395463277400293376.0000, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=1075216
+
+  Round 16/50
+    Reward=-1565.474, Q1=243633377075265536.0000, Q2=74670257003823104.0000, Actor=-1062947746826309074944.0000, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1075216
+
+  Round 17/50
+    Reward=-1555.551, Q1=58515557858672640.0000, Q2=32137917426040832.0000, Actor=-569585233416056471552.0000, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1075216
+
+  Round 18/50
+    Reward=-1109.059, Q1=2347159632528539648.0000, Q2=373166859123425280.0000, Actor=-4304508154218398351360.0000, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1075216
+
+  Round 19/50
+    Reward=-1415.779, Q1=10889300094746624.0000, Q2=17881737707126784.0000, Actor=-644460180864625541120.0000, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1075216
+
+  Round 20/50
+    Reward=-1100.052, Q1=20768365899415552.0000, Q2=25108415319638016.0000, Actor=-982514301906402148352.0000, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1075216
+
+  Round 21/50
+    Reward=-1234.921, Q1=1509340430817296384.0000, Q2=235750617438486528.0000, Actor=-4478499377797299961856.0000, Latency=16.39, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-47.02, BER=0.00007, Rate=24.56, CommOv=0.03, BytesUp=1075216
+
+  Round 22/50
+    Reward=-1706.107, Q1=246377912717017088.0000, Q2=74228055760961536.0000, Actor=-2347161002520027856896.0000, Latency=29.28, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-66.37, BER=0.00078, Rate=80.94, CommOv=0.01, BytesUp=1075216
+
+  Round 23/50
+    Reward=-1622.160, Q1=268475467915329536.0000, Q2=79688393713254400.0000, Actor=-2748602021679648997376.0000, Latency=18.72, PktAtk=0.04, SuccAtk=0.03, Drop=0.02, RSSI=-53.55, BER=0.00067, Rate=98.43, CommOv=0.00, BytesUp=1075216
+
+  Round 24/50
+    Reward=-1629.278, Q1=148736864944128000.0000, Q2=55352327330070528.0000, Actor=-2387770804784957751296.0000, Latency=46.24, PktAtk=0.03, SuccAtk=0.03, Drop=0.01, RSSI=-80.49, BER=0.00045, Rate=42.77, CommOv=0.01, BytesUp=1075216
+
+  Round 25/50
+    Reward=-1339.173, Q1=53885742027374592.0000, Q2=31661742991867904.0000, Actor=-1544340044270731788288.0000, Latency=32.48, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-62.48, BER=0.00005, Rate=99.93, CommOv=0.04, BytesUp=1075216
+
+  Round 26/50
+    Reward=-1344.260, Q1=2311199280108404736.0000, Q2=376653891531440128.0000, Actor=-10416071585170372689920.0000, Latency=97.21, PktAtk=0.09, SuccAtk=0.09, Drop=0.01, RSSI=-65.72, BER=0.00021, Rate=40.70, CommOv=0.00, BytesUp=1075216
+
+  Round 27/50
+    Reward=-1366.292, Q1=549277251452010496.0000, Q2=124331907285516288.0000, Actor=-5444960598831939977216.0000, Latency=44.11, PktAtk=0.10, SuccAtk=0.06, Drop=0.04, RSSI=-67.25, BER=0.00042, Rate=95.77, CommOv=0.05, BytesUp=1075216
+
+  Round 28/50
+    Reward=-1296.573, Q1=233574563668033536.0000, Q2=69754843027210240.0000, Actor=-3614763293938143985664.0000, Latency=60.02, PktAtk=0.07, SuccAtk=0.04, Drop=0.01, RSSI=-41.56, BER=0.00058, Rate=54.68, CommOv=0.04, BytesUp=1075216
+
+  Round 29/50
+    Reward=-1385.268, Q1=1337403337951150080.0000, Q2=210061971364511744.0000, Actor=-8490232742364993028096.0000, Latency=15.14, PktAtk=0.06, SuccAtk=0.04, Drop=0.04, RSSI=-82.13, BER=0.00096, Rate=8.93, CommOv=0.01, BytesUp=1075216
+
+  Round 30/50
+    Reward=-1383.017, Q1=1227691456391544832.0000, Q2=194611221654142976.0000, Actor=-9283721397761447297024.0000, Latency=63.55, PktAtk=0.07, SuccAtk=0.04, Drop=0.01, RSSI=-45.49, BER=0.00025, Rate=59.86, CommOv=0.03, BytesUp=1075216
+
+  Round 31/50
+    Reward=-1182.017, Q1=332007603410305024.0000, Q2=82344298409885696.0000, Actor=-5293035043102316822528.0000, Latency=47.73, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-79.79, BER=0.00072, Rate=24.63, CommOv=0.02, BytesUp=1075216
+
+  Round 32/50
+    Reward=-1388.259, Q1=1501927248544923648.0000, Q2=234627397591236608.0000, Actor=-12765945162040961138688.0000, Latency=70.45, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-86.37, BER=0.00046, Rate=99.85, CommOv=0.05, BytesUp=1075216
+
+  Round 33/50
+    Reward=-829.426, Q1=5828411280850944.0000, Q2=10895286205415424.0000, Actor=-1383397156187206057984.0000, Latency=16.59, PktAtk=0.02, SuccAtk=0.01, Drop=0.05, RSSI=-45.96, BER=0.00088, Rate=37.58, CommOv=0.01, BytesUp=1075216
+
+  Round 34/50
+    Reward=-1168.558, Q1=201530809104990208.0000, Q2=60618403911565312.0000, Actor=-4664249781478242648064.0000, Latency=85.04, PktAtk=0.07, SuccAtk=0.06, Drop=0.05, RSSI=-57.30, BER=0.00001, Rate=81.89, CommOv=0.01, BytesUp=1075216
+
+  Round 35/50
+    Reward=-1024.782, Q1=22412743520813056.0000, Q2=24735337280438272.0000, Actor=-3317383010718498947072.0000, Latency=69.70, PktAtk=0.09, SuccAtk=0.05, Drop=0.01, RSSI=-84.65, BER=0.00055, Rate=27.96, CommOv=0.03, BytesUp=1075216
+
+  Round 36/50
+    Reward=-1376.243, Q1=593770501298454528.0000, Q2=131997401706659840.0000, Actor=-11495153196186759856128.0000, Latency=74.59, PktAtk=0.02, SuccAtk=0.02, Drop=0.01, RSSI=-65.57, BER=0.00091, Rate=84.76, CommOv=0.00, BytesUp=1075216
+
+  Round 37/50
+    Reward=-1739.411, Q1=221700061426352128.0000, Q2=69693163001872384.0000, Actor=-8077533005611922358272.0000, Latency=48.12, PktAtk=0.03, SuccAtk=0.01, Drop=0.04, RSSI=-58.14, BER=0.00026, Rate=74.38, CommOv=0.03, BytesUp=1075216
+
+  Round 38/50
+    Reward=-1387.459, Q1=1375728327565770752.0000, Q2=215708289990656000.0000, Actor=-16655830260990424907776.0000, Latency=48.49, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-44.80, BER=0.00055, Rate=83.62, CommOv=0.03, BytesUp=1075216
+
+  Round 39/50
+    Reward=-1732.320, Q1=155932567252500480.0000, Q2=56315959077502976.0000, Actor=-8081366694794721492992.0000, Latency=23.33, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-50.19, BER=0.00086, Rate=89.99, CommOv=0.01, BytesUp=1075216
+
+  Round 40/50
+    Reward=-1685.290, Q1=123774497839906816.0000, Q2=48473125456707584.0000, Actor=-7544876515084117999616.0000, Latency=32.46, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-69.68, BER=0.00062, Rate=16.30, CommOv=0.05, BytesUp=1075216
+
+  Round 41/50
+    Reward=-1277.463, Q1=671335617799389184.0000, Q2=144019350175612928.0000, Actor=-16274569027336120827904.0000, Latency=87.81, PktAtk=0.10, SuccAtk=0.09, Drop=0.04, RSSI=-88.76, BER=0.00074, Rate=33.89, CommOv=0.05, BytesUp=1075216
+
+  Round 42/50
+    Reward=-1384.957, Q1=1246871199787515904.0000, Q2=197150973255221248.0000, Actor=-19542848165417492414464.0000, Latency=82.20, PktAtk=0.09, SuccAtk=0.08, Drop=0.01, RSSI=-50.63, BER=0.00011, Rate=87.34, CommOv=0.04, BytesUp=1075216
+
+  Round 43/50
+    Reward=-1381.941, Q1=1173256559845703680.0000, Q2=187829485473628160.0000, Actor=-20961421249444229152768.0000, Latency=30.02, PktAtk=0.08, SuccAtk=0.06, Drop=0.02, RSSI=-50.23, BER=0.00023, Rate=3.34, CommOv=0.01, BytesUp=1075216
+
+  Round 44/50
+    Reward=-1215.545, Q1=1012964738226716672.0000, Q2=190783959116808192.0000, Actor=-25724484510346607853568.0000, Latency=39.54, PktAtk=0.09, SuccAtk=0.09, Drop=0.01, RSSI=-57.93, BER=0.00040, Rate=98.13, CommOv=0.03, BytesUp=1075216
+
+  Round 45/50
+    Reward=-1706.621, Q1=255033216711262208.0000, Q2=75985049572343808.0000, Actor=-14713829687972272799744.0000, Latency=94.53, PktAtk=0.01, SuccAtk=0.01, Drop=0.01, RSSI=-41.87, BER=0.00027, Rate=11.73, CommOv=0.02, BytesUp=1075216
+
+  Round 46/50
+    Reward=-1296.183, Q1=50765929323167744.0000, Q2=27360981784985600.0000, Actor=-4302198652034487418880.0000, Latency=75.57, PktAtk=0.03, SuccAtk=0.03, Drop=0.03, RSSI=-70.74, BER=0.00058, Rate=26.22, CommOv=0.04, BytesUp=1075216
+
+  Round 47/50
+    Reward=-1380.724, Q1=1407447176442806272.0000, Q2=220437770538057728.0000, Actor=-28634730855751745536000.0000, Latency=10.15, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-52.90, BER=0.00067, Rate=37.06, CommOv=0.00, BytesUp=1075216
+
+  Round 48/50
+    Reward=-1337.676, Q1=48832777428140032.0000, Q2=30298219724406784.0000, Actor=-6761541225047570513920.0000, Latency=69.78, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-54.01, BER=0.00030, Rate=31.62, CommOv=0.02, BytesUp=1075216
+
+  Round 49/50
+    Reward=-1648.795, Q1=228595614240210944.0000, Q2=71887715196469248.0000, Actor=-17591970997533793058816.0000, Latency=46.22, PktAtk=0.03, SuccAtk=0.02, Drop=0.02, RSSI=-42.98, BER=0.00068, Rate=90.38, CommOv=0.03, BytesUp=1075216
+
+  Round 50/50
+    Reward=-1192.251, Q1=10732401718198272.0000, Q2=18175820560334848.0000, Actor=-6296976909085794369536.0000, Latency=37.09, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-68.51, BER=0.00058, Rate=65.82, CommOv=0.02, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/50
+    Reward=-1314.392, Q1=192452725709996032.0000, Q2=58413861623037952.0000, Actor=-13636832117683451330560.0000, Latency=49.79, PktAtk=0.02, SuccAtk=0.02, Drop=0.05, RSSI=-50.20, BER=0.00017, Rate=9.39, CommOv=0.03, BytesUp=1082346
+
+  Round 2/50
+    Reward=-1627.888, Q1=229249875198345216.0000, Q2=70438593230798848.0000, Actor=-19455748548624147021824.0000, Latency=66.96, PktAtk=0.03, SuccAtk=0.03, Drop=0.04, RSSI=-56.36, BER=0.00022, Rate=20.71, CommOv=0.00, BytesUp=1082346
+
+  Round 3/50
+    Reward=-1382.995, Q1=1053679035327971328.0000, Q2=168016801337180160.0000, Actor=-28770960240880075669504.0000, Latency=32.04, PktAtk=0.05, SuccAtk=0.04, Drop=0.00, RSSI=-69.28, BER=0.00063, Rate=20.25, CommOv=0.03, BytesUp=1082346
+
+  Round 4/50
+    Reward=-758.071, Q1=18791448287641600.0000, Q2=22055999242240000.0000, Actor=-7614395204832115818496.0000, Latency=54.49, PktAtk=0.02, SuccAtk=0.02, Drop=0.00, RSSI=-52.45, BER=0.00077, Rate=11.55, CommOv=0.02, BytesUp=1082346
+
+  Round 5/50
+    Reward=-1177.502, Q1=280856449880424448.0000, Q2=68094391490707456.0000, Actor=-17000091046006159835136.0000, Latency=25.83, PktAtk=0.10, SuccAtk=0.07, Drop=0.00, RSSI=-77.54, BER=0.00085, Rate=46.19, CommOv=0.04, BytesUp=1082346
+
+  Round 6/50
+    Reward=-1435.462, Q1=513060781542080512.0000, Q2=112005325376192512.0000, Actor=-29106124880548429037568.0000, Latency=70.08, PktAtk=0.10, SuccAtk=0.08, Drop=0.05, RSSI=-45.43, BER=0.00061, Rate=72.21, CommOv=0.03, BytesUp=1082346
+
+  Round 7/50
+    Reward=-1642.946, Q1=78399946474127360.0000, Q2=32959205367349248.0000, Actor=-12840958243334350962688.0000, Latency=84.75, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-66.27, BER=0.00026, Rate=25.48, CommOv=0.03, BytesUp=1082346
+
+  Round 8/50
+    Reward=-1648.688, Q1=164480634503299072.0000, Q2=50016229896749056.0000, Actor=-17768988358587310931968.0000, Latency=78.92, PktAtk=0.05, SuccAtk=0.04, Drop=0.01, RSSI=-86.13, BER=0.00029, Rate=27.90, CommOv=0.02, BytesUp=1082346
+
+  Round 9/50
+    Reward=-1387.635, Q1=906031941025792000.0000, Q2=141648365019463680.0000, Actor=-28724642970512383803392.0000, Latency=58.61, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-54.68, BER=0.00006, Rate=41.35, CommOv=0.03, BytesUp=1082346
+
+  Round 10/50
+    Reward=-1433.275, Q1=6044355794042880.0000, Q2=10037377225457664.0000, Actor=-5626671273647131328512.0000, Latency=47.42, PktAtk=0.02, SuccAtk=0.01, Drop=0.05, RSSI=-60.80, BER=0.00070, Rate=85.82, CommOv=0.04, BytesUp=1082346
+
+  Round 11/50
+    Reward=-1493.786, Q1=12922213342642176.0000, Q2=11904637879713792.0000, Actor=-5346396506237169565696.0000, Latency=44.23, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-47.33, BER=0.00095, Rate=42.48, CommOv=0.04, BytesUp=1082346
+
+  Round 12/50
+    Reward=-1129.556, Q1=759880251256864768.0000, Q2=133579392780599296.0000, Actor=-35316674335085263060992.0000, Latency=59.15, PktAtk=0.06, SuccAtk=0.04, Drop=0.01, RSSI=-68.21, BER=0.00003, Rate=34.28, CommOv=0.03, BytesUp=1082346
+
+  Round 13/50
+    Reward=-1377.006, Q1=605195664061628416.0000, Q2=98982220030541824.0000, Actor=-24752450084773096849408.0000, Latency=46.39, PktAtk=0.02, SuccAtk=0.01, Drop=0.01, RSSI=-58.89, BER=0.00003, Rate=40.01, CommOv=0.03, BytesUp=1082346
+
+  Round 14/50
+    Reward=-1383.020, Q1=635997795119005696.0000, Q2=99663436203425792.0000, Actor=-25725729755643575795712.0000, Latency=12.44, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-87.49, BER=0.00038, Rate=21.95, CommOv=0.02, BytesUp=1082346
+
+  Round 15/50
+    Reward=-1294.313, Q1=175358463814139904.0000, Q2=43951594340876288.0000, Actor=-17636132169579881299968.0000, Latency=78.51, PktAtk=0.04, SuccAtk=0.03, Drop=0.04, RSSI=-77.39, BER=0.00008, Rate=2.92, CommOv=0.03, BytesUp=1082346
+
+  Round 16/50
+    Reward=-1379.853, Q1=3757566492409856.0000, Q2=6912626919473152.0000, Actor=-4693712611715477143552.0000, Latency=99.99, PktAtk=0.03, SuccAtk=0.03, Drop=0.04, RSSI=-57.41, BER=0.00075, Rate=95.01, CommOv=0.01, BytesUp=1082346
+
+  Round 17/50
+    Reward=-1251.890, Q1=6093211047034880.0000, Q2=7891356013821952.0000, Actor=-4596420504540462186496.0000, Latency=11.83, PktAtk=0.02, SuccAtk=0.01, Drop=0.03, RSSI=-61.80, BER=0.00022, Rate=70.25, CommOv=0.04, BytesUp=1082346
+
+  Round 18/50
+    Reward=-1450.208, Q1=226983695834152960.0000, Q2=51162676927135744.0000, Actor=-22099199400304042835968.0000, Latency=25.10, PktAtk=0.06, SuccAtk=0.05, Drop=0.01, RSSI=-49.03, BER=0.00096, Rate=11.70, CommOv=0.00, BytesUp=1082346
+
+  Round 19/50
+    Reward=-1361.187, Q1=664526411008049152.0000, Q2=108092060413722624.0000, Actor=-33927255303246309228544.0000, Latency=38.08, PktAtk=0.07, SuccAtk=0.07, Drop=0.02, RSSI=-54.25, BER=0.00008, Rate=69.37, CommOv=0.03, BytesUp=1082346
+
+  Round 20/50
+    Reward=-1376.534, Q1=404534517114601472.0000, Q2=63816840287092736.0000, Actor=-21065652559220091912192.0000, Latency=19.17, PktAtk=0.08, SuccAtk=0.07, Drop=0.03, RSSI=-83.95, BER=0.00098, Rate=78.48, CommOv=0.02, BytesUp=1082346
+
+  Round 21/50
+    Reward=-1200.802, Q1=363501877037367296.0000, Q2=59214924563349504.0000, Actor=-21658607745158759841792.0000, Latency=48.55, PktAtk=0.04, SuccAtk=0.03, Drop=0.02, RSSI=-47.52, BER=0.00082, Rate=11.45, CommOv=0.05, BytesUp=1082346
+
+  Round 22/50
+    Reward=-1388.125, Q1=416448893832658944.0000, Q2=65093399056744448.0000, Actor=-23800177454364487581696.0000, Latency=67.20, PktAtk=0.08, SuccAtk=0.07, Drop=0.02, RSSI=-53.31, BER=0.00097, Rate=27.74, CommOv=0.04, BytesUp=1082346
+
+  Round 23/50
+    Reward=-1294.258, Q1=101248493884014592.0000, Q2=25870452039614464.0000, Actor=-14629522302947897114624.0000, Latency=58.44, PktAtk=0.05, SuccAtk=0.03, Drop=0.04, RSSI=-76.58, BER=0.00085, Rate=83.24, CommOv=0.00, BytesUp=1082346
+
+  Round 24/50
+    Reward=-1723.493, Q1=17907908016603136.0000, Q2=9241789294706688.0000, Actor=-7099360736696258789376.0000, Latency=89.35, PktAtk=0.02, SuccAtk=0.02, Drop=0.03, RSSI=-71.05, BER=0.00003, Rate=85.24, CommOv=0.01, BytesUp=1082346
+
+  Round 25/50
+    Reward=-1550.679, Q1=20160484145627136.0000, Q2=9108394052943872.0000, Actor=-6704134966497385644032.0000, Latency=29.09, PktAtk=0.08, SuccAtk=0.05, Drop=0.04, RSSI=-54.94, BER=0.00028, Rate=2.00, CommOv=0.05, BytesUp=1082346
+
+  Round 26/50
+    Reward=-1733.540, Q1=23580517211308032.0000, Q2=10142340857462784.0000, Actor=-8366249207573436694528.0000, Latency=17.71, PktAtk=0.07, SuccAtk=0.05, Drop=0.04, RSSI=-55.47, BER=0.00065, Rate=49.59, CommOv=0.04, BytesUp=1082346
+
+  Round 27/50
+    Reward=-1371.010, Q1=320210118522175488.0000, Q2=52195998813913088.0000, Actor=-23663749910852553146368.0000, Latency=18.37, PktAtk=0.02, SuccAtk=0.02, Drop=0.02, RSSI=-60.92, BER=0.00047, Rate=53.56, CommOv=0.02, BytesUp=1082346
+
+  Round 28/50
+    Reward=-1729.828, Q1=30789905432969216.0000, Q2=11125742339358720.0000, Actor=-9532475471379442958336.0000, Latency=77.13, PktAtk=0.03, SuccAtk=0.03, Drop=0.01, RSSI=-77.43, BER=0.00012, Rate=20.07, CommOv=0.01, BytesUp=1082346
+
+  Round 29/50
+    Reward=-1384.786, Q1=246388461156696064.0000, Q2=38709805799440384.0000, Actor=-18112101851597973225472.0000, Latency=58.23, PktAtk=0.08, SuccAtk=0.05, Drop=0.01, RSSI=-65.79, BER=0.00072, Rate=97.68, CommOv=0.03, BytesUp=1082346
+
+  Round 30/50
+    Reward=-1375.841, Q1=229240151392387072.0000, Q2=37442202036600832.0000, Actor=-19888143652447615713280.0000, Latency=35.47, PktAtk=0.01, SuccAtk=0.01, Drop=0.01, RSSI=-81.03, BER=0.00001, Rate=53.88, CommOv=0.01, BytesUp=1082346
+
+  Round 31/50
+    Reward=-1380.976, Q1=190842301952557056.0000, Q2=30671145292267520.0000, Actor=-17003092695157802270720.0000, Latency=97.69, PktAtk=0.06, SuccAtk=0.05, Drop=0.01, RSSI=-46.58, BER=0.00049, Rate=87.40, CommOv=0.03, BytesUp=1082346
+
+  Round 32/50
+    Reward=-1047.311, Q1=1692501924642816.0000, Q2=2365885419356160.0000, Actor=-1287190416522387390464.0000, Latency=52.25, PktAtk=0.04, SuccAtk=0.03, Drop=0.00, RSSI=-42.95, BER=0.00048, Rate=82.39, CommOv=0.02, BytesUp=1082346
+
+  Round 33/50
+    Reward=-1021.675, Q1=3319793897701376.0000, Q2=3654631427145728.0000, Actor=-1945676354739016564736.0000, Latency=16.67, PktAtk=0.06, SuccAtk=0.03, Drop=0.01, RSSI=-61.86, BER=0.00030, Rate=99.40, CommOv=0.01, BytesUp=1082346
+
+  Round 34/50
+    Reward=-1725.056, Q1=34212942828273664.0000, Q2=10291676870344704.0000, Actor=-10205295241310085578752.0000, Latency=78.80, PktAtk=0.06, SuccAtk=0.05, Drop=0.01, RSSI=-63.87, BER=0.00045, Rate=44.83, CommOv=0.04, BytesUp=1082346
+
+  Round 35/50
+    Reward=-986.874, Q1=162632905212821504.0000, Q2=28481094223396864.0000, Actor=-19977994968613284478976.0000, Latency=99.10, PktAtk=0.03, SuccAtk=0.02, Drop=0.03, RSSI=-53.00, BER=0.00095, Rate=21.57, CommOv=0.01, BytesUp=1082346
+
+  Round 36/50
+    Reward=-1055.902, Q1=65994543324987392.0000, Q2=13968492072009728.0000, Actor=-10581557479378008408064.0000, Latency=69.44, PktAtk=0.02, SuccAtk=0.01, Drop=0.00, RSSI=-89.87, BER=0.00045, Rate=59.79, CommOv=0.01, BytesUp=1082346
+
+  Round 37/50
+    Reward=-1224.108, Q1=132120641498251264.0000, Q2=21275345986519040.0000, Actor=-13951507630847082627072.0000, Latency=30.83, PktAtk=0.07, SuccAtk=0.06, Drop=0.02, RSSI=-55.63, BER=0.00092, Rate=78.99, CommOv=0.03, BytesUp=1082346
+
+  Round 38/50
+    Reward=-1535.008, Q1=6522996613185536.0000, Q2=3492693711781888.0000, Actor=-3826392788452841095168.0000, Latency=69.51, PktAtk=0.09, SuccAtk=0.07, Drop=0.03, RSSI=-57.62, BER=0.00091, Rate=82.84, CommOv=0.00, BytesUp=1082346
+
+  Round 39/50
+    Reward=-1174.405, Q1=4736980634042368.0000, Q2=2800502823714816.0000, Actor=-1851490886881957117952.0000, Latency=24.93, PktAtk=0.03, SuccAtk=0.03, Drop=0.03, RSSI=-75.57, BER=0.00012, Rate=69.18, CommOv=0.03, BytesUp=1082346
+
+  Round 40/50
+    Reward=-1301.698, Q1=222631090077040640.0000, Q2=36176208886497280.0000, Actor=-24965211390169147506688.0000, Latency=94.84, PktAtk=0.05, SuccAtk=0.04, Drop=0.00, RSSI=-88.01, BER=0.00043, Rate=32.91, CommOv=0.01, BytesUp=1082346
+
+  Round 41/50
+    Reward=-1587.054, Q1=13069457706450944.0000, Q2=4698687779373056.0000, Actor=-5933373163670503161856.0000, Latency=18.22, PktAtk=0.10, SuccAtk=0.09, Drop=0.03, RSSI=-42.46, BER=0.00100, Rate=67.56, CommOv=0.01, BytesUp=1082346
+
+  Round 42/50
+    Reward=-1385.880, Q1=105034026519101440.0000, Q2=16613332932886528.0000, Actor=-12933531985474765193216.0000, Latency=13.62, PktAtk=0.08, SuccAtk=0.06, Drop=0.03, RSSI=-44.20, BER=0.00018, Rate=58.95, CommOv=0.03, BytesUp=1082346
+
+  Round 43/50
+    Reward=-947.811, Q1=34191405714767872.0000, Q2=7529410529853440.0000, Actor=-7162117834553713229824.0000, Latency=54.26, PktAtk=0.01, SuccAtk=0.01, Drop=0.02, RSSI=-56.49, BER=0.00086, Rate=33.65, CommOv=0.03, BytesUp=1082346
+
+  Round 44/50
+    Reward=-1243.796, Q1=88660099358261248.0000, Q2=16465728865566720.0000, Actor=-16405886111170896592896.0000, Latency=35.94, PktAtk=0.09, SuccAtk=0.09, Drop=0.03, RSSI=-67.26, BER=0.00031, Rate=33.00, CommOv=0.05, BytesUp=1082346
+
+  Round 45/50
+    Reward=-1730.927, Q1=12133014175744000.0000, Q2=4218014635393024.0000, Actor=-6246202763936865976320.0000, Latency=46.38, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-62.87, BER=0.00041, Rate=19.57, CommOv=0.02, BytesUp=1082346
+
+  Round 46/50
+    Reward=-1353.010, Q1=110718166627254272.0000, Q2=18009238106275840.0000, Actor=-16271084367124442906624.0000, Latency=78.08, PktAtk=0.06, SuccAtk=0.06, Drop=0.01, RSSI=-62.54, BER=0.00093, Rate=44.37, CommOv=0.03, BytesUp=1082346
+
+  Round 47/50
+    Reward=-1367.519, Q1=39142227401768960.0000, Q2=8549657999310848.0000, Actor=-10900056548625277255680.0000, Latency=20.93, PktAtk=0.10, SuccAtk=0.08, Drop=0.01, RSSI=-82.08, BER=0.00055, Rate=55.67, CommOv=0.00, BytesUp=1082346
+
+  Round 48/50
+    Reward=-1714.519, Q1=8887719707017216.0000, Q2=3285896942059520.0000, Actor=-5463270546066968150016.0000, Latency=99.30, PktAtk=0.09, SuccAtk=0.07, Drop=0.01, RSSI=-48.39, BER=0.00050, Rate=71.94, CommOv=0.03, BytesUp=1082346
+
+  Round 49/50
+    Reward=-915.974, Q1=1258743245307904.0000, Q2=1366024146386944.0000, Actor=-839535006099062128640.0000, Latency=34.61, PktAtk=0.08, SuccAtk=0.08, Drop=0.01, RSSI=-62.44, BER=0.00038, Rate=92.26, CommOv=0.03, BytesUp=1082346
+
+  Round 50/50
+    Reward=-1375.649, Q1=71297432071176192.0000, Q2=11653881582845952.0000, Actor=-12189403344944244981760.0000, Latency=89.14, PktAtk=0.09, SuccAtk=0.06, Drop=0.04, RSSI=-69.25, BER=0.00093, Rate=51.27, CommOv=0.04, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/50
+    Reward=-1379.255, Q1=58020305179770880.0000, Q2=9461877377597440.0000, Actor=-10556748274930731188224.0000, Latency=35.46, PktAtk=0.03, SuccAtk=0.02, Drop=0.05, RSSI=-65.52, BER=0.00015, Rate=54.32, CommOv=0.02, BytesUp=3225648
+
+  Round 2/50
+    Reward=-941.694, Q1=47020756495761408.0000, Q2=8709418434691072.0000, Actor=-11290585064412802973696.0000, Latency=59.67, PktAtk=0.05, SuccAtk=0.04, Drop=0.02, RSSI=-80.57, BER=0.00070, Rate=57.61, CommOv=0.01, BytesUp=3225648
+
+  Round 3/50
+    Reward=-1422.830, Q1=34963842698051584.0000, Q2=7531651429040128.0000, Actor=-11650439563138308243456.0000, Latency=79.80, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-49.43, BER=0.00039, Rate=66.71, CommOv=0.04, BytesUp=3225648
+
+  Round 4/50
+    Reward=-1350.294, Q1=82582608965271552.0000, Q2=13434668439306240.0000, Actor=-16423267753932733022208.0000, Latency=98.27, PktAtk=0.05, SuccAtk=0.03, Drop=0.03, RSSI=-60.49, BER=0.00087, Rate=87.54, CommOv=0.02, BytesUp=3225648
+
+  Round 5/50
+    Reward=-1168.510, Q1=14835280896851968.0000, Q2=3914196970373120.0000, Actor=-6362227312286951800832.0000, Latency=57.34, PktAtk=0.05, SuccAtk=0.04, Drop=0.02, RSSI=-57.26, BER=0.00015, Rate=47.48, CommOv=0.05, BytesUp=3225648
+
+  Round 6/50
+    Reward=-1149.114, Q1=652911734423552.0000, Q2=860662590865408.0000, Actor=-673715986256489349120.0000, Latency=40.47, PktAtk=0.07, SuccAtk=0.06, Drop=0.04, RSSI=-47.38, BER=0.00086, Rate=38.62, CommOv=0.02, BytesUp=3225648
+
+  Round 7/50
+    Reward=-1262.322, Q1=53000974469431296.0000, Q2=10094406874955776.0000, Actor=-16132214746714566819840.0000, Latency=74.68, PktAtk=0.08, SuccAtk=0.07, Drop=0.00, RSSI=-86.58, BER=0.00063, Rate=92.17, CommOv=0.05, BytesUp=3225648
+
+  Round 8/50
+    Reward=-1325.790, Q1=12555166511267840.0000, Q2=3480108920733696.0000, Actor=-6863709323244144164864.0000, Latency=77.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.03, RSSI=-46.37, BER=0.00044, Rate=69.71, CommOv=0.05, BytesUp=3225648
+
+  Round 9/50
+    Reward=-1299.710, Q1=4356562227298304.0000, Q2=1790097540251648.0000, Actor=-3177936929556319436800.0000, Latency=14.14, PktAtk=0.08, SuccAtk=0.05, Drop=0.02, RSSI=-82.72, BER=0.00053, Rate=57.03, CommOv=0.04, BytesUp=3225648
+
+  Round 10/50
+    Reward=-928.154, Q1=73104337697505280.0000, Q2=12699652432330752.0000, Actor=-19642654688559463661568.0000, Latency=25.30, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-77.96, BER=0.00091, Rate=15.17, CommOv=0.02, BytesUp=3225648
+
+  Round 11/50
+    Reward=-1279.489, Q1=42774322330206208.0000, Q2=8594877025615872.0000, Actor=-15863490586448903536640.0000, Latency=32.86, PktAtk=0.03, SuccAtk=0.01, Drop=0.04, RSSI=-44.94, BER=0.00068, Rate=16.64, CommOv=0.02, BytesUp=3225648
+
+  Round 12/50
+    Reward=-1318.245, Q1=13510097728700416.0000, Q2=3650484099350528.0000, Actor=-8035560020034782756864.0000, Latency=41.10, PktAtk=0.06, SuccAtk=0.05, Drop=0.02, RSSI=-77.50, BER=0.00085, Rate=20.72, CommOv=0.02, BytesUp=3225648
+
+  Round 13/50
+    Reward=-1244.566, Q1=56956901342052352.0000, Q2=10595375081586688.0000, Actor=-19794412485202967265280.0000, Latency=53.49, PktAtk=0.02, SuccAtk=0.02, Drop=0.03, RSSI=-40.37, BER=0.00030, Rate=97.82, CommOv=0.03, BytesUp=3225648
+
+  Round 14/50
+    Reward=-1376.972, Q1=61644110821326848.0000, Q2=10080778943725568.0000, Actor=-17283146786186022879232.0000, Latency=34.70, PktAtk=0.06, SuccAtk=0.05, Drop=0.04, RSSI=-87.55, BER=0.00061, Rate=50.18, CommOv=0.05, BytesUp=3225648
+
+  Round 15/50
+    Reward=-1731.570, Q1=9098118343688192.0000, Q2=3091566851784704.0000, Actor=-9078284071259407908864.0000, Latency=35.76, PktAtk=0.08, SuccAtk=0.06, Drop=0.02, RSSI=-58.17, BER=0.00062, Rate=68.10, CommOv=0.04, BytesUp=3225648
+
+  Round 16/50
+    Reward=-1588.181, Q1=5259164368502784.0000, Q2=2158239856721920.0000, Actor=-6479407596891411578880.0000, Latency=69.33, PktAtk=0.08, SuccAtk=0.07, Drop=0.05, RSSI=-57.68, BER=0.00031, Rate=44.64, CommOv=0.03, BytesUp=3225648
+
+  Round 17/50
+    Reward=-1696.178, Q1=4043906324889600.0000, Q2=1966945905672192.0000, Actor=-6578812173766640009216.0000, Latency=75.91, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-81.22, BER=0.00013, Rate=54.40, CommOv=0.05, BytesUp=3225648
+
+  Round 18/50
+    Reward=-1060.435, Q1=5173004103319552.0000, Q2=1839783332544512.0000, Actor=-3422017955610964787200.0000, Latency=57.78, PktAtk=0.09, SuccAtk=0.08, Drop=0.01, RSSI=-48.77, BER=0.00048, Rate=80.84, CommOv=0.04, BytesUp=3225648
+
+  Round 19/50
+    Reward=-1335.699, Q1=1036436409155584.0000, Q2=1075183456616448.0000, Actor=-2807469416833938882560.0000, Latency=40.48, PktAtk=0.01, SuccAtk=0.01, Drop=0.01, RSSI=-41.67, BER=0.00086, Rate=72.70, CommOv=0.05, BytesUp=3225648
+
+  Round 20/50
+    Reward=-1733.578, Q1=10838206090051584.0000, Q2=3440021038170112.0000, Actor=-11719878313992920236032.0000, Latency=97.05, PktAtk=0.08, SuccAtk=0.05, Drop=0.04, RSSI=-89.30, BER=0.00054, Rate=46.02, CommOv=0.03, BytesUp=3225648
+
+  Round 21/50
+    Reward=-1387.800, Q1=76804821390196736.0000, Q2=11987860387266560.0000, Actor=-23487794273411187867648.0000, Latency=70.51, PktAtk=0.06, SuccAtk=0.05, Drop=0.05, RSSI=-84.58, BER=0.00023, Rate=3.48, CommOv=0.04, BytesUp=3225648
+
+  Round 22/50
+    Reward=-1737.285, Q1=5880521582182400.0000, Q2=2366479198584832.0000, Actor=-9352353441332806549504.0000, Latency=60.53, PktAtk=0.09, SuccAtk=0.06, Drop=0.00, RSSI=-48.81, BER=0.00091, Rate=30.92, CommOv=0.02, BytesUp=3225648
+
+  Round 23/50
+    Reward=-1329.225, Q1=115063453760094208.0000, Q2=18750981105778688.0000, Actor=-41159847153618976243712.0000, Latency=22.58, PktAtk=0.09, SuccAtk=0.06, Drop=0.02, RSSI=-85.14, BER=0.00089, Rate=14.43, CommOv=0.02, BytesUp=3225648
+
+  Round 24/50
+    Reward=-1165.642, Q1=28747496012382208.0000, Q2=6182002516557824.0000, Actor=-18632808040514549972992.0000, Latency=70.34, PktAtk=0.07, SuccAtk=0.07, Drop=0.02, RSSI=-52.89, BER=0.00015, Rate=42.07, CommOv=0.00, BytesUp=3225648
+
+  Round 25/50
+    Reward=-1626.546, Q1=6605934042284032.0000, Q2=2564528998973440.0000, Actor=-10993604194185110355968.0000, Latency=54.04, PktAtk=0.04, SuccAtk=0.04, Drop=0.00, RSSI=-71.47, BER=0.00044, Rate=95.10, CommOv=0.04, BytesUp=3225648
+
+  Round 26/50
+    Reward=-1259.478, Q1=86254539715379200.0000, Q2=13462186294771712.0000, Actor=-31481030590047849545728.0000, Latency=18.94, PktAtk=0.07, SuccAtk=0.05, Drop=0.05, RSSI=-72.07, BER=0.00040, Rate=19.79, CommOv=0.01, BytesUp=3225648
+
+  Round 27/50
+    Reward=-1719.402, Q1=5927204118593536.0000, Q2=2359324319940608.0000, Actor=-10970552519492414472192.0000, Latency=86.32, PktAtk=0.05, SuccAtk=0.04, Drop=0.03, RSSI=-60.14, BER=0.00002, Rate=78.89, CommOv=0.01, BytesUp=3225648
+
+  Round 28/50
+    Reward=-1058.053, Q1=2147461904728064.0000, Q2=1146321939464192.0000, Actor=-1620835654266456637440.0000, Latency=21.33, PktAtk=0.06, SuccAtk=0.03, Drop=0.04, RSSI=-79.64, BER=0.00022, Rate=87.10, CommOv=0.02, BytesUp=3225648
+
+  Round 29/50
+    Reward=-1553.917, Q1=2244677147295744.0000, Q2=1411945802498048.0000, Actor=-6441607759318984163328.0000, Latency=23.28, PktAtk=0.09, SuccAtk=0.05, Drop=0.04, RSSI=-82.77, BER=0.00013, Rate=25.81, CommOv=0.01, BytesUp=3225648
+
+  Round 30/50
+    Reward=-1406.133, Q1=525189909577728.0000, Q2=879956724809728.0000, Actor=-3444955069988139433984.0000, Latency=69.50, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-78.10, BER=0.00032, Rate=18.25, CommOv=0.00, BytesUp=3225648
+
+  Round 31/50
+    Reward=-1589.499, Q1=5606880088948736.0000, Q2=2236562343460864.0000, Actor=-11302055732663715627008.0000, Latency=76.75, PktAtk=0.05, SuccAtk=0.05, Drop=0.02, RSSI=-51.10, BER=0.00051, Rate=11.80, CommOv=0.03, BytesUp=3225648
+
+  Round 32/50
+    Reward=-1374.920, Q1=58626084547067904.0000, Q2=9338435722543104.0000, Actor=-27589560224029551362048.0000, Latency=95.09, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-63.93, BER=0.00046, Rate=96.44, CommOv=0.00, BytesUp=3225648
+
+  Round 33/50
+    Reward=-1522.284, Q1=12903197374939136.0000, Q2=3838118604046336.0000, Actor=-19315634808817209835520.0000, Latency=53.11, PktAtk=0.04, SuccAtk=0.03, Drop=0.02, RSSI=-44.51, BER=0.00007, Rate=9.00, CommOv=0.03, BytesUp=3225648
+
+  Round 34/50
+    Reward=-1684.313, Q1=9738138264010752.0000, Q2=3153592085118976.0000, Actor=-17353756472943751200768.0000, Latency=15.91, PktAtk=0.03, SuccAtk=0.02, Drop=0.03, RSSI=-73.74, BER=0.00099, Rate=53.53, CommOv=0.02, BytesUp=3225648
+
+  Round 35/50
+    Reward=-1058.900, Q1=3479555943694336.0000, Q2=1565284724899840.0000, Actor=-3895641262223196684288.0000, Latency=64.49, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-57.45, BER=0.00077, Rate=72.36, CommOv=0.01, BytesUp=3225648
+
+  Round 36/50
+    Reward=-835.503, Q1=3673833957490688.0000, Q2=1516523021664256.0000, Actor=-2085991630629278580736.0000, Latency=50.64, PktAtk=0.02, SuccAtk=0.02, Drop=0.02, RSSI=-69.20, BER=0.00010, Rate=43.25, CommOv=0.03, BytesUp=3225648
+
+  Round 37/50
+    Reward=-1698.169, Q1=13427845883756544.0000, Q2=3907210669195264.0000, Actor=-22258660604110163673088.0000, Latency=43.69, PktAtk=0.02, SuccAtk=0.01, Drop=0.00, RSSI=-48.41, BER=0.00009, Rate=10.56, CommOv=0.04, BytesUp=3225648
+
+  Round 38/50
+    Reward=-1667.195, Q1=13595701795618816.0000, Q2=3921715847495680.0000, Actor=-22828690216145702092800.0000, Latency=83.06, PktAtk=0.06, SuccAtk=0.04, Drop=0.03, RSSI=-73.52, BER=0.00012, Rate=36.01, CommOv=0.03, BytesUp=3225648
+
+  Round 39/50
+    Reward=-1439.967, Q1=459980327092224.0000, Q2=788830605017088.0000, Actor=-4269652263427387686912.0000, Latency=77.53, PktAtk=0.09, SuccAtk=0.07, Drop=0.05, RSSI=-59.98, BER=0.00035, Rate=58.21, CommOv=0.01, BytesUp=3225648
+
+  Round 40/50
+    Reward=-1253.454, Q1=56225339562524672.0000, Q2=10544256380829696.0000, Actor=-46673212364241093263360.0000, Latency=69.11, PktAtk=0.02, SuccAtk=0.01, Drop=0.04, RSSI=-71.62, BER=0.00076, Rate=57.84, CommOv=0.04, BytesUp=3225648
+
+  Round 41/50
+    Reward=-1634.501, Q1=10776164213719040.0000, Q2=3341748696776704.0000, Actor=-21640989663416486461440.0000, Latency=86.06, PktAtk=0.10, SuccAtk=0.09, Drop=0.03, RSSI=-57.87, BER=0.00003, Rate=92.98, CommOv=0.04, BytesUp=3225648
+
+  Round 42/50
+    Reward=-1708.712, Q1=11654117806047232.0000, Q2=3555399160561664.0000, Actor=-23765468212036343169024.0000, Latency=34.07, PktAtk=0.02, SuccAtk=0.02, Drop=0.02, RSSI=-73.01, BER=0.00001, Rate=87.12, CommOv=0.03, BytesUp=3225648
+
+  Round 43/50
+    Reward=-1134.669, Q1=71338092526567424.0000, Q2=12594316211912704.0000, Actor=-55559296314203210514432.0000, Latency=46.07, PktAtk=0.01, SuccAtk=0.01, Drop=0.00, RSSI=-52.69, BER=0.00022, Rate=42.56, CommOv=0.02, BytesUp=3225648
+
+  Round 44/50
+    Reward=-1654.941, Q1=4220209095245824.0000, Q2=1946263759093760.0000, Actor=-15218260993735439417344.0000, Latency=43.30, PktAtk=0.07, SuccAtk=0.06, Drop=0.03, RSSI=-85.75, BER=0.00005, Rate=16.58, CommOv=0.03, BytesUp=3225648
+
+  Round 45/50
+    Reward=-1367.270, Q1=424728242159616.0000, Q2=814346133307392.0000, Actor=-5729013323379312164864.0000, Latency=70.66, PktAtk=0.03, SuccAtk=0.02, Drop=0.02, RSSI=-67.90, BER=0.00027, Rate=75.74, CommOv=0.01, BytesUp=3225648
+
+  Round 46/50
+    Reward=-1136.687, Q1=69712786707447808.0000, Q2=12375295428395008.0000, Actor=-59185153381398451585024.0000, Latency=48.69, PktAtk=0.03, SuccAtk=0.02, Drop=0.02, RSSI=-56.64, BER=0.00005, Rate=40.13, CommOv=0.03, BytesUp=3225648
+
+  Round 47/50
+    Reward=-1289.738, Q1=23493331522682880.0000, Q2=5598230024814592.0000, Actor=-33730020157565618356224.0000, Latency=10.69, PktAtk=0.03, SuccAtk=0.02, Drop=0.01, RSSI=-77.22, BER=0.00033, Rate=1.77, CommOv=0.04, BytesUp=3225648
+
+  Round 48/50
+    Reward=-1370.659, Q1=76128106343038976.0000, Q2=12404860909518848.0000, Actor=-56197366309409062387712.0000, Latency=25.81, PktAtk=0.04, SuccAtk=0.03, Drop=0.03, RSSI=-48.33, BER=0.00081, Rate=8.14, CommOv=0.04, BytesUp=3225648
+
+  Round 49/50
+    Reward=-950.177, Q1=5759720795144192.0000, Q2=1990094168784896.0000, Actor=-7569028193985799127040.0000, Latency=13.81, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-61.21, BER=0.00057, Rate=71.24, CommOv=0.02, BytesUp=3225648
+
+  Round 50/50
+    Reward=-1553.780, Q1=17093867832606720.0000, Q2=4645596078014464.0000, Actor=-35533783865921539932160.0000, Latency=20.37, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-59.09, BER=0.00083, Rate=92.06, CommOv=0.00, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/50
+    Reward=-1094.020, Q1=951427732078592.0000, Q2=1194553080020992.0000, Actor=-3918952456844419792896.0000, Latency=86.00, PktAtk=0.02, SuccAtk=0.02, Drop=0.03, RSSI=-70.21, BER=0.00031, Rate=34.61, CommOv=0.02, BytesUp=1182737
+
+  Round 2/50
+    Reward=-1729.164, Q1=8355600639459328.0000, Q2=2926058676420608.0000, Actor=-27080946200112464396288.0000, Latency=25.13, PktAtk=0.05, SuccAtk=0.03, Drop=0.03, RSSI=-44.70, BER=0.00035, Rate=73.01, CommOv=0.04, BytesUp=1182737
+
+  Round 3/50
+    Reward=-1476.742, Q1=21149862074515456.0000, Q2=5367505992286208.0000, Actor=-41381280140097528791040.0000, Latency=83.35, PktAtk=0.02, SuccAtk=0.01, Drop=0.01, RSSI=-59.88, BER=0.00076, Rate=65.90, CommOv=0.01, BytesUp=1182737
+
+  Round 4/50
+    Reward=-1379.584, Q1=62406617840222208.0000, Q2=9845113014452224.0000, Actor=-48775181921923352231936.0000, Latency=79.56, PktAtk=0.05, SuccAtk=0.04, Drop=0.04, RSSI=-67.55, BER=0.00092, Rate=56.88, CommOv=0.03, BytesUp=1182737
+
+  Round 5/50
+    Reward=-1451.531, Q1=31437337393102848.0000, Q2=7055414180970496.0000, Actor=-54224645557432709283840.0000, Latency=66.21, PktAtk=0.09, SuccAtk=0.07, Drop=0.01, RSSI=-86.59, BER=0.00044, Rate=30.98, CommOv=0.01, BytesUp=1182737
+
+  Round 6/50
+    Reward=-1731.501, Q1=10017050218987520.0000, Q2=3272424971829248.0000, Actor=-32849998775978913955840.0000, Latency=15.06, PktAtk=0.05, SuccAtk=0.03, Drop=0.02, RSSI=-87.16, BER=0.00083, Rate=8.60, CommOv=0.04, BytesUp=1182737
+
+  Round 7/50
+    Reward=-1130.211, Q1=71578129658806272.0000, Q2=12613978572193792.0000, Actor=-80345766590561464090624.0000, Latency=86.98, PktAtk=0.06, SuccAtk=0.05, Drop=0.02, RSSI=-62.28, BER=0.00079, Rate=89.69, CommOv=0.02, BytesUp=1182737
+
+  Round 8/50
+    Reward=-1068.001, Q1=21351469986873344.0000, Q2=4761072716218368.0000, Actor=-35210938823033858555904.0000, Latency=82.88, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-82.46, BER=0.00006, Rate=11.25, CommOv=0.04, BytesUp=1182737
+
+  Round 9/50
+    Reward=-1576.820, Q1=4831694863466496.0000, Q2=2056409537576960.0000, Actor=-22521884743330900738048.0000, Latency=40.91, PktAtk=0.07, SuccAtk=0.05, Drop=0.01, RSSI=-77.61, BER=0.00044, Rate=44.50, CommOv=0.03, BytesUp=1182737
+
+  Round 10/50
+    Reward=-1379.198, Q1=57096638103027712.0000, Q2=9290721857110016.0000, Actor=-54940335092216291655680.0000, Latency=24.29, PktAtk=0.04, SuccAtk=0.02, Drop=0.02, RSSI=-73.08, BER=0.00060, Rate=79.13, CommOv=0.03, BytesUp=1182737
+
+  Round 11/50
+    Reward=-1338.363, Q1=755994036535296.0000, Q2=973048396120064.0000, Actor=-9496947699819023958016.0000, Latency=15.93, PktAtk=0.01, SuccAtk=0.01, Drop=0.01, RSSI=-53.81, BER=0.00066, Rate=90.73, CommOv=0.04, BytesUp=1182737
+
+  Round 12/50
+    Reward=-1187.093, Q1=400775511539712.0000, Q2=783223390994432.0000, Actor=-6241741948505955500032.0000, Latency=40.00, PktAtk=0.06, SuccAtk=0.03, Drop=0.02, RSSI=-41.62, BER=0.00070, Rate=39.80, CommOv=0.03, BytesUp=1182737
+
+  Round 13/50
+    Reward=-1171.372, Q1=12705700820025344.0000, Q2=3518133876817920.0000, Actor=-30059192396291269197824.0000, Latency=94.42, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-49.34, BER=0.00067, Rate=83.07, CommOv=0.04, BytesUp=1182737
+
+  Round 14/50
+    Reward=-1720.988, Q1=13489482959421440.0000, Q2=3945159389609984.0000, Actor=-44750098762160226172928.0000, Latency=71.69, PktAtk=0.05, SuccAtk=0.04, Drop=0.02, RSSI=-71.91, BER=0.00036, Rate=18.85, CommOv=0.01, BytesUp=1182737
+
+  Round 15/50
+    Reward=-1605.859, Q1=3214621422911488.0000, Q2=1684290484043776.0000, Actor=-22216356041010458918912.0000, Latency=95.29, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-86.14, BER=0.00084, Rate=11.01, CommOv=0.04, BytesUp=1182737
+
+  Round 16/50
+    Reward=-1376.457, Q1=64778273011269632.0000, Q2=10583187038142464.0000, Actor=-72766762360451085893632.0000, Latency=85.16, PktAtk=0.09, SuccAtk=0.05, Drop=0.02, RSSI=-51.68, BER=0.00013, Rate=38.30, CommOv=0.01, BytesUp=1182737
+
+  Round 17/50
+    Reward=-1376.901, Q1=63155862000107520.0000, Q2=10313833532882944.0000, Actor=-74130551406810674233344.0000, Latency=84.82, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-68.12, BER=0.00041, Rate=67.96, CommOv=0.01, BytesUp=1182737
+
+  Round 18/50
+    Reward=-1599.012, Q1=11345980746104832.0000, Q2=3548737397850112.0000, Actor=-45509828997699864625152.0000, Latency=49.98, PktAtk=0.03, SuccAtk=0.02, Drop=0.02, RSSI=-63.30, BER=0.00031, Rate=81.05, CommOv=0.02, BytesUp=1182737
+
+  Round 19/50
+    Reward=-1709.380, Q1=4339460741267456.0000, Q2=2038679644143616.0000, Actor=-30681623641791077023744.0000, Latency=85.16, PktAtk=0.04, SuccAtk=0.04, Drop=0.05, RSSI=-66.92, BER=0.00028, Rate=38.81, CommOv=0.03, BytesUp=1182737
+
+  Round 20/50
+    Reward=-1089.940, Q1=51896338945671168.0000, Q2=9436400705339392.0000, Actor=-86915203395803825569792.0000, Latency=96.96, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-77.50, BER=0.00064, Rate=87.54, CommOv=0.03, BytesUp=1182737
+
+  Round 21/50
+    Reward=-1056.735, Q1=1114923111284736.0000, Q2=860039149518848.0000, Actor=-4080605787769163218944.0000, Latency=19.23, PktAtk=0.08, SuccAtk=0.08, Drop=0.01, RSSI=-51.84, BER=0.00027, Rate=90.63, CommOv=0.01, BytesUp=1182737
+
+  Round 22/50
+    Reward=-1412.302, Q1=36649982433951744.0000, Q2=7782085066489856.0000, Actor=-83891702778769388339200.0000, Latency=49.37, PktAtk=0.09, SuccAtk=0.06, Drop=0.02, RSSI=-72.52, BER=0.00003, Rate=6.27, CommOv=0.03, BytesUp=1182737
+
+  Round 23/50
+    Reward=-1644.521, Q1=6808791253254144.0000, Q2=2610142356963328.0000, Actor=-39763591657545673998336.0000, Latency=31.22, PktAtk=0.10, SuccAtk=0.07, Drop=0.00, RSSI=-43.46, BER=0.00084, Rate=65.35, CommOv=0.04, BytesUp=1182737
+
+  Round 24/50
+    Reward=-743.880, Q1=850527676006400.0000, Q2=1124441564119040.0000, Actor=-4514412207125859139584.0000, Latency=22.38, PktAtk=0.03, SuccAtk=0.03, Drop=0.03, RSSI=-83.06, BER=0.00071, Rate=45.41, CommOv=0.00, BytesUp=1182737
+
+  Round 25/50
+    Reward=-1488.186, Q1=20484657539710976.0000, Q2=5251515031748608.0000, Actor=-66667019471146075553792.0000, Latency=17.13, PktAtk=0.03, SuccAtk=0.02, Drop=0.03, RSSI=-53.64, BER=0.00053, Rate=12.01, CommOv=0.01, BytesUp=1182737
+
+  Round 26/50
+    Reward=-1460.970, Q1=450973378019328.0000, Q2=789966355431424.0000, Actor=-10859133464711268401152.0000, Latency=37.10, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-67.14, BER=0.00011, Rate=90.61, CommOv=0.03, BytesUp=1182737
+
+  Round 27/50
+    Reward=-1068.156, Q1=23562048851935232.0000, Q2=5108798100340736.0000, Actor=-56055237208768876904448.0000, Latency=11.48, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-68.54, BER=0.00061, Rate=24.82, CommOv=0.02, BytesUp=1182737
+
+  Round 28/50
+    Reward=-948.238, Q1=20603589479104512.0000, Q2=4583590172033024.0000, Actor=-45276060651841944289280.0000, Latency=69.79, PktAtk=0.01, SuccAtk=0.01, Drop=0.00, RSSI=-63.70, BER=0.00051, Rate=98.84, CommOv=0.03, BytesUp=1182737
+
+  Round 29/50
+    Reward=-1471.051, Q1=27970128406642688.0000, Q2=6531773915725824.0000, Actor=-83826517677762827780096.0000, Latency=45.14, PktAtk=0.05, SuccAtk=0.04, Drop=0.05, RSSI=-77.32, BER=0.00002, Rate=79.06, CommOv=0.02, BytesUp=1182737
+
+  Round 30/50
+    Reward=-1168.506, Q1=20209719503224832.0000, Q2=4838548020658176.0000, Actor=-56863241528714299703296.0000, Latency=75.96, PktAtk=0.06, SuccAtk=0.06, Drop=0.04, RSSI=-73.37, BER=0.00004, Rate=55.06, CommOv=0.04, BytesUp=1182737
+
+  Round 31/50
+    Reward=-1507.717, Q1=820581754732544.0000, Q2=959369596370944.0000, Actor=-16609764066301958946816.0000, Latency=25.76, PktAtk=0.08, SuccAtk=0.06, Drop=0.03, RSSI=-58.41, BER=0.00081, Rate=7.25, CommOv=0.04, BytesUp=1182737
+
+  Round 32/50
+    Reward=-1149.966, Q1=700795922153472.0000, Q2=901285867945984.0000, Actor=-4785662886782477271040.0000, Latency=51.19, PktAtk=0.03, SuccAtk=0.02, Drop=0.01, RSSI=-87.90, BER=0.00093, Rate=52.02, CommOv=0.05, BytesUp=1182737
+
+  Round 33/50
+    Reward=-1385.276, Q1=66123186185437184.0000, Q2=10380553702342656.0000, Actor=-91368146534565658230784.0000, Latency=58.87, PktAtk=0.03, SuccAtk=0.02, Drop=0.01, RSSI=-72.15, BER=0.00078, Rate=86.71, CommOv=0.02, BytesUp=1182737
+
+  Round 34/50
+    Reward=-1453.929, Q1=421424573448192.0000, Q2=754258198659072.0000, Actor=-12427124725375089770496.0000, Latency=21.20, PktAtk=0.04, SuccAtk=0.03, Drop=0.04, RSSI=-45.27, BER=0.00039, Rate=97.40, CommOv=0.02, BytesUp=1182737
+
+  Round 35/50
+    Reward=-1208.231, Q1=45371385974882304.0000, Q2=8672916581384192.0000, Actor=-109845172812169649061888.0000, Latency=54.78, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-53.65, BER=0.00008, Rate=60.64, CommOv=0.04, BytesUp=1182737
+
+  Round 36/50
+    Reward=-1383.729, Q1=61544385975681024.0000, Q2=9723845686591488.0000, Actor=-93411438692702907006976.0000, Latency=59.09, PktAtk=0.03, SuccAtk=0.02, Drop=0.03, RSSI=-74.68, BER=0.00060, Rate=43.19, CommOv=0.03, BytesUp=1182737
+
+  Round 37/50
+    Reward=-1398.729, Q1=99322742217637888.0000, Q2=15536407464378368.0000, Actor=-144362273565811926892544.0000, Latency=41.64, PktAtk=0.00, SuccAtk=0.00, Drop=0.02, RSSI=-40.09, BER=0.00027, Rate=98.02, CommOv=0.05, BytesUp=1182737
+
+  Round 38/50
+    Reward=-1377.596, Q1=68834925456916480.0000, Q2=10783239098597376.0000, Actor=-109941504808199103971328.0000, Latency=16.75, PktAtk=0.06, SuccAtk=0.04, Drop=0.04, RSSI=-56.03, BER=0.00095, Rate=15.14, CommOv=0.03, BytesUp=1182737
+
+  Round 39/50
+    Reward=-717.457, Q1=7828689219747840.0000, Q2=2303043605364736.0000, Actor=-19174446960499144785920.0000, Latency=80.32, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-71.68, BER=0.00038, Rate=57.16, CommOv=0.03, BytesUp=1182737
+
+  Round 40/50
+    Reward=-1373.969, Q1=57633191187447808.0000, Q2=9218464401063936.0000, Actor=-102030616810748911812608.0000, Latency=71.12, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-61.30, BER=0.00053, Rate=40.41, CommOv=0.03, BytesUp=1182737
+
+  Round 41/50
+    Reward=-1055.887, Q1=1161082936754176.0000, Q2=873771367923712.0000, Actor=-5757264403841807286272.0000, Latency=32.47, PktAtk=0.01, SuccAtk=0.01, Drop=0.02, RSSI=-70.65, BER=0.00056, Rate=26.92, CommOv=0.01, BytesUp=1182737
+
+  Round 42/50
+    Reward=-1540.697, Q1=1689283383525376.0000, Q2=1250813661937664.0000, Actor=-25927970652310088974336.0000, Latency=50.16, PktAtk=0.10, SuccAtk=0.06, Drop=0.05, RSSI=-65.44, BER=0.00012, Rate=85.43, CommOv=0.02, BytesUp=1182737
+
+  Round 43/50
+    Reward=-1145.080, Q1=65021677397868544.0000, Q2=11704251885551616.0000, Actor=-160893654732399316041728.0000, Latency=90.88, PktAtk=0.04, SuccAtk=0.02, Drop=0.03, RSSI=-47.72, BER=0.00032, Rate=35.40, CommOv=0.00, BytesUp=1182737
+
+  Round 44/50
+    Reward=-1378.039, Q1=60155977667706880.0000, Q2=9833534856364032.0000, Actor=-120454860900720120430592.0000, Latency=58.80, PktAtk=0.09, SuccAtk=0.08, Drop=0.04, RSSI=-43.63, BER=0.00064, Rate=79.58, CommOv=0.03, BytesUp=1182737
+
+  Round 45/50
+    Reward=-1366.665, Q1=26577272660033536.0000, Q2=6039448257036288.0000, Actor=-107842755324250414907392.0000, Latency=20.92, PktAtk=0.02, SuccAtk=0.01, Drop=0.04, RSSI=-88.69, BER=0.00055, Rate=37.52, CommOv=0.04, BytesUp=1182737
+
+  Round 46/50
+    Reward=-1369.457, Q1=57756577007927296.0000, Q2=9254672049111040.0000, Actor=-114959757786586990772224.0000, Latency=59.65, PktAtk=0.06, SuccAtk=0.03, Drop=0.02, RSSI=-40.02, BER=0.00072, Rate=53.04, CommOv=0.04, BytesUp=1182737
+
+  Round 47/50
+    Reward=-1734.765, Q1=5391241055305728.0000, Q2=2263059070451712.0000, Actor=-55754149055681022394368.0000, Latency=84.10, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-67.50, BER=0.00068, Rate=35.11, CommOv=0.04, BytesUp=1182737
+
+  Round 48/50
+    Reward=-1368.147, Q1=57133793865105408.0000, Q2=9248601112838144.0000, Actor=-121457326148975773876224.0000, Latency=80.22, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-68.37, BER=0.00091, Rate=6.49, CommOv=0.01, BytesUp=1182737
+
+  Round 49/50
+    Reward=-1447.769, Q1=30131366687408128.0000, Q2=6856507803041792.0000, Actor=-131758517663051366268928.0000, Latency=23.77, PktAtk=0.02, SuccAtk=0.01, Drop=0.04, RSSI=-72.70, BER=0.00094, Rate=89.60, CommOv=0.04, BytesUp=1182737
+
+  Round 50/50
+    Reward=-949.759, Q1=6471616993165312.0000, Q2=2125659576991744.0000, Actor=-24633374910625420935168.0000, Latency=32.55, PktAtk=0.06, SuccAtk=0.05, Drop=0.01, RSSI=-74.86, BER=0.00053, Rate=50.75, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/10
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1337.407, Q1=84.9068, Q2=61.4869, Actor=1.0639, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/10
+    Reward=-1233.427, Q1=88.3680, Q2=85.1854, Actor=2.8469, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/10
+    Reward=-1066.991, Q1=5.0305, Q2=0.8839, Actor=1.7274, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/10
+    Reward=-1126.494, Q1=54.9385, Q2=51.9516, Actor=3.9514, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/10
+    Reward=-1676.698, Q1=53.3812, Q2=51.5180, Actor=0.9338, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+  Round 6/10
+    Reward=-1694.731, Q1=52.9835, Q2=52.5912, Actor=1.4252, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1075216
+
+  Round 7/10
+    Reward=-1179.710, Q1=2.5707, Q2=0.5497, Actor=1.9306, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1075216
+
+  Round 8/10
+    Reward=-869.188, Q1=3.8001, Q2=3.2904, Actor=5.3798, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1075216
+
+  Round 9/10
+    Reward=-1311.547, Q1=4.0829, Q2=5.1404, Actor=4.2397, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1075216
+
+  Round 10/10
+    Reward=-1577.055, Q1=23.7916, Q2=20.1341, Actor=2.8820, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/10
+    Reward=-1145.023, Q1=7.1104, Q2=8.9081, Actor=11.0503, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=1082346
+
+  Round 2/10
+    Reward=-1152.653, Q1=7.1097, Q2=27.4117, Actor=9.1045, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=1082346
+
+  Round 3/10
+    Reward=-1151.224, Q1=31.0782, Q2=35.6371, Actor=12.4726, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=1082346
+
+  Round 4/10
+    Reward=-1117.120, Q1=28.8230, Q2=29.1390, Actor=17.2649, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=1082346
+
+  Round 5/10
+    Reward=-1341.545, Q1=0.2460, Q2=13.0530, Actor=9.7587, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=1082346
+
+  Round 6/10
+    Reward=-1771.806, Q1=11.8740, Q2=6.5912, Actor=6.3164, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1082346
+
+  Round 7/10
+    Reward=-1205.084, Q1=21.9309, Q2=81.7108, Actor=12.9123, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1082346
+
+  Round 8/10
+    Reward=-1366.208, Q1=3.8746, Q2=28.7941, Actor=12.4003, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1082346
+
+  Round 9/10
+    Reward=-1173.862, Q1=8.2632, Q2=21.1198, Actor=6.4417, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1082346
+
+  Round 10/10
+    Reward=-1151.714, Q1=203.2312, Q2=215.5286, Actor=21.0547, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/10
+    Reward=-1266.192, Q1=128.4441, Q2=135.9100, Actor=17.3965, Latency=16.39, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-47.02, BER=0.00007, Rate=24.56, CommOv=0.03, BytesUp=3225648
+
+  Round 2/10
+    Reward=-1805.502, Q1=4.9789, Q2=1.9994, Actor=11.3676, Latency=29.28, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-66.37, BER=0.00078, Rate=80.94, CommOv=0.01, BytesUp=3225648
+
+  Round 3/10
+    Reward=-1363.652, Q1=145.4915, Q2=130.2850, Actor=22.7596, Latency=18.72, PktAtk=0.04, SuccAtk=0.03, Drop=0.02, RSSI=-53.55, BER=0.00067, Rate=98.43, CommOv=0.00, BytesUp=3225648
+
+  Round 4/10
+    Reward=-1148.046, Q1=282.9728, Q2=492.0516, Actor=24.3536, Latency=46.24, PktAtk=0.03, SuccAtk=0.03, Drop=0.01, RSSI=-80.49, BER=0.00045, Rate=42.77, CommOv=0.01, BytesUp=3225648
+
+  Round 5/10
+    Reward=-1153.775, Q1=321.4093, Q2=504.9077, Actor=24.1343, Latency=32.48, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-62.48, BER=0.00005, Rate=99.93, CommOv=0.04, BytesUp=3225648
+
+  Round 6/10
+    Reward=-1692.691, Q1=68.8053, Q2=48.5358, Actor=17.0112, Latency=97.21, PktAtk=0.09, SuccAtk=0.09, Drop=0.01, RSSI=-65.72, BER=0.00021, Rate=40.70, CommOv=0.00, BytesUp=3225648
+
+  Round 7/10
+    Reward=-1530.348, Q1=44.0369, Q2=66.9246, Actor=13.3788, Latency=44.11, PktAtk=0.10, SuccAtk=0.06, Drop=0.04, RSSI=-67.25, BER=0.00042, Rate=95.77, CommOv=0.05, BytesUp=3225648
+
+  Round 8/10
+    Reward=-1488.765, Q1=96.3844, Q2=94.8369, Actor=16.2583, Latency=60.02, PktAtk=0.07, SuccAtk=0.04, Drop=0.01, RSSI=-41.56, BER=0.00058, Rate=54.68, CommOv=0.04, BytesUp=3225648
+
+  Round 9/10
+    Reward=-1390.754, Q1=330.7863, Q2=539.3633, Actor=27.2442, Latency=15.14, PktAtk=0.06, SuccAtk=0.04, Drop=0.04, RSSI=-82.13, BER=0.00096, Rate=8.93, CommOv=0.01, BytesUp=3225648
+
+  Round 10/10
+    Reward=-1459.634, Q1=174.0663, Q2=205.3733, Actor=19.7410, Latency=63.55, PktAtk=0.07, SuccAtk=0.04, Drop=0.01, RSSI=-45.49, BER=0.00025, Rate=59.86, CommOv=0.03, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/10
+    Reward=-1524.734, Q1=119.6644, Q2=160.8189, Actor=17.4377, Latency=47.73, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-79.79, BER=0.00072, Rate=24.63, CommOv=0.02, BytesUp=1182737
+
+  Round 2/10
+    Reward=-1327.611, Q1=729.8223, Q2=614.7328, Actor=33.9960, Latency=70.45, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-86.37, BER=0.00046, Rate=99.85, CommOv=0.05, BytesUp=1182737
+
+  Round 3/10
+    Reward=-1444.296, Q1=489.8023, Q2=462.9590, Actor=28.8774, Latency=16.59, PktAtk=0.02, SuccAtk=0.01, Drop=0.05, RSSI=-45.96, BER=0.00088, Rate=37.58, CommOv=0.01, BytesUp=1182737
+
+  Round 4/10
+    Reward=-1023.406, Q1=4078.2791, Q2=6156.6948, Actor=71.2371, Latency=85.04, PktAtk=0.07, SuccAtk=0.06, Drop=0.05, RSSI=-57.30, BER=0.00001, Rate=81.89, CommOv=0.01, BytesUp=1182737
+
+  Round 5/10
+    Reward=-1601.597, Q1=438.7736, Q2=329.1794, Actor=28.5184, Latency=69.70, PktAtk=0.09, SuccAtk=0.05, Drop=0.01, RSSI=-84.65, BER=0.00055, Rate=27.96, CommOv=0.03, BytesUp=1182737
+
+  Round 6/10
+    Reward=-1301.950, Q1=315.6899, Q2=483.5479, Actor=22.9853, Latency=74.59, PktAtk=0.02, SuccAtk=0.02, Drop=0.01, RSSI=-65.57, BER=0.00091, Rate=84.76, CommOv=0.00, BytesUp=1182737
+
+  Round 7/10
+    Reward=-1593.441, Q1=273.7923, Q2=308.4523, Actor=23.5917, Latency=48.12, PktAtk=0.03, SuccAtk=0.01, Drop=0.04, RSSI=-58.14, BER=0.00026, Rate=74.38, CommOv=0.03, BytesUp=1182737
+
+  Round 8/10
+    Reward=-1187.069, Q1=1092.0203, Q2=884.6448, Actor=37.9305, Latency=48.49, PktAtk=0.00, SuccAtk=0.00, Drop=0.04, RSSI=-44.80, BER=0.00055, Rate=83.62, CommOv=0.03, BytesUp=1182737
+
+  Round 9/10
+    Reward=-1730.073, Q1=351.3205, Q2=393.2991, Actor=26.4323, Latency=23.33, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-50.19, BER=0.00086, Rate=89.99, CommOv=0.01, BytesUp=1182737
+
+  Round 10/10
+    Reward=-1198.390, Q1=2217.5310, Q2=1943.6213, Actor=53.5843, Latency=32.46, PktAtk=0.01, SuccAtk=0.01, Drop=0.04, RSSI=-69.68, BER=0.00062, Rate=16.30, CommOv=0.05, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1329.827, Q1=122.8611, Q2=91.9592, Actor=1.0537, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/5
+    Reward=-1227.354, Q1=5.4405, Q2=0.8343, Actor=1.7349, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/5
+    Reward=-1292.378, Q1=0.0007, Q2=2.0762, Actor=2.1789, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/5
+    Reward=-1351.844, Q1=0.2156, Q2=3.3544, Actor=3.9216, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/5
+    Reward=-1353.598, Q1=3.3474, Q2=22.3307, Actor=4.4994, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1434.337, Q1=23.3111, Q2=21.2804, Actor=2.6478, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1082346
+
+  Round 2/5
+    Reward=-1456.333, Q1=56.4785, Q2=55.6081, Actor=1.7898, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1082346
+
+  Round 3/5
+    Reward=-1324.539, Q1=18.2485, Q2=15.7197, Actor=1.7061, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 4/5
+    Reward=-1811.975, Q1=52.1584, Q2=46.5657, Actor=2.3199, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 5/5
+    Reward=-1494.920, Q1=23.6352, Q2=23.2905, Actor=3.2505, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1447.152, Q1=17.0474, Q2=17.7641, Actor=4.7980, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1573.919, Q1=14.7040, Q2=15.3022, Actor=3.9250, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1197.576, Q1=1.6237, Q2=0.6640, Actor=4.0294, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1364.943, Q1=0.0545, Q2=0.0741, Actor=8.9679, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1573.257, Q1=3.3471, Q2=1.7311, Actor=5.7279, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1280.571, Q1=25.5705, Q2=24.2737, Actor=12.6719, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1182737
+
+  Round 2/5
+    Reward=-1312.279, Q1=1.4052, Q2=3.1869, Actor=6.7939, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1182737
+
+  Round 3/5
+    Reward=-1221.167, Q1=40.8989, Q2=115.4251, Actor=15.4281, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1182737
+
+  Round 4/5
+    Reward=-1506.332, Q1=5.1406, Q2=6.4502, Actor=8.8586, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1182737
+
+  Round 5/5
+    Reward=-1747.239, Q1=18.2353, Q2=10.1687, Actor=13.6964, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/6
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1190.319, Q1=4.3891, Q2=2.7887, Actor=0.3414, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/6
+    Reward=-1255.078, Q1=3.8110, Q2=4.3396, Actor=2.1996, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/6
+    Reward=-990.705, Q1=133.2447, Q2=88.4013, Actor=2.7312, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/6
+    Reward=-1537.829, Q1=34.5976, Q2=33.8503, Actor=0.7712, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/6
+    Reward=-1773.106, Q1=69.3864, Q2=65.3530, Actor=1.1834, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+  Round 6/6
+    Reward=-1515.979, Q1=37.5421, Q2=33.9928, Actor=1.6218, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/6
+    Reward=-1521.274, Q1=27.8281, Q2=25.9474, Actor=2.0244, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1082346
+
+  Round 2/6
+    Reward=-963.902, Q1=5.6729, Q2=7.2394, Actor=5.3398, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 3/6
+    Reward=-1574.176, Q1=20.8285, Q2=22.1540, Actor=3.0206, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 4/6
+    Reward=-1602.048, Q1=20.3432, Q2=17.9149, Actor=3.1494, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+  Round 5/6
+    Reward=-1591.965, Q1=16.2122, Q2=12.0984, Actor=3.9335, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=1082346
+
+  Round 6/6
+    Reward=-1185.954, Q1=6.9644, Q2=4.3800, Actor=8.0505, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/6
+    Reward=-1302.925, Q1=1.4177, Q2=0.2798, Actor=6.7162, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 2/6
+    Reward=-1404.291, Q1=0.6795, Q2=7.9087, Actor=9.0405, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 3/6
+    Reward=-1715.956, Q1=0.6355, Q2=2.1581, Actor=8.0718, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+  Round 4/6
+    Reward=-1296.446, Q1=10.5863, Q2=5.4849, Actor=8.2976, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=3225648
+
+  Round 5/6
+    Reward=-1179.104, Q1=22.4004, Q2=56.9122, Actor=9.1087, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=3225648
+
+  Round 6/6
+    Reward=-1688.379, Q1=1.4518, Q2=7.2530, Actor=10.1882, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/6
+    Reward=-1132.451, Q1=325.3180, Q2=318.2129, Actor=28.7982, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1182737
+
+  Round 2/6
+    Reward=-1180.888, Q1=72.5510, Q2=155.4192, Actor=13.0755, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1182737
+
+  Round 3/6
+    Reward=-1498.318, Q1=35.1326, Q2=40.8780, Actor=12.4751, Latency=16.39, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-47.02, BER=0.00007, Rate=24.56, CommOv=0.03, BytesUp=1182737
+
+  Round 4/6
+    Reward=-1257.909, Q1=438.5959, Q2=438.8007, Actor=28.6054, Latency=29.28, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-66.37, BER=0.00078, Rate=80.94, CommOv=0.01, BytesUp=1182737
+
+  Round 5/6
+    Reward=-1324.220, Q1=183.6412, Q2=356.4871, Actor=21.0045, Latency=18.72, PktAtk=0.04, SuccAtk=0.03, Drop=0.02, RSSI=-53.55, BER=0.00067, Rate=98.43, CommOv=0.00, BytesUp=1182737
+
+  Round 6/6
+    Reward=-1601.145, Q1=115.9500, Q2=81.1868, Actor=18.6959, Latency=46.24, PktAtk=0.03, SuccAtk=0.03, Drop=0.01, RSSI=-80.49, BER=0.00045, Rate=42.77, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+    Reward=-1146.625, Q1=9.0073, Q2=4.7380, Actor=0.8283, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/5
+    Reward=-1281.049, Q1=185.6518, Q2=132.6107, Actor=2.4910, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/5
+    Reward=-1313.867, Q1=0.0164, Q2=2.2851, Actor=2.7306, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/5
+    Reward=-1037.770, Q1=0.0006, Q2=2.5105, Actor=3.0172, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/5
+    Reward=-1012.439, Q1=6.0131, Q2=2.1169, Actor=1.5063, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1462.877, Q1=41.1428, Q2=40.6957, Actor=1.6884, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1082346
+
+  Round 2/5
+    Reward=-1065.038, Q1=1.1402, Q2=5.3086, Actor=3.6313, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1082346
+
+  Round 3/5
+    Reward=-1026.834, Q1=10.2680, Q2=27.2297, Actor=5.4787, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 4/5
+    Reward=-1066.707, Q1=0.6881, Q2=1.1433, Actor=3.5177, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 5/5
+    Reward=-1188.210, Q1=1.3896, Q2=0.7835, Actor=4.3411, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1128.670, Q1=8.7543, Q2=0.1484, Actor=8.2389, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1563.243, Q1=20.2010, Q2=20.3485, Actor=3.0456, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1800.735, Q1=31.6913, Q2=33.6320, Actor=4.0969, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1536.443, Q1=9.6541, Q2=9.7219, Actor=4.2605, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1399.334, Q1=0.0014, Q2=0.0693, Actor=9.1027, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1207.596, Q1=9.9313, Q2=51.8501, Actor=11.6278, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1182737
+
+  Round 2/5
+    Reward=-1286.230, Q1=1.9343, Q2=3.2730, Actor=6.1195, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1182737
+
+  Round 3/5
+    Reward=-1887.652, Q1=2.0095, Q2=3.2345, Actor=7.9874, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1182737
+
+  Round 4/5
+    Reward=-1463.155, Q1=3.4877, Q2=5.8927, Actor=8.6864, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1182737
+
+  Round 5/5
+    Reward=-1400.166, Q1=33.1426, Q2=75.2154, Actor=14.5305, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+    Reward=-1157.681, Q1=2.1077, Q2=0.7668, Actor=0.7440, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/5
+    Reward=-1367.764, Q1=0.1694, Q2=0.4052, Actor=1.6948, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/5
+    Reward=-1391.850, Q1=1.8414, Q2=0.6534, Actor=3.2445, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/5
+    Reward=-1377.005, Q1=1.9587, Q2=11.4058, Actor=3.7880, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/5
+    Reward=-1322.174, Q1=24.5460, Q2=0.4020, Actor=7.5287, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1153.689, Q1=9.2214, Q2=35.7179, Actor=5.6790, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1082346
+
+  Round 2/5
+    Reward=-1441.059, Q1=32.3379, Q2=13.6563, Actor=3.4965, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1082346
+
+  Round 3/5
+    Reward=-1560.585, Q1=44.0416, Q2=41.3511, Actor=1.5492, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 4/5
+    Reward=-1302.369, Q1=34.0666, Q2=33.2832, Actor=2.9441, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 5/5
+    Reward=-1859.430, Q1=48.2007, Q2=46.2955, Actor=2.4668, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1456.958, Q1=28.3125, Q2=18.8935, Actor=3.8055, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1385.865, Q1=15.1054, Q2=6.8746, Actor=4.5285, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1129.604, Q1=4.2287, Q2=4.5648, Actor=8.1404, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1356.269, Q1=3.1240, Q2=0.0539, Actor=5.8357, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1714.297, Q1=7.9420, Q2=10.4197, Actor=6.2901, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1522.710, Q1=1.2959, Q2=0.8605, Actor=6.3206, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1182737
+
+  Round 2/5
+    Reward=-1472.884, Q1=0.3158, Q2=2.3256, Actor=8.2968, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1182737
+
+  Round 3/5
+    Reward=-1601.794, Q1=0.9548, Q2=0.0235, Actor=9.0253, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1182737
+
+  Round 4/5
+    Reward=-1766.867, Q1=1.1900, Q2=0.3210, Actor=9.4167, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1182737
+
+  Round 5/5
+    Reward=-1547.960, Q1=6.1749, Q2=7.3025, Actor=9.8091, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1255.685, Q1=48.7925, Q2=49.6125, Actor=0.8916, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/5
+    Reward=-1278.445, Q1=0.0466, Q2=0.9142, Actor=2.0210, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/5
+    Reward=-1045.864, Q1=0.1288, Q2=0.0298, Actor=1.4659, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/5
+    Reward=-1498.131, Q1=37.5990, Q2=36.5218, Actor=0.8011, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/5
+    Reward=-988.544, Q1=8.9723, Q2=9.5686, Actor=4.2850, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-962.642, Q1=1.0200, Q2=14.2603, Actor=5.2497, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1082346
+
+  Round 2/5
+    Reward=-873.598, Q1=1.1712, Q2=9.9859, Actor=4.0277, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1082346
+
+  Round 3/5
+    Reward=-1562.887, Q1=45.9827, Q2=40.1509, Actor=2.0374, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 4/5
+    Reward=-1100.212, Q1=3.5686, Q2=4.2716, Actor=5.7448, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 5/5
+    Reward=-1518.581, Q1=28.2772, Q2=29.7949, Actor=2.9347, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1238.922, Q1=7.4936, Q2=0.8084, Actor=4.9389, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1789.722, Q1=33.8836, Q2=29.1922, Actor=3.8008, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1271.689, Q1=3.3647, Q2=4.5155, Actor=8.5454, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1050.773, Q1=12.0089, Q2=39.9452, Actor=10.3816, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1418.259, Q1=1.5685, Q2=1.6806, Actor=5.7534, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1051.988, Q1=72.3057, Q2=76.4028, Actor=15.5611, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1182737
+
+  Round 2/5
+    Reward=-1209.672, Q1=7.2278, Q2=27.8603, Actor=8.7204, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1182737
+
+  Round 3/5
+    Reward=-1241.449, Q1=23.5206, Q2=78.8194, Actor=13.8242, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1182737
+
+  Round 4/5
+    Reward=-1161.215, Q1=97.9608, Q2=185.9801, Actor=16.9113, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1182737
+
+  Round 5/5
+    Reward=-1076.940, Q1=42.6031, Q2=30.4401, Actor=10.5392, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+    Reward=-1176.026, Q1=0.1338, Q2=0.2299, Actor=6.9475, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/5
+    Reward=-1522.153, Q1=2.6991, Q2=6.6001, Actor=9.6799, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/5
+    Reward=-1190.637, Q1=75.4678, Q2=95.8384, Actor=15.0167, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/5
+    Reward=-1161.160, Q1=246.4442, Q2=266.2464, Actor=24.9481, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/5
+    Reward=-1635.407, Q1=274.7035, Q2=271.7741, Actor=26.1254, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1256.518, Q1=442.2298, Q2=546.9503, Actor=28.3559, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1082346
+
+  Round 2/5
+    Reward=-1215.651, Q1=554.3373, Q2=570.3427, Actor=30.9285, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1082346
+
+  Round 3/5
+    Reward=-1445.557, Q1=757.6205, Q2=748.8162, Actor=35.4393, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 4/5
+    Reward=-1343.644, Q1=1230.4048, Q2=1206.6348, Actor=44.0929, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 5/5
+    Reward=-1355.040, Q1=1498.5632, Q2=1489.7638, Actor=47.4406, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1548.985, Q1=1831.2947, Q2=1964.6056, Actor=51.5900, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1493.292, Q1=2168.8452, Q2=2337.7131, Actor=55.0765, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1627.152, Q1=3253.3015, Q2=3335.0325, Actor=66.0465, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1453.599, Q1=3573.8635, Q2=3738.5437, Actor=68.4378, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1491.171, Q1=4097.4229, Q2=4222.4585, Actor=72.3751, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1582.155, Q1=5075.6841, Q2=5445.0103, Actor=80.3734, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1182737
+
+  Round 2/5
+    Reward=-1404.128, Q1=6047.2739, Q2=6403.8887, Actor=87.6171, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1182737
+
+  Round 3/5
+    Reward=-1608.960, Q1=6903.8091, Q2=7137.3301, Actor=92.2732, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1182737
+
+  Round 4/5
+    Reward=-1504.478, Q1=7010.5640, Q2=7668.7441, Actor=92.3278, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1182737
+
+  Round 5/5
+    Reward=-1592.893, Q1=8515.3447, Q2=9060.5791, Actor=101.9306, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/7
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-984.328, Q1=0.8538, Q2=1.0840, Actor=1.7945, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/7
+    Reward=-1168.792, Q1=7.7083, Q2=11.3193, Actor=8.1176, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/7
+    Reward=-1082.270, Q1=21.3231, Q2=16.9936, Actor=9.1608, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/7
+    Reward=-1691.875, Q1=63.1504, Q2=68.9986, Actor=16.4069, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/7
+    Reward=-1596.363, Q1=176.2157, Q2=222.9899, Actor=21.2729, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+  Round 6/7
+    Reward=-1257.671, Q1=333.9650, Q2=421.4169, Actor=25.0175, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1075216
+
+  Round 7/7
+    Reward=-1535.420, Q1=583.4246, Q2=691.0826, Actor=32.4919, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/7
+    Reward=-1431.099, Q1=739.8295, Q2=873.7576, Actor=34.7839, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 2/7
+    Reward=-1590.080, Q1=1301.8904, Q2=1341.3601, Actor=44.0735, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 3/7
+    Reward=-1482.939, Q1=1615.5217, Q2=1687.0159, Actor=48.0709, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+  Round 4/7
+    Reward=-1551.457, Q1=1994.2900, Q2=2348.2891, Actor=52.6091, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=1082346
+
+  Round 5/7
+    Reward=-1354.839, Q1=2975.3481, Q2=3323.0046, Actor=64.3568, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=1082346
+
+  Round 6/7
+    Reward=-1439.616, Q1=2920.0513, Q2=3217.7634, Actor=62.4493, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=1082346
+
+  Round 7/7
+    Reward=-1631.194, Q1=4017.5593, Q2=4443.3569, Actor=72.4172, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/7
+    Reward=-1469.660, Q1=3905.4614, Q2=4425.4751, Actor=70.6516, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+  Round 2/7
+    Reward=-1608.948, Q1=5257.4858, Q2=5820.5054, Actor=81.2669, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=3225648
+
+  Round 3/7
+    Reward=-1468.291, Q1=5634.0742, Q2=5908.8579, Actor=83.1756, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=3225648
+
+  Round 4/7
+    Reward=-1632.508, Q1=7419.5122, Q2=7952.4858, Actor=95.1501, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=3225648
+
+  Round 5/7
+    Reward=-1416.732, Q1=8173.7041, Q2=8698.2422, Actor=99.6592, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=3225648
+
+  Round 6/7
+    Reward=-1569.466, Q1=9006.9561, Q2=9653.0547, Actor=103.6961, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=3225648
+
+  Round 7/7
+    Reward=-1566.806, Q1=9993.7373, Q2=10732.2227, Actor=108.8529, Latency=16.39, PktAtk=0.06, SuccAtk=0.04, Drop=0.05, RSSI=-47.02, BER=0.00007, Rate=24.56, CommOv=0.03, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/7
+    Reward=-1683.760, Q1=10378.7881, Q2=11385.3564, Actor=110.8787, Latency=29.28, PktAtk=0.01, SuccAtk=0.01, Drop=0.03, RSSI=-66.37, BER=0.00078, Rate=80.94, CommOv=0.01, BytesUp=1182737
+
+  Round 2/7
+    Reward=-1614.512, Q1=12406.1807, Q2=13547.2500, Actor=121.1045, Latency=18.72, PktAtk=0.04, SuccAtk=0.03, Drop=0.02, RSSI=-53.55, BER=0.00067, Rate=98.43, CommOv=0.00, BytesUp=1182737
+
+  Round 3/7
+    Reward=-1516.509, Q1=12675.4111, Q2=13547.1572, Actor=120.9900, Latency=46.24, PktAtk=0.03, SuccAtk=0.03, Drop=0.01, RSSI=-80.49, BER=0.00045, Rate=42.77, CommOv=0.01, BytesUp=1182737
+
+  Round 4/7
+    Reward=-1397.237, Q1=15904.2979, Q2=17054.0781, Actor=135.9471, Latency=32.48, PktAtk=0.09, SuccAtk=0.07, Drop=0.04, RSSI=-62.48, BER=0.00005, Rate=99.93, CommOv=0.04, BytesUp=1182737
+
+  Round 5/7
+    Reward=-1522.026, Q1=14745.2861, Q2=15841.5674, Actor=129.9213, Latency=97.21, PktAtk=0.09, SuccAtk=0.09, Drop=0.01, RSSI=-65.72, BER=0.00021, Rate=40.70, CommOv=0.00, BytesUp=1182737
+
+  Round 6/7
+    Reward=-1560.991, Q1=16938.3379, Q2=18514.0703, Actor=139.1194, Latency=44.11, PktAtk=0.10, SuccAtk=0.06, Drop=0.04, RSSI=-67.25, BER=0.00042, Rate=95.77, CommOv=0.05, BytesUp=1182737
+
+  Round 7/7
+    Reward=-1426.860, Q1=16744.2871, Q2=18287.2188, Actor=138.7576, Latency=60.02, PktAtk=0.07, SuccAtk=0.04, Drop=0.01, RSSI=-41.56, BER=0.00058, Rate=54.68, CommOv=0.04, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+    Reward=-883.159, Q1=3892939520.0000, Q2=18985631744.0000, Actor=-5275398656.0000, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=89.33, CommOv=0.00, BytesUp=1075216
+
+  Round 2/5
+    Reward=-1062.645, Q1=2376508637184.0000, Q2=13456547774464.0000, Actor=-1737678127104.0000, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=65.34, CommOv=0.03, BytesUp=1075216
+
+  Round 3/5
+    Reward=-953.167, Q1=54869914288128.0000, Q2=339061831106560.0000, Actor=-34310241386496.0000, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=34.68, CommOv=0.01, BytesUp=1075216
+
+  Round 4/5
+    Reward=-1264.668, Q1=1421224810905600.0000, Q2=8490192566484992.0000, Actor=-607132818866176.0000, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=80.91, CommOv=0.04, BytesUp=1075216
+
+  Round 5/5
+    Reward=-1067.513, Q1=1790058617110528.0000, Q2=8325953553956864.0000, Actor=-636174515306496.0000, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=86.31, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1359.111, Q1=2900033053655040.0000, Q2=15596918184869888.0000, Actor=-1872330057842688.0000, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=11.00, CommOv=0.01, BytesUp=1082346
+
+  Round 2/5
+    Reward=-865.791, Q1=7006679723933696.0000, Q2=20866718503010304.0000, Actor=-4321914457686016.0000, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=65.16, CommOv=0.03, BytesUp=1082346
+
+  Round 3/5
+    Reward=-792.835, Q1=15553851474051072.0000, Q2=44328430476460032.0000, Actor=-10538721241726976.0000, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=56.14, CommOv=0.03, BytesUp=1082346
+
+  Round 4/5
+    Reward=-1437.612, Q1=13095247911321600.0000, Q2=38981879092740096.0000, Actor=-7102271737298944.0000, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=21.89, CommOv=0.05, BytesUp=1082346
+
+  Round 5/5
+    Reward=-1067.270, Q1=9439100092284928.0000, Q2=28777474884108288.0000, Actor=-7318003649609728.0000, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=27.22, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1348.573, Q1=17862758246645760.0000, Q2=51408413480976384.0000, Actor=-14473752024711168.0000, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=99.76, CommOv=0.03, BytesUp=3225648
+
+  Round 2/5
+    Reward=-1286.397, Q1=11964507576336384.0000, Q2=34059984010477568.0000, Actor=-30110987067588608.0000, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=7.29, CommOv=0.02, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1335.543, Q1=12193384236056576.0000, Q2=41754684209233920.0000, Actor=-22577543563444224.0000, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=68.49, CommOv=0.03, BytesUp=3225648
+
+  Round 4/5
+    Reward=-1077.596, Q1=11640028165832704.0000, Q2=37541982716821504.0000, Actor=-18379337585655808.0000, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=87.71, CommOv=0.01, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1283.949, Q1=13440354976006144.0000, Q2=38291201106903040.0000, Actor=-58673148798697472.0000, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=61.29, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-967.256, Q1=10955872087834624.0000, Q2=29989538277359616.0000, Actor=-26287209896214528.0000, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=2.93, CommOv=0.05, BytesUp=1182737
+
+  Round 2/5
+    Reward=-1401.655, Q1=19040318020124672.0000, Q2=54378787093086208.0000, Actor=-41361406938841088.0000, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=9.48, CommOv=0.02, BytesUp=1182737
+
+  Round 3/5
+    Reward=-1083.656, Q1=11841019750383616.0000, Q2=40548567198203904.0000, Actor=-47769317755846656.0000, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=27.24, CommOv=0.04, BytesUp=1182737
+
+  Round 4/5
+    Reward=-880.353, Q1=19201493110358016.0000, Q2=48812865959755776.0000, Actor=-79402211452387328.0000, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=99.52, CommOv=0.03, BytesUp=1182737
+
+  Round 5/5
+    Reward=-955.911, Q1=18679869332258816.0000, Q2=50573274270138368.0000, Actor=-106944539641511936.0000, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=23.78, CommOv=0.01, BytesUp=1182737
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+===== Running with SACFL Aggregator =====
+
+  Round 1/5
+C:\Users\Abrokwa\AppData\Local\Programs\Python\Python311\Lib\site-packages\gym\utils\passive_env_checker.py:233: DeprecationWarning: `np.bool8` is a deprecated alias for `np.bool_`.  (Deprecated NumPy 1.24)
+  if not isinstance(terminated, (bool, np.bool8)):
+    Reward=-1064.087, Q1=29209890816.0000, Q2=34189332480.0000, Actor=-13253025792.0000, Latency=67.55, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-53.18, BER=0.00068, Rate=26.87, CommOv=0.00, BytesUp=1075216
+
+  Round 2/5
+    Reward=-1284.033, Q1=97605270896640.0000, Q2=88283346370560.0000, Actor=-11635872759808.0000, Latency=47.97, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-88.67, BER=0.00020, Rate=19.85, CommOv=0.03, BytesUp=1075216
+
+  Round 3/5
+    Reward=-1593.254, Q1=531511161913344.0000, Q2=498970979729408.0000, Actor=-79985452777472.0000, Latency=29.84, PktAtk=0.06, SuccAtk=0.05, Drop=0.00, RSSI=-49.71, BER=0.00070, Rate=10.87, CommOv=0.01, BytesUp=1075216
+
+  Round 4/5
+    Reward=-849.672, Q1=1222248908193792.0000, Q2=1200600259756032.0000, Actor=-243747212230656.0000, Latency=96.15, PktAtk=0.03, SuccAtk=0.02, Drop=0.00, RSSI=-47.63, BER=0.00060, Rate=24.41, CommOv=0.04, BytesUp=1075216
+
+  Round 5/5
+    Reward=-1280.967, Q1=22336172843859968.0000, Q2=22258075306033152.0000, Actor=-4365851167817728.0000, Latency=58.26, PktAtk=0.10, SuccAtk=0.07, Drop=0.03, RSSI=-48.53, BER=0.00062, Rate=25.99, CommOv=0.03, BytesUp=1075216
+
+===== Running with SACDAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1299.467, Q1=5476144505683968.0000, Q2=5941367310123008.0000, Actor=-2403049234497536.0000, Latency=73.41, PktAtk=0.00, SuccAtk=0.00, Drop=0.01, RSSI=-86.01, BER=0.00023, Rate=3.93, CommOv=0.01, BytesUp=1082346
+
+  Round 2/5
+    Reward=-1265.244, Q1=38338931078463488.0000, Q2=38268656823566336.0000, Actor=-13262339319005184.0000, Latency=67.21, PktAtk=0.04, SuccAtk=0.02, Drop=0.01, RSSI=-76.65, BER=0.00094, Rate=19.79, CommOv=0.03, BytesUp=1082346
+
+  Round 3/5
+    Reward=-1446.598, Q1=19986490725498880.0000, Q2=20661743336292352.0000, Actor=-6967170319777792.0000, Latency=25.40, PktAtk=0.07, SuccAtk=0.04, Drop=0.02, RSSI=-40.52, BER=0.00064, Rate=17.15, CommOv=0.03, BytesUp=1082346
+
+  Round 4/5
+    Reward=-1045.900, Q1=2431511982768128.0000, Q2=3035615507513344.0000, Actor=-6359464659648512.0000, Latency=85.86, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-74.23, BER=0.00027, Rate=7.12, CommOv=0.05, BytesUp=1082346
+
+  Round 5/5
+    Reward=-1288.129, Q1=58621871184150528.0000, Q2=57338354567479296.0000, Actor=-34616753505959936.0000, Latency=88.87, PktAtk=0.03, SuccAtk=0.03, Drop=0.02, RSSI=-44.27, BER=0.00046, Rate=8.68, CommOv=0.01, BytesUp=1082346
+
+===== Running with SACHEFL Aggregator =====
+
+  Round 1/5
+    Reward=-1518.534, Q1=28642784709705728.0000, Q2=29656817898356736.0000, Actor=-17474355764133888.0000, Latency=60.52, PktAtk=0.03, SuccAtk=0.02, Drop=0.04, RSSI=-70.03, BER=0.00022, Rate=29.93, CommOv=0.03, BytesUp=3225648
+
+  Round 2/5
+    Reward=-617.556, Q1=20063901068558336.0000, Q2=20147998675697664.0000, Actor=-15298207504400384.0000, Latency=18.18, PktAtk=0.00, SuccAtk=0.00, Drop=0.03, RSSI=-50.40, BER=0.00042, Rate=2.84, CommOv=0.02, BytesUp=3225648
+
+  Round 3/5
+    Reward=-1272.527, Q1=76023300551081984.0000, Q2=75252250842234880.0000, Actor=-72715840725712896.0000, Latency=99.65, PktAtk=0.05, SuccAtk=0.05, Drop=0.04, RSSI=-89.43, BER=0.00072, Rate=20.77, CommOv=0.03, BytesUp=3225648
+
+  Round 4/5
+    Reward=-954.923, Q1=6869374451318784.0000, Q2=7274160086581248.0000, Actor=-6497141983805440.0000, Latency=34.01, PktAtk=0.06, SuccAtk=0.04, Drop=0.02, RSSI=-67.31, BER=0.00095, Rate=26.40, CommOv=0.01, BytesUp=3225648
+
+  Round 5/5
+    Reward=-1011.715, Q1=4688012638158848.0000, Q2=6120537239584768.0000, Actor=-16464696999673856.0000, Latency=55.05, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-75.08, BER=0.00064, Rate=18.66, CommOv=0.01, BytesUp=3225648
+
+===== Running with SACSAFL Aggregator =====
+
+  Round 1/5
+    Reward=-1109.608, Q1=135544589426622464.0000, Q2=134425432618434560.0000, Actor=-170872937409150976.0000, Latency=78.63, PktAtk=0.05, SuccAtk=0.05, Drop=0.03, RSSI=-89.97, BER=0.00032, Rate=1.56, CommOv=0.05, BytesUp=1182737
+
+  Round 2/5
+    Reward=-1280.746, Q1=51683811078963200.0000, Q2=50683435886313472.0000, Actor=-126316706162278400.0000, Latency=89.08, PktAtk=0.08, SuccAtk=0.05, Drop=0.00, RSSI=-46.10, BER=0.00095, Rate=3.48, CommOv=0.02, BytesUp=1182737
+
+  Round 3/5
+    Reward=-1325.027, Q1=71872214659497984.0000, Q2=72440335753543680.0000, Actor=-140045328605773824.0000, Latency=16.23, PktAtk=0.08, SuccAtk=0.07, Drop=0.01, RSSI=-66.24, BER=0.00055, Rate=8.69, CommOv=0.04, BytesUp=1182737
+
+  Round 4/5
+    Reward=-1293.421, Q1=72776210786025472.0000, Q2=70662992387112960.0000, Actor=-218936576388890624.0000, Latency=48.08, PktAtk=0.02, SuccAtk=0.02, Drop=0.04, RSSI=-79.94, BER=0.00031, Rate=29.86, CommOv=0.03, BytesUp=1182737
+
+  Round 5/5
+    Reward=-1383.986, Q1=16382480588210176.0000, Q2=17362591051415552.0000, Actor=-26393963455840256.0000, Latency=49.43, PktAtk=0.05, SuccAtk=0.03, Drop=0.01, RSSI=-73.10, BER=0.00059, Rate=7.67, CommOv=0.01, BytesUp=1182737
+
+
+
