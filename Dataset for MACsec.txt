@@ -1,0 +1,758 @@
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+--- Learning Rate: 0.01 ---
+Rounds 50: MACsec Global Accuracy=96.61%
+Rounds 100: MACsec Global Accuracy=96.45%
+Rounds 150: MACsec Global Accuracy=96.35%
+Rounds 200: MACsec Global Accuracy=96.29%
+Rounds 250: MACsec Global Accuracy=96.25%
+Rounds 300: MACsec Global Accuracy=96.23%
+Rounds 350: MACsec Global Accuracy=96.22%
+Rounds 400: MACsec Global Accuracy=96.21%
+Rounds 450: MACsec Global Accuracy=96.21%
+Rounds 500: MACsec Global Accuracy=96.20%
+
+Statistics for MACsec:
+Total malicious packets: 2
+Successful attacks: 0
+Attack success percentage: 0.00%
+
+
+--- Learning Rate: 0.05 ---
+Rounds 50: MACsec Global Accuracy=96.20%
+Rounds 100: MACsec Global Accuracy=96.20%
+Rounds 150: MACsec Global Accuracy=96.20%
+Rounds 200: MACsec Global Accuracy=96.20%
+Rounds 250: MACsec Global Accuracy=96.20%
+Rounds 300: MACsec Global Accuracy=96.20%
+Rounds 350: MACsec Global Accuracy=96.20%
+Rounds 400: MACsec Global Accuracy=96.20%
+Rounds 450: MACsec Global Accuracy=96.20%
+Rounds 500: MACsec Global Accuracy=96.20%
+
+Statistics for MACsec:
+Total malicious packets: 2
+Successful attacks: 0
+Attack success percentage: 0.00%
+
+
+--- Learning Rate: 0.1 ---
+Rounds 50: MACsec Global Accuracy=96.20%
+Rounds 100: MACsec Global Accuracy=96.20%
+Rounds 150: MACsec Global Accuracy=96.20%
+Rounds 200: MACsec Global Accuracy=96.20%
+Rounds 250: MACsec Global Accuracy=96.20%
+Rounds 300: MACsec Global Accuracy=96.20%
+Rounds 350: MACsec Global Accuracy=96.20%
+Rounds 400: MACsec Global Accuracy=96.20%
+Rounds 450: MACsec Global Accuracy=96.20%
+Rounds 500: MACsec Global Accuracy=96.20%
+
+Statistics for MACsec:
+Total malicious packets: 2
+Successful attacks: 0
+Attack success percentage: 0.00%
+
+
+--- Learning Rate: 0.01 ---
+Rounds 50: No MACsec Global Accuracy=95.72%
+Rounds 100: No MACsec Global Accuracy=95.20%
+Rounds 150: No MACsec Global Accuracy=95.12%
+Rounds 200: No MACsec Global Accuracy=95.13%
+Rounds 250: No MACsec Global Accuracy=95.11%
+Rounds 300: No MACsec Global Accuracy=95.06%
+Rounds 350: No MACsec Global Accuracy=95.05%
+Rounds 400: No MACsec Global Accuracy=95.01%
+Rounds 450: No MACsec Global Accuracy=95.01%
+Rounds 500: No MACsec Global Accuracy=95.02%
+
+Statistics for No MACsec:
+Total malicious packets: 2
+Successful attacks: 0
+Attack success percentage: 0.00%
+
+
+--- Learning Rate: 0.05 ---
+Rounds 50: No MACsec Global Accuracy=95.00%
+Rounds 100: No MACsec Global Accuracy=94.97%
+Rounds 150: No MACsec Global Accuracy=95.00%
+Rounds 200: No MACsec Global Accuracy=95.00%
+Rounds 250: No MACsec Global Accuracy=94.98%
+Rounds 300: No MACsec Global Accuracy=95.02%
+Rounds 350: No MACsec Global Accuracy=94.98%
+Rounds 400: No MACsec Global Accuracy=94.98%
+Rounds 450: No MACsec Global Accuracy=94.99%
+Rounds 500: No MACsec Global Accuracy=94.96%
+
+Statistics for No MACsec:
+Total malicious packets: 2
+Successful attacks: 1
+Attack success percentage: 50.00%
+
+
+--- Learning Rate: 0.1 ---
+Rounds 50: No MACsec Global Accuracy=95.04%
+Rounds 100: No MACsec Global Accuracy=95.04%
+Rounds 150: No MACsec Global Accuracy=95.02%
+Rounds 200: No MACsec Global Accuracy=95.01%
+Rounds 250: No MACsec Global Accuracy=94.93%
+Rounds 300: No MACsec Global Accuracy=94.96%
+Rounds 350: No MACsec Global Accuracy=95.03%
+Rounds 400: No MACsec Global Accuracy=95.02%
+Rounds 450: No MACsec Global Accuracy=94.95%
+Rounds 500: No MACsec Global Accuracy=94.94%
+
+Statistics for No MACsec:
+Total malicious packets: 2
+Successful attacks: 1
+Attack success percentage: 50.00%
+
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+
+--- Learning Rate: 0.01 ---
+Rounds 50: MACsec Global Accuracy=96.61%
+Rounds 100: MACsec Global Accuracy=96.45%
+Rounds 150: MACsec Global Accuracy=96.35%
+Rounds 200: MACsec Global Accuracy=96.29%
+Rounds 250: MACsec Global Accuracy=96.25%
+Rounds 300: MACsec Global Accuracy=96.23%
+Rounds 350: MACsec Global Accuracy=96.22%
+Rounds 400: MACsec Global Accuracy=96.21%
+Rounds 450: MACsec Global Accuracy=96.21%
+Rounds 500: MACsec Global Accuracy=96.20%
+Rounds 550: MACsec Global Accuracy=96.20%
+Rounds 600: MACsec Global Accuracy=96.20%
+Rounds 650: MACsec Global Accuracy=96.20%
+Rounds 700: MACsec Global Accuracy=96.20%
+Rounds 750: MACsec Global Accuracy=96.20%
+Rounds 800: MACsec Global Accuracy=96.20%
+Rounds 850: MACsec Global Accuracy=96.20%
+Rounds 900: MACsec Global Accuracy=96.20%
+Rounds 950: MACsec Global Accuracy=96.20%
+Rounds 1000: MACsec Global Accuracy=96.20%
+Rounds 1050: MACsec Global Accuracy=96.20%
+Rounds 1100: MACsec Global Accuracy=96.20%
+Rounds 1150: MACsec Global Accuracy=96.20%
+Rounds 1200: MACsec Global Accuracy=96.20%
+Rounds 1250: MACsec Global Accuracy=96.20%
+Rounds 1300: MACsec Global Accuracy=96.20%
+Rounds 1350: MACsec Global Accuracy=96.20%
+Rounds 1400: MACsec Global Accuracy=96.20%
+Rounds 1450: MACsec Global Accuracy=96.20%
+Rounds 1500: MACsec Global Accuracy=96.20%
+Rounds 1550: MACsec Global Accuracy=96.20%
+Rounds 1600: MACsec Global Accuracy=96.20%
+Rounds 1650: MACsec Global Accuracy=96.20%
+Rounds 1700: MACsec Global Accuracy=96.20%
+Rounds 1750: MACsec Global Accuracy=96.20%
+Rounds 1800: MACsec Global Accuracy=96.20%
+Rounds 1850: MACsec Global Accuracy=96.20%
+Rounds 1900: MACsec Global Accuracy=96.20%
+Rounds 1950: MACsec Global Accuracy=96.20%
+Rounds 2000: MACsec Global Accuracy=96.20%
+Rounds 2050: MACsec Global Accuracy=96.20%
+Rounds 2100: MACsec Global Accuracy=96.20%
+Rounds 2150: MACsec Global Accuracy=96.20%
+Rounds 2200: MACsec Global Accuracy=96.20%
+Rounds 2250: MACsec Global Accuracy=96.20%
+Rounds 2300: MACsec Global Accuracy=96.20%
+Rounds 2350: MACsec Global Accuracy=96.20%
+Rounds 2400: MACsec Global Accuracy=96.20%
+Rounds 2450: MACsec Global Accuracy=96.20%
+Rounds 2500: MACsec Global Accuracy=96.20%
+Rounds 2550: MACsec Global Accuracy=96.20%
+Rounds 2600: MACsec Global Accuracy=96.20%
+Rounds 2650: MACsec Global Accuracy=96.20%
+Rounds 2700: MACsec Global Accuracy=96.20%
+Rounds 2750: MACsec Global Accuracy=96.20%
+Rounds 2800: MACsec Global Accuracy=96.20%
+Rounds 2850: MACsec Global Accuracy=96.20%
+Rounds 2900: MACsec Global Accuracy=96.20%
+Rounds 2950: MACsec Global Accuracy=96.20%
+Rounds 3000: MACsec Global Accuracy=96.20%
+Rounds 3050: MACsec Global Accuracy=96.20%
+Rounds 3100: MACsec Global Accuracy=96.20%
+Rounds 3150: MACsec Global Accuracy=96.20%
+Rounds 3200: MACsec Global Accuracy=96.20%
+Rounds 3250: MACsec Global Accuracy=96.20%
+Rounds 3300: MACsec Global Accuracy=96.20%
+Rounds 3350: MACsec Global Accuracy=96.20%
+Rounds 3400: MACsec Global Accuracy=96.20%
+Rounds 3450: MACsec Global Accuracy=96.20%
+Rounds 3500: MACsec Global Accuracy=96.20%
+Rounds 3550: MACsec Global Accuracy=96.20%
+Rounds 3600: MACsec Global Accuracy=96.20%
+Rounds 3650: MACsec Global Accuracy=96.20%
+Rounds 3700: MACsec Global Accuracy=96.20%
+Rounds 3750: MACsec Global Accuracy=96.20%
+Rounds 3800: MACsec Global Accuracy=96.20%
+Rounds 3850: MACsec Global Accuracy=96.20%
+Rounds 3900: MACsec Global Accuracy=96.20%
+Rounds 3950: MACsec Global Accuracy=96.20%
+Rounds 4000: MACsec Global Accuracy=96.20%
+Rounds 4050: MACsec Global Accuracy=96.20%
+Rounds 4100: MACsec Global Accuracy=96.20%
+Rounds 4150: MACsec Global Accuracy=96.20%
+Rounds 4200: MACsec Global Accuracy=96.20%
+Rounds 4250: MACsec Global Accuracy=96.20%
+Rounds 4300: MACsec Global Accuracy=96.20%
+Rounds 4350: MACsec Global Accuracy=96.20%
+Rounds 4400: MACsec Global Accuracy=96.20%
+Rounds 4450: MACsec Global Accuracy=96.20%
+Rounds 4500: MACsec Global Accuracy=96.20%
+Rounds 4550: MACsec Global Accuracy=96.20%
+Rounds 4600: MACsec Global Accuracy=96.20%
+Rounds 4650: MACsec Global Accuracy=96.20%
+Rounds 4700: MACsec Global Accuracy=96.20%
+Rounds 4750: MACsec Global Accuracy=96.20%
+Rounds 4800: MACsec Global Accuracy=96.20%
+Rounds 4850: MACsec Global Accuracy=96.20%
+Rounds 4900: MACsec Global Accuracy=96.20%
+Rounds 4950: MACsec Global Accuracy=96.20%
+Rounds 5000: MACsec Global Accuracy=96.20%
+
+Statistics for MACsec:
+Total malicious packets: 2
+Successful attacks: 0
+Attack success percentage: 0.00%
+
+
+--- Learning Rate: 0.05 ---
+Rounds 50: MACsec Global Accuracy=96.20%
+Rounds 100: MACsec Global Accuracy=96.20%
+Rounds 150: MACsec Global Accuracy=96.20%
+Rounds 200: MACsec Global Accuracy=96.20%
+Rounds 250: MACsec Global Accuracy=96.20%
+Rounds 300: MACsec Global Accuracy=96.20%
+Rounds 350: MACsec Global Accuracy=96.20%
+Rounds 400: MACsec Global Accuracy=96.20%
+Rounds 450: MACsec Global Accuracy=96.20%
+Rounds 500: MACsec Global Accuracy=96.20%
+Rounds 550: MACsec Global Accuracy=96.20%
+Rounds 600: MACsec Global Accuracy=96.20%
+Rounds 650: MACsec Global Accuracy=96.20%
+Rounds 700: MACsec Global Accuracy=96.20%
+Rounds 750: MACsec Global Accuracy=96.20%
+Rounds 800: MACsec Global Accuracy=96.20%
+Rounds 850: MACsec Global Accuracy=96.20%
+Rounds 900: MACsec Global Accuracy=96.20%
+Rounds 950: MACsec Global Accuracy=96.20%
+Rounds 1000: MACsec Global Accuracy=96.20%
+Rounds 1050: MACsec Global Accuracy=96.20%
+Rounds 1100: MACsec Global Accuracy=96.20%
+Rounds 1150: MACsec Global Accuracy=96.20%
+Rounds 1200: MACsec Global Accuracy=96.20%
+Rounds 1250: MACsec Global Accuracy=96.20%
+Rounds 1300: MACsec Global Accuracy=96.20%
+Rounds 1350: MACsec Global Accuracy=96.20%
+Rounds 1400: MACsec Global Accuracy=96.20%
+Rounds 1450: MACsec Global Accuracy=96.20%
+Rounds 1500: MACsec Global Accuracy=96.20%
+Rounds 1550: MACsec Global Accuracy=96.20%
+Rounds 1600: MACsec Global Accuracy=96.20%
+Rounds 1650: MACsec Global Accuracy=96.20%
+Rounds 1700: MACsec Global Accuracy=96.20%
+Rounds 1750: MACsec Global Accuracy=96.20%
+Rounds 1800: MACsec Global Accuracy=96.20%
+Rounds 1850: MACsec Global Accuracy=96.20%
+Rounds 1900: MACsec Global Accuracy=96.20%
+Rounds 1950: MACsec Global Accuracy=96.20%
+Rounds 2000: MACsec Global Accuracy=96.20%
+Rounds 2050: MACsec Global Accuracy=96.20%
+Rounds 2100: MACsec Global Accuracy=96.20%
+Rounds 2150: MACsec Global Accuracy=96.20%
+Rounds 2200: MACsec Global Accuracy=96.20%
+Rounds 2250: MACsec Global Accuracy=96.20%
+Rounds 2300: MACsec Global Accuracy=96.20%
+Rounds 2350: MACsec Global Accuracy=96.20%
+Rounds 2400: MACsec Global Accuracy=96.20%
+Rounds 2450: MACsec Global Accuracy=96.20%
+Rounds 2500: MACsec Global Accuracy=96.20%
+Rounds 2550: MACsec Global Accuracy=96.20%
+Rounds 2600: MACsec Global Accuracy=96.20%
+Rounds 2650: MACsec Global Accuracy=96.20%
+Rounds 2700: MACsec Global Accuracy=96.20%
+Rounds 2750: MACsec Global Accuracy=96.20%
+Rounds 2800: MACsec Global Accuracy=96.20%
+Rounds 2850: MACsec Global Accuracy=96.20%
+Rounds 2900: MACsec Global Accuracy=96.20%
+Rounds 2950: MACsec Global Accuracy=96.20%
+Rounds 3000: MACsec Global Accuracy=96.20%
+Rounds 3050: MACsec Global Accuracy=96.20%
+Rounds 3100: MACsec Global Accuracy=96.20%
+Rounds 3150: MACsec Global Accuracy=96.20%
+Rounds 3200: MACsec Global Accuracy=96.20%
+Rounds 3250: MACsec Global Accuracy=96.20%
+Rounds 3300: MACsec Global Accuracy=96.20%
+Rounds 3350: MACsec Global Accuracy=96.20%
+Rounds 3400: MACsec Global Accuracy=96.20%
+Rounds 3450: MACsec Global Accuracy=96.20%
+Rounds 3500: MACsec Global Accuracy=96.20%
+Rounds 3550: MACsec Global Accuracy=96.20%
+Rounds 3600: MACsec Global Accuracy=96.20%
+Rounds 3650: MACsec Global Accuracy=96.20%
+Rounds 3700: MACsec Global Accuracy=96.20%
+Rounds 3750: MACsec Global Accuracy=96.20%
+Rounds 3800: MACsec Global Accuracy=96.20%
+Rounds 3850: MACsec Global Accuracy=96.20%
+Rounds 3900: MACsec Global Accuracy=96.20%
+Rounds 3950: MACsec Global Accuracy=96.20%
+Rounds 4000: MACsec Global Accuracy=96.20%
+Rounds 4050: MACsec Global Accuracy=96.20%
+Rounds 4100: MACsec Global Accuracy=96.20%
+Rounds 4150: MACsec Global Accuracy=96.20%
+Rounds 4200: MACsec Global Accuracy=96.20%
+Rounds 4250: MACsec Global Accuracy=96.20%
+Rounds 4300: MACsec Global Accuracy=96.20%
+Rounds 4350: MACsec Global Accuracy=96.20%
+Rounds 4400: MACsec Global Accuracy=96.20%
+Rounds 4450: MACsec Global Accuracy=96.20%
+Rounds 4500: MACsec Global Accuracy=96.20%
+Rounds 4550: MACsec Global Accuracy=96.20%
+Rounds 4600: MACsec Global Accuracy=96.20%
+Rounds 4650: MACsec Global Accuracy=96.20%
+Rounds 4700: MACsec Global Accuracy=96.20%
+Rounds 4750: MACsec Global Accuracy=96.20%
+Rounds 4800: MACsec Global Accuracy=96.20%
+Rounds 4850: MACsec Global Accuracy=96.20%
+Rounds 4900: MACsec Global Accuracy=96.20%
+Rounds 4950: MACsec Global Accuracy=96.20%
+Rounds 5000: MACsec Global Accuracy=96.20%
+
+Statistics for MACsec:
+Total malicious packets: 2
+Successful attacks: 0
+Attack success percentage: 0.00%
+
+
+--- Learning Rate: 0.1 ---
+Rounds 50: MACsec Global Accuracy=96.20%
+Rounds 100: MACsec Global Accuracy=96.20%
+Rounds 150: MACsec Global Accuracy=96.20%
+Rounds 200: MACsec Global Accuracy=96.20%
+Rounds 250: MACsec Global Accuracy=96.20%
+Rounds 300: MACsec Global Accuracy=96.20%
+Rounds 350: MACsec Global Accuracy=96.20%
+Rounds 400: MACsec Global Accuracy=96.20%
+Rounds 450: MACsec Global Accuracy=96.20%
+Rounds 500: MACsec Global Accuracy=96.20%
+Rounds 550: MACsec Global Accuracy=96.20%
+Rounds 600: MACsec Global Accuracy=96.20%
+Rounds 650: MACsec Global Accuracy=96.20%
+Rounds 700: MACsec Global Accuracy=96.20%
+Rounds 750: MACsec Global Accuracy=96.20%
+Rounds 800: MACsec Global Accuracy=96.20%
+Rounds 850: MACsec Global Accuracy=96.20%
+Rounds 900: MACsec Global Accuracy=96.20%
+Rounds 950: MACsec Global Accuracy=96.20%
+Rounds 1000: MACsec Global Accuracy=96.20%
+Rounds 1050: MACsec Global Accuracy=96.20%
+Rounds 1100: MACsec Global Accuracy=96.20%
+Rounds 1150: MACsec Global Accuracy=96.20%
+Rounds 1200: MACsec Global Accuracy=96.20%
+Rounds 1250: MACsec Global Accuracy=96.20%
+Rounds 1300: MACsec Global Accuracy=96.20%
+Rounds 1350: MACsec Global Accuracy=96.20%
+Rounds 1400: MACsec Global Accuracy=96.20%
+Rounds 1450: MACsec Global Accuracy=96.20%
+Rounds 1500: MACsec Global Accuracy=96.20%
+Rounds 1550: MACsec Global Accuracy=96.20%
+Rounds 1600: MACsec Global Accuracy=96.20%
+Rounds 1650: MACsec Global Accuracy=96.20%
+Rounds 1700: MACsec Global Accuracy=96.20%
+Rounds 1750: MACsec Global Accuracy=96.20%
+Rounds 1800: MACsec Global Accuracy=96.20%
+Rounds 1850: MACsec Global Accuracy=96.20%
+Rounds 1900: MACsec Global Accuracy=96.20%
+Rounds 1950: MACsec Global Accuracy=96.20%
+Rounds 2000: MACsec Global Accuracy=96.20%
+Rounds 2050: MACsec Global Accuracy=96.20%
+Rounds 2100: MACsec Global Accuracy=96.20%
+Rounds 2150: MACsec Global Accuracy=96.20%
+Rounds 2200: MACsec Global Accuracy=96.20%
+Rounds 2250: MACsec Global Accuracy=96.20%
+Rounds 2300: MACsec Global Accuracy=96.20%
+Rounds 2350: MACsec Global Accuracy=96.20%
+Rounds 2400: MACsec Global Accuracy=96.20%
+Rounds 2450: MACsec Global Accuracy=96.20%
+Rounds 2500: MACsec Global Accuracy=96.20%
+Rounds 2550: MACsec Global Accuracy=96.20%
+Rounds 2600: MACsec Global Accuracy=96.20%
+Rounds 2650: MACsec Global Accuracy=96.20%
+Rounds 2700: MACsec Global Accuracy=96.20%
+Rounds 2750: MACsec Global Accuracy=96.20%
+Rounds 2800: MACsec Global Accuracy=96.20%
+Rounds 2850: MACsec Global Accuracy=96.20%
+Rounds 2900: MACsec Global Accuracy=96.20%
+Rounds 2950: MACsec Global Accuracy=96.20%
+Rounds 3000: MACsec Global Accuracy=96.20%
+Rounds 3050: MACsec Global Accuracy=96.20%
+Rounds 3100: MACsec Global Accuracy=96.20%
+Rounds 3150: MACsec Global Accuracy=96.20%
+Rounds 3200: MACsec Global Accuracy=96.20%
+Rounds 3250: MACsec Global Accuracy=96.20%
+Rounds 3300: MACsec Global Accuracy=96.20%
+Rounds 3350: MACsec Global Accuracy=96.20%
+Rounds 3400: MACsec Global Accuracy=96.20%
+Rounds 3450: MACsec Global Accuracy=96.20%
+Rounds 3500: MACsec Global Accuracy=96.20%
+Rounds 3550: MACsec Global Accuracy=96.20%
+Rounds 3600: MACsec Global Accuracy=96.20%
+Rounds 3650: MACsec Global Accuracy=96.20%
+Rounds 3700: MACsec Global Accuracy=96.20%
+Rounds 3750: MACsec Global Accuracy=96.20%
+Rounds 3800: MACsec Global Accuracy=96.20%
+Rounds 3850: MACsec Global Accuracy=96.20%
+Rounds 3900: MACsec Global Accuracy=96.20%
+Rounds 3950: MACsec Global Accuracy=96.20%
+Rounds 4000: MACsec Global Accuracy=96.20%
+Rounds 4050: MACsec Global Accuracy=96.20%
+Rounds 4100: MACsec Global Accuracy=96.20%
+Rounds 4150: MACsec Global Accuracy=96.20%
+Rounds 4200: MACsec Global Accuracy=96.20%
+Rounds 4250: MACsec Global Accuracy=96.20%
+Rounds 4300: MACsec Global Accuracy=96.20%
+Rounds 4350: MACsec Global Accuracy=96.20%
+Rounds 4400: MACsec Global Accuracy=96.20%
+Rounds 4450: MACsec Global Accuracy=96.20%
+Rounds 4500: MACsec Global Accuracy=96.20%
+Rounds 4550: MACsec Global Accuracy=96.20%
+Rounds 4600: MACsec Global Accuracy=96.20%
+Rounds 4650: MACsec Global Accuracy=96.20%
+Rounds 4700: MACsec Global Accuracy=96.20%
+Rounds 4750: MACsec Global Accuracy=96.20%
+Rounds 4800: MACsec Global Accuracy=96.20%
+Rounds 4850: MACsec Global Accuracy=96.20%
+Rounds 4900: MACsec Global Accuracy=96.20%
+Rounds 4950: MACsec Global Accuracy=96.20%
+Rounds 5000: MACsec Global Accuracy=96.20%
+
+Statistics for MACsec:
+Total malicious packets: 2
+Successful attacks: 0
+Attack success percentage: 0.00%
+
+
+--- Learning Rate: 0.01 ---
+Rounds 50: No MACsec Global Accuracy=95.72%
+Rounds 100: No MACsec Global Accuracy=95.20%
+Rounds 150: No MACsec Global Accuracy=95.12%
+Rounds 200: No MACsec Global Accuracy=95.13%
+Rounds 250: No MACsec Global Accuracy=95.11%
+Rounds 300: No MACsec Global Accuracy=95.06%
+Rounds 350: No MACsec Global Accuracy=95.05%
+Rounds 400: No MACsec Global Accuracy=95.01%
+Rounds 450: No MACsec Global Accuracy=95.01%
+Rounds 500: No MACsec Global Accuracy=95.02%
+Rounds 550: No MACsec Global Accuracy=94.99%
+Rounds 600: No MACsec Global Accuracy=94.99%
+Rounds 650: No MACsec Global Accuracy=95.00%
+Rounds 700: No MACsec Global Accuracy=95.01%
+Rounds 750: No MACsec Global Accuracy=94.99%
+Rounds 800: No MACsec Global Accuracy=95.01%
+Rounds 850: No MACsec Global Accuracy=94.99%
+Rounds 900: No MACsec Global Accuracy=94.99%
+Rounds 950: No MACsec Global Accuracy=94.99%
+Rounds 1000: No MACsec Global Accuracy=94.99%
+Rounds 1050: No MACsec Global Accuracy=95.00%
+Rounds 1100: No MACsec Global Accuracy=95.00%
+Rounds 1150: No MACsec Global Accuracy=94.99%
+Rounds 1200: No MACsec Global Accuracy=95.01%
+Rounds 1250: No MACsec Global Accuracy=94.98%
+Rounds 1300: No MACsec Global Accuracy=94.99%
+Rounds 1350: No MACsec Global Accuracy=95.00%
+Rounds 1400: No MACsec Global Accuracy=95.00%
+Rounds 1450: No MACsec Global Accuracy=94.98%
+Rounds 1500: No MACsec Global Accuracy=95.00%
+Rounds 1550: No MACsec Global Accuracy=94.99%
+Rounds 1600: No MACsec Global Accuracy=94.99%
+Rounds 1650: No MACsec Global Accuracy=95.03%
+Rounds 1700: No MACsec Global Accuracy=95.01%
+Rounds 1750: No MACsec Global Accuracy=95.01%
+Rounds 1800: No MACsec Global Accuracy=94.99%
+Rounds 1850: No MACsec Global Accuracy=95.01%
+Rounds 1900: No MACsec Global Accuracy=95.00%
+Rounds 1950: No MACsec Global Accuracy=95.00%
+Rounds 2000: No MACsec Global Accuracy=95.00%
+Rounds 2050: No MACsec Global Accuracy=95.00%
+Rounds 2100: No MACsec Global Accuracy=95.00%
+Rounds 2150: No MACsec Global Accuracy=95.00%
+Rounds 2200: No MACsec Global Accuracy=95.00%
+Rounds 2250: No MACsec Global Accuracy=95.00%
+Rounds 2300: No MACsec Global Accuracy=95.00%
+Rounds 2350: No MACsec Global Accuracy=94.99%
+Rounds 2400: No MACsec Global Accuracy=94.99%
+Rounds 2450: No MACsec Global Accuracy=95.00%
+Rounds 2500: No MACsec Global Accuracy=94.98%
+Rounds 2550: No MACsec Global Accuracy=95.00%
+Rounds 2600: No MACsec Global Accuracy=95.01%
+Rounds 2650: No MACsec Global Accuracy=95.02%
+Rounds 2700: No MACsec Global Accuracy=94.99%
+Rounds 2750: No MACsec Global Accuracy=95.00%
+Rounds 2800: No MACsec Global Accuracy=95.00%
+Rounds 2850: No MACsec Global Accuracy=94.99%
+Rounds 2900: No MACsec Global Accuracy=95.00%
+Rounds 2950: No MACsec Global Accuracy=95.01%
+Rounds 3000: No MACsec Global Accuracy=95.00%
+Rounds 3050: No MACsec Global Accuracy=94.98%
+Rounds 3100: No MACsec Global Accuracy=95.01%
+Rounds 3150: No MACsec Global Accuracy=95.01%
+Rounds 3200: No MACsec Global Accuracy=94.99%
+Rounds 3250: No MACsec Global Accuracy=95.00%
+Rounds 3300: No MACsec Global Accuracy=95.00%
+Rounds 3350: No MACsec Global Accuracy=95.01%
+Rounds 3400: No MACsec Global Accuracy=94.99%
+Rounds 3450: No MACsec Global Accuracy=95.00%
+Rounds 3500: No MACsec Global Accuracy=94.99%
+Rounds 3550: No MACsec Global Accuracy=94.99%
+Rounds 3600: No MACsec Global Accuracy=94.99%
+Rounds 3650: No MACsec Global Accuracy=95.01%
+Rounds 3700: No MACsec Global Accuracy=94.99%
+Rounds 3750: No MACsec Global Accuracy=94.99%
+Rounds 3800: No MACsec Global Accuracy=94.98%
+Rounds 3850: No MACsec Global Accuracy=94.99%
+Rounds 3900: No MACsec Global Accuracy=95.01%
+Rounds 3950: No MACsec Global Accuracy=95.00%
+Rounds 4000: No MACsec Global Accuracy=95.01%
+Rounds 4050: No MACsec Global Accuracy=94.99%
+Rounds 4100: No MACsec Global Accuracy=95.01%
+Rounds 4150: No MACsec Global Accuracy=95.00%
+Rounds 4200: No MACsec Global Accuracy=94.99%
+Rounds 4250: No MACsec Global Accuracy=95.00%
+Rounds 4300: No MACsec Global Accuracy=95.01%
+Rounds 4350: No MACsec Global Accuracy=95.00%
+Rounds 4400: No MACsec Global Accuracy=95.00%
+Rounds 4450: No MACsec Global Accuracy=94.99%
+Rounds 4500: No MACsec Global Accuracy=94.99%
+Rounds 4550: No MACsec Global Accuracy=95.00%
+Rounds 4600: No MACsec Global Accuracy=94.99%
+Rounds 4650: No MACsec Global Accuracy=94.99%
+Rounds 4700: No MACsec Global Accuracy=94.99%
+Rounds 4750: No MACsec Global Accuracy=94.99%
+Rounds 4800: No MACsec Global Accuracy=94.97%
+Rounds 4850: No MACsec Global Accuracy=94.97%
+Rounds 4900: No MACsec Global Accuracy=95.02%
+Rounds 4950: No MACsec Global Accuracy=95.01%
+Rounds 5000: No MACsec Global Accuracy=95.01%
+
+Statistics for No MACsec:
+Total malicious packets: 2
+Successful attacks: 1
+Attack success percentage: 50.00%
+
+
+--- Learning Rate: 0.05 ---
+Rounds 50: No MACsec Global Accuracy=94.98%
+Rounds 100: No MACsec Global Accuracy=94.97%
+Rounds 150: No MACsec Global Accuracy=95.02%
+Rounds 200: No MACsec Global Accuracy=94.99%
+Rounds 250: No MACsec Global Accuracy=95.06%
+Rounds 300: No MACsec Global Accuracy=95.04%
+Rounds 350: No MACsec Global Accuracy=95.01%
+Rounds 400: No MACsec Global Accuracy=95.00%
+Rounds 450: No MACsec Global Accuracy=94.97%
+Rounds 500: No MACsec Global Accuracy=95.00%
+Rounds 550: No MACsec Global Accuracy=95.01%
+Rounds 600: No MACsec Global Accuracy=95.03%
+Rounds 650: No MACsec Global Accuracy=94.96%
+Rounds 700: No MACsec Global Accuracy=95.03%
+Rounds 750: No MACsec Global Accuracy=94.98%
+Rounds 800: No MACsec Global Accuracy=95.01%
+Rounds 850: No MACsec Global Accuracy=94.98%
+Rounds 900: No MACsec Global Accuracy=95.00%
+Rounds 950: No MACsec Global Accuracy=94.99%
+Rounds 1000: No MACsec Global Accuracy=94.98%
+Rounds 1050: No MACsec Global Accuracy=94.98%
+Rounds 1100: No MACsec Global Accuracy=95.01%
+Rounds 1150: No MACsec Global Accuracy=94.96%
+Rounds 1200: No MACsec Global Accuracy=94.98%
+Rounds 1250: No MACsec Global Accuracy=94.97%
+Rounds 1300: No MACsec Global Accuracy=94.97%
+Rounds 1350: No MACsec Global Accuracy=94.98%
+Rounds 1400: No MACsec Global Accuracy=95.01%
+Rounds 1450: No MACsec Global Accuracy=95.03%
+Rounds 1500: No MACsec Global Accuracy=95.04%
+Rounds 1550: No MACsec Global Accuracy=95.01%
+Rounds 1600: No MACsec Global Accuracy=95.00%
+Rounds 1650: No MACsec Global Accuracy=94.96%
+Rounds 1700: No MACsec Global Accuracy=94.99%
+Rounds 1750: No MACsec Global Accuracy=95.02%
+Rounds 1800: No MACsec Global Accuracy=94.99%
+Rounds 1850: No MACsec Global Accuracy=95.00%
+Rounds 1900: No MACsec Global Accuracy=95.04%
+Rounds 1950: No MACsec Global Accuracy=94.99%
+Rounds 2000: No MACsec Global Accuracy=94.98%
+Rounds 2050: No MACsec Global Accuracy=94.98%
+Rounds 2100: No MACsec Global Accuracy=94.97%
+Rounds 2150: No MACsec Global Accuracy=94.96%
+Rounds 2200: No MACsec Global Accuracy=95.04%
+Rounds 2250: No MACsec Global Accuracy=94.99%
+Rounds 2300: No MACsec Global Accuracy=95.04%
+Rounds 2350: No MACsec Global Accuracy=95.00%
+Rounds 2400: No MACsec Global Accuracy=94.98%
+Rounds 2450: No MACsec Global Accuracy=94.98%
+Rounds 2500: No MACsec Global Accuracy=95.00%
+Rounds 2550: No MACsec Global Accuracy=95.00%
+Rounds 2600: No MACsec Global Accuracy=94.99%
+Rounds 2650: No MACsec Global Accuracy=94.99%
+Rounds 2700: No MACsec Global Accuracy=95.03%
+Rounds 2750: No MACsec Global Accuracy=94.99%
+Rounds 2800: No MACsec Global Accuracy=95.02%
+Rounds 2850: No MACsec Global Accuracy=94.98%
+Rounds 2900: No MACsec Global Accuracy=95.00%
+Rounds 2950: No MACsec Global Accuracy=95.02%
+Rounds 3000: No MACsec Global Accuracy=94.99%
+Rounds 3050: No MACsec Global Accuracy=95.02%
+Rounds 3100: No MACsec Global Accuracy=95.02%
+Rounds 3150: No MACsec Global Accuracy=94.99%
+Rounds 3200: No MACsec Global Accuracy=94.99%
+Rounds 3250: No MACsec Global Accuracy=95.00%
+Rounds 3300: No MACsec Global Accuracy=94.99%
+Rounds 3350: No MACsec Global Accuracy=95.02%
+Rounds 3400: No MACsec Global Accuracy=94.97%
+Rounds 3450: No MACsec Global Accuracy=95.02%
+Rounds 3500: No MACsec Global Accuracy=95.06%
+Rounds 3550: No MACsec Global Accuracy=95.03%
+Rounds 3600: No MACsec Global Accuracy=95.02%
+Rounds 3650: No MACsec Global Accuracy=95.00%
+Rounds 3700: No MACsec Global Accuracy=95.00%
+Rounds 3750: No MACsec Global Accuracy=95.02%
+Rounds 3800: No MACsec Global Accuracy=94.98%
+Rounds 3850: No MACsec Global Accuracy=95.03%
+Rounds 3900: No MACsec Global Accuracy=94.96%
+Rounds 3950: No MACsec Global Accuracy=95.01%
+Rounds 4000: No MACsec Global Accuracy=95.02%
+Rounds 4050: No MACsec Global Accuracy=95.01%
+Rounds 4100: No MACsec Global Accuracy=95.02%
+Rounds 4150: No MACsec Global Accuracy=94.96%
+Rounds 4200: No MACsec Global Accuracy=95.00%
+Rounds 4250: No MACsec Global Accuracy=95.04%
+Rounds 4300: No MACsec Global Accuracy=94.98%
+Rounds 4350: No MACsec Global Accuracy=94.99%
+Rounds 4400: No MACsec Global Accuracy=95.01%
+Rounds 4450: No MACsec Global Accuracy=94.97%
+Rounds 4500: No MACsec Global Accuracy=95.01%
+Rounds 4550: No MACsec Global Accuracy=95.01%
+Rounds 4600: No MACsec Global Accuracy=95.00%
+Rounds 4650: No MACsec Global Accuracy=94.98%
+Rounds 4700: No MACsec Global Accuracy=95.02%
+Rounds 4750: No MACsec Global Accuracy=95.04%
+Rounds 4800: No MACsec Global Accuracy=94.99%
+Rounds 4850: No MACsec Global Accuracy=95.00%
+Rounds 4900: No MACsec Global Accuracy=94.96%
+Rounds 4950: No MACsec Global Accuracy=95.00%
+Rounds 5000: No MACsec Global Accuracy=95.00%
+
+Statistics for No MACsec:
+Total malicious packets: 2
+Successful attacks: 1
+Attack success percentage: 50.00%
+
+
+--- Learning Rate: 0.1 ---
+Rounds 50: No MACsec Global Accuracy=94.99%
+Rounds 100: No MACsec Global Accuracy=95.03%
+Rounds 150: No MACsec Global Accuracy=95.01%
+Rounds 200: No MACsec Global Accuracy=94.98%
+Rounds 250: No MACsec Global Accuracy=94.98%
+Rounds 300: No MACsec Global Accuracy=94.97%
+Rounds 350: No MACsec Global Accuracy=94.98%
+Rounds 400: No MACsec Global Accuracy=95.05%
+Rounds 450: No MACsec Global Accuracy=94.95%
+Rounds 500: No MACsec Global Accuracy=95.06%
+Rounds 550: No MACsec Global Accuracy=95.05%
+Rounds 600: No MACsec Global Accuracy=95.03%
+Rounds 650: No MACsec Global Accuracy=94.99%
+Rounds 700: No MACsec Global Accuracy=95.00%
+Rounds 750: No MACsec Global Accuracy=94.95%
+Rounds 800: No MACsec Global Accuracy=94.98%
+Rounds 850: No MACsec Global Accuracy=94.96%
+Rounds 900: No MACsec Global Accuracy=94.99%
+Rounds 950: No MACsec Global Accuracy=95.03%
+Rounds 1000: No MACsec Global Accuracy=95.03%
+Rounds 1050: No MACsec Global Accuracy=94.94%
+Rounds 1100: No MACsec Global Accuracy=94.98%
+Rounds 1150: No MACsec Global Accuracy=95.02%
+Rounds 1200: No MACsec Global Accuracy=94.97%
+Rounds 1250: No MACsec Global Accuracy=95.03%
+Rounds 1300: No MACsec Global Accuracy=94.99%
+Rounds 1350: No MACsec Global Accuracy=94.98%
+Rounds 1400: No MACsec Global Accuracy=94.99%
+Rounds 1450: No MACsec Global Accuracy=94.98%
+Rounds 1500: No MACsec Global Accuracy=95.02%
+Rounds 1550: No MACsec Global Accuracy=95.03%
+Rounds 1600: No MACsec Global Accuracy=94.94%
+Rounds 1650: No MACsec Global Accuracy=95.02%
+Rounds 1700: No MACsec Global Accuracy=95.04%
+Rounds 1750: No MACsec Global Accuracy=94.94%
+Rounds 1800: No MACsec Global Accuracy=94.99%
+Rounds 1850: No MACsec Global Accuracy=94.99%
+Rounds 1900: No MACsec Global Accuracy=94.98%
+Rounds 1950: No MACsec Global Accuracy=95.03%
+Rounds 2000: No MACsec Global Accuracy=95.01%
+Rounds 2050: No MACsec Global Accuracy=95.05%
+Rounds 2100: No MACsec Global Accuracy=95.03%
+Rounds 2150: No MACsec Global Accuracy=94.98%
+Rounds 2200: No MACsec Global Accuracy=95.01%
+Rounds 2250: No MACsec Global Accuracy=94.99%
+Rounds 2300: No MACsec Global Accuracy=95.03%
+Rounds 2350: No MACsec Global Accuracy=95.03%
+Rounds 2400: No MACsec Global Accuracy=95.01%
+Rounds 2450: No MACsec Global Accuracy=95.08%
+Rounds 2500: No MACsec Global Accuracy=95.01%
+Rounds 2550: No MACsec Global Accuracy=95.01%
+Rounds 2600: No MACsec Global Accuracy=95.02%
+Rounds 2650: No MACsec Global Accuracy=95.04%
+Rounds 2700: No MACsec Global Accuracy=94.99%
+Rounds 2750: No MACsec Global Accuracy=94.94%
+Rounds 2800: No MACsec Global Accuracy=95.03%
+Rounds 2850: No MACsec Global Accuracy=95.00%
+Rounds 2900: No MACsec Global Accuracy=94.93%
+Rounds 2950: No MACsec Global Accuracy=94.99%
+Rounds 3000: No MACsec Global Accuracy=95.02%
+Rounds 3050: No MACsec Global Accuracy=95.01%
+Rounds 3100: No MACsec Global Accuracy=94.97%
+Rounds 3150: No MACsec Global Accuracy=94.92%
+Rounds 3200: No MACsec Global Accuracy=94.91%
+Rounds 3250: No MACsec Global Accuracy=95.04%
+Rounds 3300: No MACsec Global Accuracy=94.99%
+Rounds 3350: No MACsec Global Accuracy=94.98%
+Rounds 3400: No MACsec Global Accuracy=94.97%
+Rounds 3450: No MACsec Global Accuracy=94.97%
+Rounds 3500: No MACsec Global Accuracy=94.99%
+Rounds 3550: No MACsec Global Accuracy=94.93%
+Rounds 3600: No MACsec Global Accuracy=94.95%
+Rounds 3650: No MACsec Global Accuracy=95.01%
+Rounds 3700: No MACsec Global Accuracy=95.00%
+Rounds 3750: No MACsec Global Accuracy=94.98%
+Rounds 3800: No MACsec Global Accuracy=95.06%
+Rounds 3850: No MACsec Global Accuracy=94.96%
+Rounds 3900: No MACsec Global Accuracy=94.97%
+Rounds 3950: No MACsec Global Accuracy=94.96%
+Rounds 4000: No MACsec Global Accuracy=94.93%
+Rounds 4050: No MACsec Global Accuracy=94.92%
+Rounds 4100: No MACsec Global Accuracy=95.00%
+Rounds 4150: No MACsec Global Accuracy=94.94%
+Rounds 4200: No MACsec Global Accuracy=94.95%
+Rounds 4250: No MACsec Global Accuracy=94.95%
+Rounds 4300: No MACsec Global Accuracy=95.02%
+Rounds 4350: No MACsec Global Accuracy=95.00%
+Rounds 4400: No MACsec Global Accuracy=94.94%
+Rounds 4450: No MACsec Global Accuracy=94.99%
+Rounds 4500: No MACsec Global Accuracy=94.96%
+Rounds 4550: No MACsec Global Accuracy=94.93%
+Rounds 4600: No MACsec Global Accuracy=95.01%
+Rounds 4650: No MACsec Global Accuracy=94.99%
+Rounds 4700: No MACsec Global Accuracy=94.98%
+Rounds 4750: No MACsec Global Accuracy=94.96%
+Rounds 4800: No MACsec Global Accuracy=94.96%
+Rounds 4850: No MACsec Global Accuracy=94.98%
+Rounds 4900: No MACsec Global Accuracy=94.97%
+Rounds 4950: No MACsec Global Accuracy=94.96%
+Rounds 5000: No MACsec Global Accuracy=95.00%
+
+Statistics for No MACsec:
+Total malicious packets: 2
+Successful attacks: 1
+Attack success percentage: 50.00%
+

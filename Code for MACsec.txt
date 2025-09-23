@@ -1,0 +1,183 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import random
+import os
+from cryptography.hazmat.primitives.asymmetric import dh
+from cryptography.hazmat.primitives import serialization, hashes
+from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+
+# -------------------------
+# Configuration / Params
+# -------------------------
+np.random.seed(920)
+random.seed(920)
+
+num_orus = 10               # number of ORU clients
+num_episodes = 5000          # number of rounds
+local_samples_per_oru = 100 # each ORU local dataset size
+malicious_oru_ids = [0, 1]  # indices of malicious ORUs
+ATTACK_DEGRADATION_PROB = 0.6
+MALICIOUS_COMPROMISE_RATE = 0.5  # fraction of malicious ORUs that have key
+
+learning_rates = [0.01, 0.05, 0.1] # for simulating effect of learning rate
+batch_size = 32
+
+# -------------------------
+# DH Key Exchange -> SAK Generation
+# -------------------------
+def generate_dh_shared_key():
+    parameters = dh.generate_parameters(generator=2, key_size=2048, backend=default_backend())
+    server_priv = parameters.generate_private_key()
+    client_priv = parameters.generate_private_key()
+
+    server_pub = server_priv.public_key().public_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PublicFormat.SubjectPublicKeyInfo
+    )
+    client_pub = client_priv.public_key().public_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PublicFormat.SubjectPublicKeyInfo
+    )
+
+    shared_server = server_priv.exchange(serialization.load_pem_public_key(client_pub, backend=default_backend()))
+    shared_client = client_priv.exchange(serialization.load_pem_public_key(server_pub, backend=default_backend()))
+
+    hkdf_server = HKDF(algorithm=hashes.SHA256(), length=32, salt=None, info=b"macsec-fl", backend=default_backend())
+    key_server = hkdf_server.derive(shared_server)
+    hkdf_client = HKDF(algorithm=hashes.SHA256(), length=32, salt=None, info=b"macsec-fl", backend=default_backend())
+    key_client = hkdf_client.derive(shared_client)
+    assert key_server == key_client
+    return key_server
+
+SAK = generate_dh_shared_key()
+
+# -------------------------
+# AES-GCM Helpers
+# -------------------------
+def encrypt_packet(aesgcm_key, plaintext_bytes):
+    nonce = os.urandom(12)
+    ct = AESGCM(aesgcm_key).encrypt(nonce, plaintext_bytes, associated_data=None)
+    return nonce, ct
+
+def decrypt_packet(aesgcm_key, nonce, ciphertext):
+    try:
+        pt = AESGCM(aesgcm_key).decrypt(nonce, ciphertext, associated_data=None)
+        return True, pt
+    except Exception:
+        return False, None
+
+# -------------------------
+# ORU Client Class
+# -------------------------
+class ORU:
+    def __init__(self, id, num_samples, is_malicious=False, compromised=False):
+        self.id = id
+        self.is_malicious = is_malicious
+        self.compromised = compromised
+        # simulate local labels
+        self.y_true = np.random.randint(0, 2, num_samples)
+        # initial predictions
+        self.predictions = np.clip(self.y_true + np.random.normal(0, 0.2, num_samples), 0, 1)
+        # local weight (simulate as float between 0 and 1)
+        self.local_weight = np.mean(self.predictions)
+
+    def local_update(self, lr):
+        # simulate gradient update: move local weight toward true mean
+        self.local_weight = self.local_weight + lr * (np.mean(self.y_true) - self.local_weight)
+        # If malicious and compromised, may flip weight
+        if self.is_malicious:
+            if self.compromised and np.random.rand() < ATTACK_DEGRADATION_PROB:
+                self.local_weight = 1 - self.local_weight
+        return self.local_weight
+
+# -------------------------
+# Server Aggregation
+# -------------------------
+def federated_aggregate(weights):
+    return np.mean(weights)
+
+# -------------------------
+# Simulation Function
+# -------------------------
+def run_federated_simulation(macsec_enabled=True):
+    # Initialize ORUs
+    orus = []
+    for i in range(num_orus):
+        is_mal = i in malicious_oru_ids
+        compromised = np.random.rand() < MALICIOUS_COMPROMISE_RATE if is_mal else False
+        orus.append(ORU(i, local_samples_per_oru, is_malicious=is_mal, compromised=compromised))
+
+    global_weight = 0.5  # initial global weight
+    global_weights = []
+    accuracies = []
+
+    for lr in learning_rates:
+        print(f"\n--- Learning Rate: {lr} ---")
+        for episode in range(num_episodes):
+            local_weights = []
+            total_malicious_packets = 0
+            successful_attacks = 0
+
+            for oru in orus:
+                w = oru.local_update(lr)
+                # Encrypt if MACsec
+                if macsec_enabled:
+                    plaintext = str(w).encode()
+                    nonce, ct = encrypt_packet(SAK, plaintext)
+                    ok, decrypted = decrypt_packet(SAK, nonce, ct)
+                    if ok:
+                        final_weight = float(decrypted.decode())
+                        # count malicious success
+                        if oru.is_malicious and oru.compromised and np.random.rand() < ATTACK_DEGRADATION_PROB:
+                            successful_attacks +=1
+                        if oru.is_malicious:
+                            total_malicious_packets +=1
+                        local_weights.append(final_weight)
+                else:
+                    # No MACsec: malicious may succeed
+                    if oru.is_malicious:
+                        total_malicious_packets +=1
+                        if np.random.rand() < ATTACK_DEGRADATION_PROB:
+                            w = 1 - w
+                            successful_attacks +=1
+                    local_weights.append(w)
+
+            # Aggregate at server
+            global_weight = federated_aggregate(local_weights)
+            global_weights.append(global_weight)
+
+            # Simulate global accuracy as proximity to 0.5 (for demonstration)
+            accuracy = 100 - abs(0.5 - global_weight) * 200  # arbitrary scale to get percentage
+            accuracies.append(accuracy)
+
+            if (episode+1) % 50 == 0:
+                model_name = "MACsec" if macsec_enabled else "No MACsec"
+                print(f"Rounds {episode+1}: {model_name} Global Accuracy={accuracy:.2f}%")
+
+        # Print statistics
+        attack_percentage = (successful_attacks / total_malicious_packets * 100) if total_malicious_packets>0 else 0
+        print(f"\nStatistics for {'MACsec' if macsec_enabled else 'No MACsec'}:")
+        print(f"Total malicious packets: {total_malicious_packets}")
+        print(f"Successful attacks: {successful_attacks}")
+        print(f"Attack success percentage: {attack_percentage:.2f}%\n")
+
+    return np.array(global_weights), np.array(accuracies)
+
+# -------------------------
+# Run Simulation and Plot
+# -------------------------
+acc_macsec_weights, acc_macsec = run_federated_simulation(macsec_enabled=True)
+acc_no_macsec_weights, acc_no_macsec = run_federated_simulation(macsec_enabled=False)
+
+plt.figure(figsize=(10,6))
+plt.plot(acc_macsec, alpha=1, linewidth=3, linestyle='-', label=' Accuracy(MACsec)')
+plt.plot(acc_no_macsec, alpha=1, linestyle='--', label='Accuracy(No MACsec) ')
+plt.xlabel('Rounds', fontsize=18)
+plt.ylabel('Accuracy (%)', fontsize=18)
+plt.legend(fontsize=22)
+plt.xticks(fontsize=18)
+plt.yticks(fontsize=18)
+plt.tight_layout()
+plt.show()
