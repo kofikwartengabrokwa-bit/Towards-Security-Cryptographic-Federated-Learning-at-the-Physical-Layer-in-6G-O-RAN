@@ -1,9 +1,5 @@
 
 
-# sac_fedprox_entropy_sweep.py
-# PyTorch federated SAC (stochastic actor + two critics) with FedProx
-# Sweeps over learning rates and batch sizes
-# Author: ChatGPT
 
 import torch, torch.nn as nn, torch.optim as optim, numpy as np, pandas as pd
 from copy import deepcopy
@@ -19,18 +15,18 @@ param_dim = 16
 rounds = 300  # reduce for faster experiments
 local_epochs = 3
 mu_fedprox = 0.9
-obs_dim = 256
+obs_dim = 8
 act_dim = 2
 alpha = 0.001
 
 #learning_rates = [1e-3, 5e-4, 1e-5]
-learning_rates = [0.005]
+learning_rates = [0.005,1e-3]
 #batch_sizes = [64, 256, 512]
 batch_sizes = [512]
 
 # -------------------- Models --------------------
 class StochasticActor(nn.Module):
-    def __init__(self, obs_dim=256, hidden=256, act_dim=2):
+    def __init__(self, obs_dim=8, hidden=16, act_dim=2):
         super().__init__()
         self.net = nn.Sequential(nn.Linear(obs_dim, hidden), nn.ReLU(),
                                  nn.Linear(hidden, hidden), nn.ReLU())
@@ -223,7 +219,7 @@ for lr in learning_rates:
         # ---- Actor Loss subplot ----
         l1, = axes[0].plot(
             rounds_arr, rec['fp']['actor'],
-            label=fr'FedProx (1000 Users, $\mu$={mu_fedprox}, lr={lr}, B={bs})'
+            label=fr'FedProx ($\mu$={mu_fedprox}, lr={lr}, B={bs})'
         )
         l2, = axes[0].plot(
             rounds_arr, rec['v']['actor'],
@@ -244,8 +240,8 @@ for lr in learning_rates:
 
         # ---- Shared Legend on Top ----
         fig.legend([l1, l2],
-                   [fr'FedProx (Seed=42, $\mu$={mu_fedprox}, lr={lr}, B={bs})',
-                    fr'Vanilla (Seed=42, lr={lr}, B={bs})'],
+                   [fr'FedProx ($\mu$={mu_fedprox}, lr={lr}, B={bs})',
+                    fr'Vanilla (lr={lr}, B={bs})'],
                    loc="upper center", fontsize=16, ncol=2, frameon=False)
 
         # ---- Adjust layout ----
