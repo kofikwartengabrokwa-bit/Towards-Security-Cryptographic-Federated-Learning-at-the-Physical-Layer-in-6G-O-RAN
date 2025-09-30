@@ -1,0 +1,1071 @@
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=960
+ SACFL: acc=0.800, bytes=18207, clients_used=867
+ SACDAFL: acc=0.800, bytes=15099, clients_used=None
+ SACSAFL: acc=0.800, bytes=20889.75, clients_used=865
+ SACHEFL: acc=0.800, bytes=51097.2, clients_used=869
+
+Round 2: participants=960
+ SACFL: acc=0.800, bytes=17934, clients_used=854
+ SACDAFL: acc=0.805, bytes=15204, clients_used=None
+ SACSAFL: acc=0.800, bytes=20672.399999999998, clients_used=856
+ SACHEFL: acc=0.805, bytes=50979.6, clients_used=867
+
+Round 3: participants=960
+ SACFL: acc=0.800, bytes=18018, clients_used=858
+ SACDAFL: acc=0.810, bytes=14994, clients_used=None
+ SACSAFL: acc=0.800, bytes=21179.55, clients_used=877
+ SACHEFL: acc=0.800, bytes=50979.6, clients_used=867
+
+Round 4: participants=960
+ SACFL: acc=0.800, bytes=18039, clients_used=859
+ SACDAFL: acc=0.810, bytes=14973, clients_used=None
+ SACSAFL: acc=0.800, bytes=20793.149999999998, clients_used=861
+ SACHEFL: acc=0.800, bytes=50038.799999999996, clients_used=851
+
+Round 5: participants=960
+ SACFL: acc=0.805, bytes=18144, clients_used=864
+ SACDAFL: acc=0.820, bytes=14910, clients_used=None
+ SACSAFL: acc=0.795, bytes=20334.3, clients_used=842
+ SACHEFL: acc=0.800, bytes=51038.399999999994, clients_used=868
+
+Round 6: participants=960
+ SACFL: acc=0.810, bytes=17829, clients_used=849
+ SACDAFL: acc=0.820, bytes=15078, clients_used=None
+ SACSAFL: acc=0.795, bytes=20986.35, clients_used=869
+ SACHEFL: acc=0.805, bytes=51508.799999999996, clients_used=876
+
+Round 7: participants=960
+ SACFL: acc=0.815, bytes=18060, clients_used=860
+ SACDAFL: acc=0.825, bytes=14847, clients_used=None
+ SACSAFL: acc=0.795, bytes=20865.6, clients_used=864
+ SACHEFL: acc=0.810, bytes=51097.2, clients_used=869
+
+Round 8: participants=960
+ SACFL: acc=0.825, bytes=18060, clients_used=860
+ SACDAFL: acc=0.820, bytes=15099, clients_used=None
+ SACSAFL: acc=0.800, bytes=21058.8, clients_used=872
+ SACHEFL: acc=0.815, bytes=50568.0, clients_used=860
+
+Round 9: participants=960
+ SACFL: acc=0.820, bytes=18123, clients_used=863
+ SACDAFL: acc=0.820, bytes=15015, clients_used=None
+ SACSAFL: acc=0.810, bytes=20986.35, clients_used=869
+ SACHEFL: acc=0.815, bytes=50862.0, clients_used=865
+
+Round 10: participants=960
+ SACFL: acc=0.825, bytes=18249, clients_used=869
+ SACDAFL: acc=0.825, bytes=15120, clients_used=None
+ SACSAFL: acc=0.815, bytes=20865.6, clients_used=864
+ SACHEFL: acc=0.810, bytes=50391.6, clients_used=857
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=720
+ SACFL: acc=0.790, bytes=13671, clients_used=651
+ SACDAFL: acc=0.795, bytes=7749, clients_used=None
+ SACSAFL: acc=0.785, bytes=15794.099999999999, clients_used=654
+ SACHEFL: acc=0.790, bytes=38514.0, clients_used=655
+
+Round 2: participants=720
+ SACFL: acc=0.290, bytes=13713, clients_used=653
+ SACDAFL: acc=0.780, bytes=7560, clients_used=None
+ SACSAFL: acc=0.355, bytes=15721.65, clients_used=651
+ SACHEFL: acc=0.480, bytes=38337.6, clients_used=652
+
+Round 3: participants=720
+ SACFL: acc=0.275, bytes=13608, clients_used=648
+ SACDAFL: acc=0.770, bytes=7644, clients_used=None
+ SACSAFL: acc=0.270, bytes=15890.699999999999, clients_used=658
+ SACHEFL: acc=0.275, bytes=37338.0, clients_used=635
+
+Round 4: participants=720
+ SACFL: acc=0.250, bytes=13650, clients_used=650
+ SACDAFL: acc=0.755, bytes=7791, clients_used=None
+ SACSAFL: acc=0.250, bytes=15866.55, clients_used=657
+ SACHEFL: acc=0.255, bytes=37808.399999999994, clients_used=643
+
+Round 5: participants=720
+ SACFL: acc=0.255, bytes=13734, clients_used=654
+ SACDAFL: acc=0.730, bytes=7896, clients_used=None
+ SACSAFL: acc=0.265, bytes=15455.999999999998, clients_used=640
+ SACHEFL: acc=0.270, bytes=37632.0, clients_used=640
+
+Round 6: participants=720
+ SACFL: acc=0.255, bytes=13356, clients_used=636
+ SACDAFL: acc=0.795, bytes=7434, clients_used=None
+ SACSAFL: acc=0.250, bytes=15455.999999999998, clients_used=640
+ SACHEFL: acc=0.255, bytes=37573.2, clients_used=639
+
+Round 7: participants=720
+ SACFL: acc=0.260, bytes=13356, clients_used=636
+ SACDAFL: acc=0.795, bytes=7224, clients_used=None
+ SACSAFL: acc=0.260, bytes=15359.4, clients_used=636
+ SACHEFL: acc=0.265, bytes=38631.6, clients_used=657
+
+Round 8: participants=720
+ SACFL: acc=0.265, bytes=13839, clients_used=659
+ SACDAFL: acc=0.795, bytes=7644, clients_used=None
+ SACSAFL: acc=0.260, bytes=15769.949999999999, clients_used=653
+ SACHEFL: acc=0.260, bytes=38631.6, clients_used=657
+
+Round 9: participants=720
+ SACFL: acc=0.270, bytes=13650, clients_used=650
+ SACDAFL: acc=0.795, bytes=7833, clients_used=None
+ SACSAFL: acc=0.265, bytes=16108.05, clients_used=667
+ SACHEFL: acc=0.270, bytes=38455.2, clients_used=654
+
+Round 10: participants=720
+ SACFL: acc=0.270, bytes=13692, clients_used=652
+ SACDAFL: acc=0.795, bytes=7539, clients_used=None
+ SACSAFL: acc=0.270, bytes=15649.199999999999, clients_used=648
+ SACHEFL: acc=0.270, bytes=38396.399999999994, clients_used=653
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=760
+ SACFL: acc=0.825, bytes=14721, clients_used=701
+ SACDAFL: acc=0.835, bytes=7686, clients_used=None
+ SACSAFL: acc=0.825, bytes=16470.3, clients_used=682
+ SACHEFL: acc=0.825, bytes=40336.799999999996, clients_used=686
+
+Round 2: participants=760
+ SACFL: acc=0.320, bytes=14532, clients_used=692
+ SACDAFL: acc=0.830, bytes=7665, clients_used=None
+ SACSAFL: acc=0.320, bytes=16470.3, clients_used=682
+ SACHEFL: acc=0.320, bytes=40219.2, clients_used=684
+
+Round 3: participants=760
+ SACFL: acc=0.300, bytes=14217, clients_used=677
+ SACDAFL: acc=0.780, bytes=7602, clients_used=None
+ SACSAFL: acc=0.285, bytes=16808.399999999998, clients_used=696
+ SACHEFL: acc=0.300, bytes=40572.0, clients_used=690
+
+Round 4: participants=760
+ SACFL: acc=0.280, bytes=14322, clients_used=682
+ SACDAFL: acc=0.815, bytes=7560, clients_used=None
+ SACSAFL: acc=0.280, bytes=16542.75, clients_used=685
+ SACHEFL: acc=0.280, bytes=40395.6, clients_used=687
+
+Round 5: participants=760
+ SACFL: acc=0.275, bytes=13671, clients_used=651
+ SACDAFL: acc=0.320, bytes=7035, clients_used=None
+ SACSAFL: acc=0.275, bytes=16470.3, clients_used=682
+ SACHEFL: acc=0.275, bytes=39807.6, clients_used=677
+
+Round 6: participants=760
+ SACFL: acc=0.280, bytes=14427, clients_used=687
+ SACDAFL: acc=0.835, bytes=7497, clients_used=None
+ SACSAFL: acc=0.280, bytes=16615.199999999997, clients_used=688
+ SACHEFL: acc=0.280, bytes=40219.2, clients_used=684
+
+Round 7: participants=760
+ SACFL: acc=0.280, bytes=14406, clients_used=686
+ SACDAFL: acc=0.835, bytes=7917, clients_used=None
+ SACSAFL: acc=0.280, bytes=16542.75, clients_used=685
+ SACHEFL: acc=0.285, bytes=40513.2, clients_used=689
+
+Round 8: participants=760
+ SACFL: acc=0.275, bytes=14553, clients_used=693
+ SACDAFL: acc=0.835, bytes=7728, clients_used=None
+ SACSAFL: acc=0.280, bytes=16518.6, clients_used=684
+ SACHEFL: acc=0.280, bytes=40454.399999999994, clients_used=688
+
+Round 9: participants=760
+ SACFL: acc=0.275, bytes=14259, clients_used=679
+ SACDAFL: acc=0.835, bytes=7644, clients_used=None
+ SACSAFL: acc=0.270, bytes=16542.75, clients_used=685
+ SACHEFL: acc=0.275, bytes=40219.2, clients_used=684
+
+Round 10: participants=760
+ SACFL: acc=0.270, bytes=14175, clients_used=675
+ SACDAFL: acc=0.835, bytes=7077, clients_used=None
+ SACSAFL: acc=0.270, bytes=16566.899999999998, clients_used=686
+ SACHEFL: acc=0.270, bytes=40395.6, clients_used=687
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=784
+ SACFL: acc=0.805, bytes=15036, clients_used=716
+ SACDAFL: acc=0.795, bytes=7623, clients_used=None
+ SACSAFL: acc=0.805, bytes=16953.3, clients_used=702
+ SACHEFL: acc=0.805, bytes=41806.799999999996, clients_used=711
+
+Round 2: participants=784
+ SACFL: acc=0.290, bytes=14952, clients_used=712
+ SACDAFL: acc=0.790, bytes=7350, clients_used=None
+ SACSAFL: acc=0.290, bytes=17001.6, clients_used=704
+ SACHEFL: acc=0.280, bytes=41336.399999999994, clients_used=703
+
+Round 3: participants=784
+ SACFL: acc=0.290, bytes=14994, clients_used=714
+ SACDAFL: acc=0.760, bytes=7560, clients_used=None
+ SACSAFL: acc=0.290, bytes=17243.1, clients_used=714
+ SACHEFL: acc=0.290, bytes=41218.799999999996, clients_used=701
+
+Round 4: participants=784
+ SACFL: acc=0.285, bytes=14784, clients_used=704
+ SACDAFL: acc=0.795, bytes=7812, clients_used=None
+ SACSAFL: acc=0.290, bytes=16977.449999999997, clients_used=703
+ SACHEFL: acc=0.295, bytes=41924.399999999994, clients_used=713
+
+Round 5: participants=784
+ SACFL: acc=0.280, bytes=14574, clients_used=694
+ SACDAFL: acc=0.295, bytes=7812, clients_used=None
+ SACSAFL: acc=0.275, bytes=16832.55, clients_used=697
+ SACHEFL: acc=0.280, bytes=41160.0, clients_used=700
+
+Round 6: participants=784
+ SACFL: acc=0.260, bytes=15204, clients_used=724
+ SACDAFL: acc=0.800, bytes=7392, clients_used=None
+ SACSAFL: acc=0.260, bytes=17098.199999999997, clients_used=708
+ SACHEFL: acc=0.255, bytes=41983.2, clients_used=714
+
+Round 7: participants=784
+ SACFL: acc=0.270, bytes=14784, clients_used=704
+ SACDAFL: acc=0.800, bytes=7581, clients_used=None
+ SACSAFL: acc=0.270, bytes=16784.25, clients_used=695
+ SACHEFL: acc=0.270, bytes=41924.399999999994, clients_used=713
+
+Round 8: participants=784
+ SACFL: acc=0.270, bytes=14952, clients_used=712
+ SACDAFL: acc=0.800, bytes=7896, clients_used=None
+ SACSAFL: acc=0.270, bytes=16687.649999999998, clients_used=691
+ SACHEFL: acc=0.270, bytes=41101.2, clients_used=699
+
+Round 9: participants=784
+ SACFL: acc=0.280, bytes=14658, clients_used=698
+ SACDAFL: acc=0.800, bytes=7602, clients_used=None
+ SACSAFL: acc=0.275, bytes=17291.399999999998, clients_used=716
+ SACHEFL: acc=0.275, bytes=40807.2, clients_used=694
+
+Round 10: participants=784
+ SACFL: acc=0.275, bytes=14616, clients_used=696
+ SACDAFL: acc=0.800, bytes=7539, clients_used=None
+ SACSAFL: acc=0.275, bytes=17363.85, clients_used=719
+ SACHEFL: acc=0.275, bytes=42394.799999999996, clients_used=721
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=1200
+ SACFL: acc=0.810, bytes=22764, clients_used=1084
+ SACDAFL: acc=0.805, bytes=14973, clients_used=None
+ SACSAFL: acc=0.810, bytes=26130.3, clients_used=1082
+ SACHEFL: acc=0.810, bytes=64503.6, clients_used=1097
+
+Round 2: participants=1200
+ SACFL: acc=0.810, bytes=22995, clients_used=1095
+ SACDAFL: acc=0.785, bytes=15393, clients_used=None
+ SACSAFL: acc=0.800, bytes=26081.999999999996, clients_used=1080
+ SACHEFL: acc=0.805, bytes=63503.99999999999, clients_used=1080
+
+Round 3: participants=1200
+ SACFL: acc=0.790, bytes=22428, clients_used=1068
+ SACDAFL: acc=0.790, bytes=14889, clients_used=None
+ SACSAFL: acc=0.780, bytes=25912.949999999997, clients_used=1073
+ SACHEFL: acc=0.685, bytes=63856.799999999996, clients_used=1086
+
+Round 4: participants=1200
+ SACFL: acc=0.345, bytes=22806, clients_used=1086
+ SACDAFL: acc=0.770, bytes=14931, clients_used=None
+ SACSAFL: acc=0.355, bytes=25816.35, clients_used=1069
+ SACHEFL: acc=0.305, bytes=63915.6, clients_used=1087
+
+Round 5: participants=1200
+ SACFL: acc=0.305, bytes=22743, clients_used=1083
+ SACDAFL: acc=0.745, bytes=15057, clients_used=None
+ SACSAFL: acc=0.300, bytes=26154.449999999997, clients_used=1083
+ SACHEFL: acc=0.295, bytes=63621.6, clients_used=1082
+
+Round 6: participants=1200
+ SACFL: acc=0.315, bytes=22554, clients_used=1074
+ SACDAFL: acc=0.735, bytes=14721, clients_used=None
+ SACSAFL: acc=0.290, bytes=26661.6, clients_used=1104
+ SACHEFL: acc=0.315, bytes=63386.399999999994, clients_used=1078
+
+Round 7: participants=1200
+ SACFL: acc=0.330, bytes=22869, clients_used=1089
+ SACDAFL: acc=0.745, bytes=15477, clients_used=None
+ SACSAFL: acc=0.325, bytes=26202.749999999996, clients_used=1085
+ SACHEFL: acc=0.325, bytes=62915.99999999999, clients_used=1070
+
+Round 8: participants=1200
+ SACFL: acc=0.330, bytes=23037, clients_used=1097
+ SACDAFL: acc=0.760, bytes=15372, clients_used=None
+ SACSAFL: acc=0.320, bytes=25912.949999999997, clients_used=1073
+ SACHEFL: acc=0.310, bytes=64091.99999999999, clients_used=1090
+
+Round 9: participants=1200
+ SACFL: acc=0.315, bytes=22659, clients_used=1079
+ SACDAFL: acc=0.805, bytes=15330, clients_used=None
+ SACSAFL: acc=0.310, bytes=26178.6, clients_used=1084
+ SACHEFL: acc=0.310, bytes=62445.6, clients_used=1062
+
+Round 10: participants=1200
+ SACFL: acc=0.315, bytes=23079, clients_used=1099
+ SACDAFL: acc=0.770, bytes=15246, clients_used=None
+ SACSAFL: acc=0.310, bytes=25816.35, clients_used=1069
+ SACHEFL: acc=0.315, bytes=63092.399999999994, clients_used=1073
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=2000
+ SACFL: acc=0.780, bytes=37989, clients_used=1809
+ SACDAFL: acc=0.785, bytes=30576, clients_used=None
+ SACSAFL: acc=0.780, bytes=43542.45, clients_used=1803
+ SACHEFL: acc=0.780, bytes=106780.79999999999, clients_used=1816
+
+Round 2: participants=2000
+ SACFL: acc=0.785, bytes=37905, clients_used=1805
+ SACDAFL: acc=0.790, bytes=30009, clients_used=None
+ SACSAFL: acc=0.780, bytes=43470.0, clients_used=1800
+ SACHEFL: acc=0.785, bytes=105722.4, clients_used=1798
+
+Round 3: participants=2000
+ SACFL: acc=0.790, bytes=37779, clients_used=1799
+ SACDAFL: acc=0.790, bytes=30198, clients_used=None
+ SACSAFL: acc=0.785, bytes=43397.549999999996, clients_used=1797
+ SACHEFL: acc=0.785, bytes=104076.0, clients_used=1770
+
+Round 4: participants=2000
+ SACFL: acc=0.785, bytes=37485, clients_used=1785
+ SACDAFL: acc=0.790, bytes=30282, clients_used=None
+ SACSAFL: acc=0.790, bytes=43639.049999999996, clients_used=1807
+ SACHEFL: acc=0.785, bytes=107368.79999999999, clients_used=1826
+
+Round 5: participants=2000
+ SACFL: acc=0.785, bytes=37380, clients_used=1780
+ SACDAFL: acc=0.790, bytes=29736, clients_used=None
+ SACSAFL: acc=0.790, bytes=43276.799999999996, clients_used=1792
+ SACHEFL: acc=0.785, bytes=106310.4, clients_used=1808
+
+Round 6: participants=2000
+ SACFL: acc=0.785, bytes=37842, clients_used=1802
+ SACDAFL: acc=0.790, bytes=30177, clients_used=None
+ SACSAFL: acc=0.795, bytes=43808.1, clients_used=1814
+ SACHEFL: acc=0.785, bytes=105957.59999999999, clients_used=1802
+
+Round 7: participants=2000
+ SACFL: acc=0.790, bytes=38325, clients_used=1825
+ SACDAFL: acc=0.795, bytes=30660, clients_used=None
+ SACSAFL: acc=0.795, bytes=43445.85, clients_used=1799
+ SACHEFL: acc=0.785, bytes=105546.0, clients_used=1795
+
+Round 8: participants=2000
+ SACFL: acc=0.795, bytes=38136, clients_used=1816
+ SACDAFL: acc=0.800, bytes=30534, clients_used=None
+ SACSAFL: acc=0.800, bytes=43663.2, clients_used=1808
+ SACHEFL: acc=0.790, bytes=105252.0, clients_used=1790
+
+Round 9: participants=2000
+ SACFL: acc=0.800, bytes=38220, clients_used=1820
+ SACDAFL: acc=0.810, bytes=30345, clients_used=None
+ SACSAFL: acc=0.800, bytes=44025.45, clients_used=1823
+ SACHEFL: acc=0.790, bytes=105781.2, clients_used=1799
+
+Round 10: participants=2000
+ SACFL: acc=0.795, bytes=37758, clients_used=1798
+ SACDAFL: acc=0.810, bytes=29820, clients_used=None
+ SACSAFL: acc=0.800, bytes=43639.049999999996, clients_used=1807
+ SACHEFL: acc=0.795, bytes=107192.4, clients_used=1823
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=2400
+ SACFL: acc=0.775, bytes=45717, clients_used=2177
+ SACDAFL: acc=0.760, bytes=30639, clients_used=None
+ SACSAFL: acc=0.775, bytes=52453.799999999996, clients_used=2172
+ SACHEFL: acc=0.775, bytes=128536.79999999999, clients_used=2186
+
+Round 2: participants=2400
+ SACFL: acc=0.780, bytes=45423, clients_used=2163
+ SACDAFL: acc=0.760, bytes=30093, clients_used=None
+ SACSAFL: acc=0.780, bytes=51536.1, clients_used=2134
+ SACHEFL: acc=0.780, bytes=126713.99999999999, clients_used=2155
+
+Round 3: participants=2400
+ SACFL: acc=0.770, bytes=45675, clients_used=2175
+ SACDAFL: acc=0.760, bytes=30702, clients_used=None
+ SACSAFL: acc=0.770, bytes=52284.74999999999, clients_used=2165
+ SACHEFL: acc=0.770, bytes=127419.59999999999, clients_used=2167
+
+Round 4: participants=2400
+ SACFL: acc=0.550, bytes=45276, clients_used=2156
+ SACDAFL: acc=0.760, bytes=30177, clients_used=None
+ SACSAFL: acc=0.615, bytes=51898.35, clients_used=2149
+ SACHEFL: acc=0.615, bytes=126949.2, clients_used=2159
+
+Round 5: participants=2400
+ SACFL: acc=0.285, bytes=45549, clients_used=2169
+ SACDAFL: acc=0.765, bytes=30681, clients_used=None
+ SACSAFL: acc=0.285, bytes=51970.799999999996, clients_used=2152
+ SACHEFL: acc=0.285, bytes=125479.2, clients_used=2134
+
+Round 6: participants=2400
+ SACFL: acc=0.300, bytes=45276, clients_used=2156
+ SACDAFL: acc=0.765, bytes=29778, clients_used=None
+ SACSAFL: acc=0.290, bytes=51946.649999999994, clients_used=2151
+ SACHEFL: acc=0.290, bytes=127066.79999999999, clients_used=2161
+
+Round 7: participants=2400
+ SACFL: acc=0.280, bytes=45486, clients_used=2166
+ SACDAFL: acc=0.760, bytes=30555, clients_used=None
+ SACSAFL: acc=0.280, bytes=52260.6, clients_used=2164
+ SACHEFL: acc=0.290, bytes=126713.99999999999, clients_used=2155
+
+Round 8: participants=2400
+ SACFL: acc=0.295, bytes=45318, clients_used=2158
+ SACDAFL: acc=0.765, bytes=30072, clients_used=None
+ SACSAFL: acc=0.285, bytes=52333.049999999996, clients_used=2167
+ SACHEFL: acc=0.280, bytes=126067.2, clients_used=2144
+
+Round 9: participants=2400
+ SACFL: acc=0.275, bytes=44835, clients_used=2135
+ SACDAFL: acc=0.755, bytes=30009, clients_used=None
+ SACSAFL: acc=0.270, bytes=52139.85, clients_used=2159
+ SACHEFL: acc=0.275, bytes=127595.99999999999, clients_used=2170
+
+Round 10: participants=2400
+ SACFL: acc=0.280, bytes=45423, clients_used=2163
+ SACDAFL: acc=0.770, bytes=30408, clients_used=None
+ SACSAFL: acc=0.280, bytes=52019.1, clients_used=2154
+ SACHEFL: acc=0.280, bytes=127595.99999999999, clients_used=2170
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=3200
+ SACFL: acc=0.760, bytes=60459, clients_used=2879
+ SACDAFL: acc=0.770, bytes=30723, clients_used=None
+ SACSAFL: acc=0.760, bytes=69914.25, clients_used=2895
+ SACHEFL: acc=0.755, bytes=168050.4, clients_used=2858
+
+Round 2: participants=3200
+ SACFL: acc=0.270, bytes=60018, clients_used=2858
+ SACDAFL: acc=0.765, bytes=30765, clients_used=None
+ SACSAFL: acc=0.265, bytes=69624.45, clients_used=2883
+ SACHEFL: acc=0.275, bytes=171284.4, clients_used=2913
+
+Round 3: participants=3200
+ SACFL: acc=0.245, bytes=60018, clients_used=2858
+ SACDAFL: acc=0.770, bytes=29820, clients_used=None
+ SACSAFL: acc=0.245, bytes=69648.59999999999, clients_used=2884
+ SACHEFL: acc=0.250, bytes=169638.0, clients_used=2885
+
+Round 4: participants=3200
+ SACFL: acc=0.230, bytes=60270, clients_used=2870
+ SACDAFL: acc=0.745, bytes=30051, clients_used=None
+ SACSAFL: acc=0.230, bytes=69358.79999999999, clients_used=2872
+ SACHEFL: acc=0.235, bytes=169226.4, clients_used=2878
+
+Round 5: participants=3200
+ SACFL: acc=0.225, bytes=60312, clients_used=2872
+ SACDAFL: acc=0.770, bytes=30387, clients_used=None
+ SACSAFL: acc=0.225, bytes=69455.4, clients_used=2876
+ SACHEFL: acc=0.225, bytes=168462.0, clients_used=2865
+
+Round 6: participants=3200
+ SACFL: acc=0.225, bytes=60648, clients_used=2888
+ SACDAFL: acc=0.770, bytes=30744, clients_used=None
+ SACSAFL: acc=0.225, bytes=69914.25, clients_used=2895
+ SACHEFL: acc=0.225, bytes=169108.8, clients_used=2876
+
+Round 7: participants=3200
+ SACFL: acc=0.225, bytes=60480, clients_used=2880
+ SACDAFL: acc=0.770, bytes=30429, clients_used=None
+ SACSAFL: acc=0.225, bytes=69238.04999999999, clients_used=2867
+ SACHEFL: acc=0.225, bytes=169638.0, clients_used=2885
+
+Round 8: participants=3200
+ SACFL: acc=0.230, bytes=60774, clients_used=2894
+ SACDAFL: acc=0.770, bytes=30051, clients_used=None
+ SACSAFL: acc=0.230, bytes=69745.2, clients_used=2888
+ SACHEFL: acc=0.230, bytes=168873.59999999998, clients_used=2872
+
+Round 9: participants=3200
+ SACFL: acc=0.235, bytes=60228, clients_used=2868
+ SACDAFL: acc=0.770, bytes=30597, clients_used=None
+ SACSAFL: acc=0.235, bytes=69769.34999999999, clients_used=2889
+ SACHEFL: acc=0.235, bytes=168814.8, clients_used=2871
+
+Round 10: participants=3200
+ SACFL: acc=0.235, bytes=60501, clients_used=2881
+ SACDAFL: acc=0.770, bytes=30303, clients_used=None
+ SACSAFL: acc=0.235, bytes=69431.25, clients_used=2875
+ SACHEFL: acc=0.235, bytes=167874.0, clients_used=2855
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=2400
+ SACFL: acc=0.770, bytes=45528, clients_used=2168
+ SACDAFL: acc=0.760, bytes=22827, clients_used=None
+ SACSAFL: acc=0.770, bytes=52526.24999999999, clients_used=2175
+ SACHEFL: acc=0.770, bytes=127831.2, clients_used=2174
+
+Round 2: participants=2400
+ SACFL: acc=0.290, bytes=45423, clients_used=2163
+ SACDAFL: acc=0.760, bytes=22869, clients_used=None
+ SACSAFL: acc=0.290, bytes=51898.35, clients_used=2149
+ SACHEFL: acc=0.285, bytes=128654.4, clients_used=2188
+
+Round 3: participants=2400
+ SACFL: acc=0.275, bytes=45213, clients_used=2153
+ SACDAFL: acc=0.760, bytes=22806, clients_used=None
+ SACSAFL: acc=0.275, bytes=51753.45, clients_used=2143
+ SACHEFL: acc=0.265, bytes=128066.4, clients_used=2178
+
+Round 4: participants=2400
+ SACFL: acc=0.270, bytes=45654, clients_used=2174
+ SACDAFL: acc=0.765, bytes=22575, clients_used=None
+ SACSAFL: acc=0.270, bytes=52260.6, clients_used=2164
+ SACHEFL: acc=0.270, bytes=128066.4, clients_used=2178
+
+Round 5: participants=2400
+ SACFL: acc=0.295, bytes=45108, clients_used=2148
+ SACDAFL: acc=0.780, bytes=22701, clients_used=None
+ SACSAFL: acc=0.300, bytes=52236.45, clients_used=2163
+ SACHEFL: acc=0.300, bytes=126596.4, clients_used=2153
+
+Round 6: participants=2400
+ SACFL: acc=0.295, bytes=45549, clients_used=2169
+ SACDAFL: acc=0.780, bytes=22533, clients_used=None
+ SACSAFL: acc=0.295, bytes=52840.2, clients_used=2188
+ SACHEFL: acc=0.295, bytes=126890.4, clients_used=2158
+
+Round 7: participants=2400
+ SACFL: acc=0.285, bytes=45633, clients_used=2173
+ SACDAFL: acc=0.780, bytes=23121, clients_used=None
+ SACSAFL: acc=0.285, bytes=52333.049999999996, clients_used=2167
+ SACHEFL: acc=0.290, bytes=126478.79999999999, clients_used=2151
+
+Round 8: participants=2400
+ SACFL: acc=0.285, bytes=44982, clients_used=2142
+ SACDAFL: acc=0.780, bytes=22722, clients_used=None
+ SACSAFL: acc=0.285, bytes=52163.99999999999, clients_used=2160
+ SACHEFL: acc=0.285, bytes=127654.79999999999, clients_used=2171
+
+Round 9: participants=2400
+ SACFL: acc=0.280, bytes=45213, clients_used=2153
+ SACDAFL: acc=0.780, bytes=22932, clients_used=None
+ SACSAFL: acc=0.280, bytes=52429.649999999994, clients_used=2171
+ SACHEFL: acc=0.280, bytes=127889.99999999999, clients_used=2175
+
+Round 10: participants=2400
+ SACFL: acc=0.280, bytes=45297, clients_used=2157
+ SACDAFL: acc=0.780, bytes=22071, clients_used=None
+ SACSAFL: acc=0.280, bytes=52091.549999999996, clients_used=2157
+ SACHEFL: acc=0.280, bytes=127537.2, clients_used=2169
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=32000
+ SACFL: acc=0.830, bytes=607026, clients_used=28906
+ SACDAFL: acc=0.860, bytes=303996, clients_used=None
+ SACSAFL: acc=0.830, bytes=696389.3999999999, clients_used=28836
+ SACHEFL: acc=0.830, bytes=1689618.0, clients_used=28735
+
+Round 2: participants=32000
+ SACFL: acc=0.335, bytes=606102, clients_used=28862
+ SACDAFL: acc=0.860, bytes=304542, clients_used=None
+ SACSAFL: acc=0.335, bytes=695761.5, clients_used=28810
+ SACHEFL: acc=0.335, bytes=1690617.5999999999, clients_used=28752
+
+Round 3: participants=32000
+ SACFL: acc=0.280, bytes=606207, clients_used=28867
+ SACDAFL: acc=0.830, bytes=302169, clients_used=None
+ SACSAFL: acc=0.280, bytes=696365.25, clients_used=28835
+ SACHEFL: acc=0.280, bytes=1693440.0, clients_used=28800
+
+Round 4: participants=32000
+ SACFL: acc=0.250, bytes=604989, clients_used=28809
+ SACDAFL: acc=0.845, bytes=301077, clients_used=None
+ SACSAFL: acc=0.250, bytes=695737.35, clients_used=28809
+ SACHEFL: acc=0.250, bytes=1688912.4, clients_used=28723
+
+Round 5: participants=32000
+ SACFL: acc=0.235, bytes=603645, clients_used=28745
+ SACDAFL: acc=0.320, bytes=301140, clients_used=None
+ SACSAFL: acc=0.235, bytes=695061.1499999999, clients_used=28781
+ SACHEFL: acc=0.235, bytes=1691676.0, clients_used=28770
+
+Round 6: participants=32000
+ SACFL: acc=0.225, bytes=604212, clients_used=28772
+ SACDAFL: acc=0.855, bytes=303303, clients_used=None
+ SACSAFL: acc=0.225, bytes=694867.95, clients_used=28773
+ SACHEFL: acc=0.225, bytes=1691617.2, clients_used=28769
+
+Round 7: participants=32000
+ SACFL: acc=0.210, bytes=604989, clients_used=28809
+ SACDAFL: acc=0.855, bytes=302421, clients_used=None
+ SACSAFL: acc=0.210, bytes=694505.7, clients_used=28758
+ SACHEFL: acc=0.210, bytes=1696203.5999999999, clients_used=28847
+
+Round 8: participants=32000
+ SACFL: acc=0.205, bytes=605955, clients_used=28855
+ SACDAFL: acc=0.855, bytes=302022, clients_used=None
+ SACSAFL: acc=0.205, bytes=697065.6, clients_used=28864
+ SACHEFL: acc=0.205, bytes=1697144.4, clients_used=28863
+
+Round 9: participants=32000
+ SACFL: acc=0.205, bytes=605682, clients_used=28842
+ SACDAFL: acc=0.855, bytes=303618, clients_used=None
+ SACSAFL: acc=0.205, bytes=694481.5499999999, clients_used=28757
+ SACHEFL: acc=0.205, bytes=1694674.7999999998, clients_used=28821
+
+Round 10: participants=32000
+ SACFL: acc=0.205, bytes=604191, clients_used=28771
+ SACDAFL: acc=0.855, bytes=302883, clients_used=None
+ SACSAFL: acc=0.205, bytes=694964.5499999999, clients_used=28777
+ SACHEFL: acc=0.205, bytes=1695909.5999999999, clients_used=28842
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=320
+ SACFL: acc=0.775, bytes=6132, clients_used=292
+ SACDAFL: acc=0.795, bytes=3129, clients_used=None
+ SACSAFL: acc=0.780, bytes=6834.45, clients_used=283
+ SACHEFL: acc=0.775, bytes=17169.6, clients_used=292
+
+Round 2: participants=320
+ SACFL: acc=0.275, bytes=6111, clients_used=291
+ SACDAFL: acc=0.795, bytes=2982, clients_used=None
+ SACSAFL: acc=0.290, bytes=7003.499999999999, clients_used=290
+ SACHEFL: acc=0.300, bytes=17110.8, clients_used=291
+
+Round 3: participants=320
+ SACFL: acc=0.285, bytes=5943, clients_used=283
+ SACDAFL: acc=0.745, bytes=2898, clients_used=None
+ SACSAFL: acc=0.275, bytes=7051.799999999999, clients_used=292
+ SACHEFL: acc=0.280, bytes=16934.399999999998, clients_used=288
+
+Round 4: participants=320
+ SACFL: acc=0.280, bytes=6069, clients_used=289
+ SACDAFL: acc=0.285, bytes=3150, clients_used=None
+ SACSAFL: acc=0.280, bytes=6906.9, clients_used=286
+ SACHEFL: acc=0.285, bytes=16875.6, clients_used=287
+
+Round 5: participants=320
+ SACFL: acc=0.280, bytes=6111, clients_used=291
+ SACDAFL: acc=0.775, bytes=2940, clients_used=None
+ SACSAFL: acc=0.280, bytes=6834.45, clients_used=283
+ SACHEFL: acc=0.290, bytes=16464.0, clients_used=280
+
+Round 6: participants=320
+ SACFL: acc=0.290, bytes=5880, clients_used=280
+ SACDAFL: acc=0.775, bytes=2919, clients_used=None
+ SACSAFL: acc=0.280, bytes=6955.2, clients_used=288
+ SACHEFL: acc=0.285, bytes=17052.0, clients_used=290
+
+Round 7: participants=320
+ SACFL: acc=0.295, bytes=5859, clients_used=279
+ SACDAFL: acc=0.775, bytes=2877, clients_used=None
+ SACSAFL: acc=0.280, bytes=7051.799999999999, clients_used=292
+ SACHEFL: acc=0.290, bytes=16640.399999999998, clients_used=283
+
+Round 8: participants=320
+ SACFL: acc=0.290, bytes=6090, clients_used=290
+ SACDAFL: acc=0.775, bytes=2919, clients_used=None
+ SACSAFL: acc=0.280, bytes=6882.749999999999, clients_used=285
+ SACHEFL: acc=0.285, bytes=16816.8, clients_used=286
+
+Round 9: participants=320
+ SACFL: acc=0.285, bytes=5859, clients_used=279
+ SACDAFL: acc=0.775, bytes=2940, clients_used=None
+ SACSAFL: acc=0.285, bytes=6713.7, clients_used=278
+ SACHEFL: acc=0.285, bytes=16993.2, clients_used=289
+
+Round 10: participants=320
+ SACFL: acc=0.285, bytes=6174, clients_used=294
+ SACDAFL: acc=0.775, bytes=2961, clients_used=None
+ SACSAFL: acc=0.285, bytes=6955.2, clients_used=288
+ SACHEFL: acc=0.285, bytes=17052.0, clients_used=290
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=160
+ SACFL: acc=0.290, bytes=3024, clients_used=144
+ SACDAFL: acc=0.750, bytes=21, clients_used=None
+ SACSAFL: acc=0.280, bytes=3453.45, clients_used=143
+ SACHEFL: acc=0.280, bytes=8584.8, clients_used=146
+
+Round 2: participants=160
+ SACFL: acc=0.300, bytes=3129, clients_used=149
+ SACDAFL: acc=0.760, bytes=21, clients_used=None
+ SACSAFL: acc=0.295, bytes=3453.45, clients_used=143
+ SACHEFL: acc=0.295, bytes=8467.199999999999, clients_used=144
+
+Round 3: participants=160
+ SACFL: acc=0.280, bytes=3087, clients_used=147
+ SACDAFL: acc=0.795, bytes=21, clients_used=None
+ SACSAFL: acc=0.285, bytes=3501.7499999999995, clients_used=145
+ SACHEFL: acc=0.285, bytes=8526.0, clients_used=145
+
+Round 4: participants=160
+ SACFL: acc=0.285, bytes=3024, clients_used=144
+ SACDAFL: acc=0.795, bytes=0, clients_used=None
+ SACSAFL: acc=0.285, bytes=3501.7499999999995, clients_used=145
+ SACHEFL: acc=0.285, bytes=8526.0, clients_used=145
+
+Round 5: participants=160
+ SACFL: acc=0.285, bytes=3129, clients_used=149
+ SACDAFL: acc=0.795, bytes=21, clients_used=None
+ SACSAFL: acc=0.285, bytes=3550.0499999999997, clients_used=147
+ SACHEFL: acc=0.285, bytes=8526.0, clients_used=145
+
+Round 6: participants=160
+ SACFL: acc=0.285, bytes=2982, clients_used=142
+ SACDAFL: acc=0.795, bytes=0, clients_used=None
+ SACSAFL: acc=0.285, bytes=3477.6, clients_used=144
+ SACHEFL: acc=0.285, bytes=8761.199999999999, clients_used=149
+
+Round 7: participants=160
+ SACFL: acc=0.285, bytes=2940, clients_used=140
+ SACDAFL: acc=0.795, bytes=21, clients_used=None
+ SACSAFL: acc=0.285, bytes=3574.2, clients_used=148
+ SACHEFL: acc=0.285, bytes=8467.199999999999, clients_used=144
+
+Round 8: participants=160
+ SACFL: acc=0.285, bytes=2982, clients_used=142
+ SACDAFL: acc=0.795, bytes=21, clients_used=None
+ SACSAFL: acc=0.285, bytes=3550.0499999999997, clients_used=147
+ SACHEFL: acc=0.285, bytes=8937.599999999999, clients_used=152
+
+Round 9: participants=160
+ SACFL: acc=0.285, bytes=3066, clients_used=146
+ SACDAFL: acc=0.795, bytes=21, clients_used=None
+ SACSAFL: acc=0.285, bytes=3501.7499999999995, clients_used=145
+ SACHEFL: acc=0.285, bytes=8114.4, clients_used=138
+
+Round 10: participants=160
+ SACFL: acc=0.285, bytes=2919, clients_used=139
+ SACDAFL: acc=0.795, bytes=21, clients_used=None
+ SACSAFL: acc=0.285, bytes=3453.45, clients_used=143
+ SACHEFL: acc=0.285, bytes=8643.599999999999, clients_used=147
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=168
+ SACFL: acc=0.320, bytes=3129, clients_used=149
+ SACDAFL: acc=0.845, bytes=126, clients_used=None
+ SACSAFL: acc=0.330, bytes=3670.7999999999997, clients_used=152
+ SACHEFL: acc=0.325, bytes=9055.199999999999, clients_used=154
+
+Round 2: participants=168
+ SACFL: acc=0.260, bytes=3234, clients_used=154
+ SACDAFL: acc=0.830, bytes=147, clients_used=None
+ SACSAFL: acc=0.255, bytes=3839.85, clients_used=159
+ SACHEFL: acc=0.260, bytes=8702.4, clients_used=148
+
+Round 3: participants=168
+ SACFL: acc=0.250, bytes=3255, clients_used=155
+ SACDAFL: acc=0.845, bytes=126, clients_used=None
+ SACSAFL: acc=0.255, bytes=3694.95, clients_used=153
+ SACHEFL: acc=0.250, bytes=8878.8, clients_used=151
+
+Round 4: participants=168
+ SACFL: acc=0.250, bytes=3213, clients_used=153
+ SACDAFL: acc=0.845, bytes=105, clients_used=None
+ SACSAFL: acc=0.250, bytes=3622.4999999999995, clients_used=150
+ SACHEFL: acc=0.250, bytes=8584.8, clients_used=146
+
+Round 5: participants=168
+ SACFL: acc=0.250, bytes=3276, clients_used=156
+ SACDAFL: acc=0.845, bytes=168, clients_used=None
+ SACSAFL: acc=0.250, bytes=3767.3999999999996, clients_used=156
+ SACHEFL: acc=0.250, bytes=8937.599999999999, clients_used=152
+
+Round 6: participants=168
+ SACFL: acc=0.250, bytes=3108, clients_used=148
+ SACDAFL: acc=0.845, bytes=147, clients_used=None
+ SACSAFL: acc=0.250, bytes=3694.95, clients_used=153
+ SACHEFL: acc=0.250, bytes=8820.0, clients_used=150
+
+Round 7: participants=168
+ SACFL: acc=0.250, bytes=3171, clients_used=151
+ SACDAFL: acc=0.845, bytes=126, clients_used=None
+ SACSAFL: acc=0.250, bytes=3767.3999999999996, clients_used=156
+ SACHEFL: acc=0.250, bytes=8878.8, clients_used=151
+
+Round 8: participants=168
+ SACFL: acc=0.250, bytes=3192, clients_used=152
+ SACDAFL: acc=0.845, bytes=189, clients_used=None
+ SACSAFL: acc=0.250, bytes=3598.35, clients_used=149
+ SACHEFL: acc=0.250, bytes=9172.8, clients_used=156
+
+Round 9: participants=168
+ SACFL: acc=0.245, bytes=3171, clients_used=151
+ SACDAFL: acc=0.845, bytes=147, clients_used=None
+ SACSAFL: acc=0.250, bytes=3694.95, clients_used=153
+ SACHEFL: acc=0.250, bytes=8643.599999999999, clients_used=147
+
+Round 10: participants=168
+ SACFL: acc=0.245, bytes=3087, clients_used=147
+ SACDAFL: acc=0.845, bytes=147, clients_used=None
+ SACSAFL: acc=0.245, bytes=3670.7999999999997, clients_used=152
+ SACHEFL: acc=0.250, bytes=8996.4, clients_used=153
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=808
+ SACFL: acc=0.760, bytes=15456, clients_used=736
+ SACDAFL: acc=0.760, bytes=15288, clients_used=None
+ SACSAFL: acc=0.765, bytes=17653.649999999998, clients_used=731
+ SACHEFL: acc=0.765, bytes=42747.6, clients_used=727
+
+Round 2: participants=808
+ SACFL: acc=0.775, bytes=15540, clients_used=740
+ SACDAFL: acc=0.775, bytes=15351, clients_used=None
+ SACSAFL: acc=0.775, bytes=17629.5, clients_used=730
+ SACHEFL: acc=0.770, bytes=42512.399999999994, clients_used=723
+
+Round 3: participants=808
+ SACFL: acc=0.775, bytes=15099, clients_used=719
+ SACDAFL: acc=0.775, bytes=14973, clients_used=None
+ SACSAFL: acc=0.775, bytes=17677.8, clients_used=732
+ SACHEFL: acc=0.775, bytes=42747.6, clients_used=727
+
+Round 4: participants=808
+ SACFL: acc=0.780, bytes=15309, clients_used=729
+ SACDAFL: acc=0.780, bytes=15120, clients_used=None
+ SACSAFL: acc=0.780, bytes=17629.5, clients_used=730
+ SACHEFL: acc=0.785, bytes=43159.2, clients_used=734
+
+Round 5: participants=808
+ SACFL: acc=0.790, bytes=15267, clients_used=727
+ SACDAFL: acc=0.790, bytes=15141, clients_used=None
+ SACSAFL: acc=0.790, bytes=17557.05, clients_used=727
+ SACHEFL: acc=0.790, bytes=42630.0, clients_used=725
+
+Round 6: participants=808
+ SACFL: acc=0.790, bytes=15078, clients_used=718
+ SACDAFL: acc=0.790, bytes=14931, clients_used=None
+ SACSAFL: acc=0.790, bytes=16929.149999999998, clients_used=701
+ SACHEFL: acc=0.795, bytes=43453.2, clients_used=739
+
+Round 7: participants=808
+ SACFL: acc=0.790, bytes=15099, clients_used=719
+ SACDAFL: acc=0.790, bytes=14931, clients_used=None
+ SACSAFL: acc=0.790, bytes=17001.6, clients_used=704
+ SACHEFL: acc=0.795, bytes=42806.399999999994, clients_used=728
+
+Round 8: participants=808
+ SACFL: acc=0.800, bytes=15351, clients_used=731
+ SACDAFL: acc=0.800, bytes=15246, clients_used=None
+ SACSAFL: acc=0.800, bytes=17484.6, clients_used=724
+ SACHEFL: acc=0.805, bytes=42571.2, clients_used=724
+
+Round 9: participants=808
+ SACFL: acc=0.810, bytes=15141, clients_used=721
+ SACDAFL: acc=0.810, bytes=14973, clients_used=None
+ SACSAFL: acc=0.805, bytes=18040.05, clients_used=747
+ SACHEFL: acc=0.810, bytes=42512.399999999994, clients_used=723
+
+Round 10: participants=808
+ SACFL: acc=0.820, bytes=15393, clients_used=733
+ SACDAFL: acc=0.820, bytes=15246, clients_used=None
+ SACSAFL: acc=0.815, bytes=17557.05, clients_used=727
+ SACHEFL: acc=0.810, bytes=43159.2, clients_used=734
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=880
+ SACFL: acc=0.790, bytes=16611, clients_used=791
+ SACDAFL: acc=0.795, bytes=15015, clients_used=None
+ SACSAFL: acc=0.795, bytes=19247.55, clients_used=797
+ SACHEFL: acc=0.790, bytes=46275.6, clients_used=787
+
+Round 2: participants=880
+ SACFL: acc=0.795, bytes=16674, clients_used=794
+ SACDAFL: acc=0.795, bytes=15288, clients_used=None
+ SACSAFL: acc=0.795, bytes=18909.449999999997, clients_used=783
+ SACHEFL: acc=0.795, bytes=46746.0, clients_used=795
+
+Round 3: participants=880
+ SACFL: acc=0.800, bytes=16716, clients_used=796
+ SACDAFL: acc=0.800, bytes=15225, clients_used=None
+ SACSAFL: acc=0.800, bytes=19102.649999999998, clients_used=791
+ SACHEFL: acc=0.795, bytes=46628.399999999994, clients_used=793
+
+Round 4: participants=880
+ SACFL: acc=0.800, bytes=17199, clients_used=819
+ SACDAFL: acc=0.800, bytes=15645, clients_used=None
+ SACSAFL: acc=0.800, bytes=18861.149999999998, clients_used=781
+ SACHEFL: acc=0.800, bytes=46393.2, clients_used=789
+
+Round 5: participants=880
+ SACFL: acc=0.800, bytes=16800, clients_used=800
+ SACDAFL: acc=0.800, bytes=15141, clients_used=None
+ SACSAFL: acc=0.800, bytes=19054.35, clients_used=789
+ SACHEFL: acc=0.800, bytes=46746.0, clients_used=795
+
+Round 6: participants=880
+ SACFL: acc=0.800, bytes=16065, clients_used=765
+ SACDAFL: acc=0.805, bytes=14616, clients_used=None
+ SACSAFL: acc=0.800, bytes=19030.199999999997, clients_used=788
+ SACHEFL: acc=0.805, bytes=45922.799999999996, clients_used=781
+
+Round 7: participants=880
+ SACFL: acc=0.800, bytes=16485, clients_used=785
+ SACDAFL: acc=0.805, bytes=14826, clients_used=None
+ SACSAFL: acc=0.805, bytes=18981.899999999998, clients_used=786
+ SACHEFL: acc=0.805, bytes=46922.399999999994, clients_used=798
+
+Round 8: participants=880
+ SACFL: acc=0.820, bytes=16359, clients_used=779
+ SACDAFL: acc=0.820, bytes=14742, clients_used=None
+ SACSAFL: acc=0.815, bytes=19271.699999999997, clients_used=798
+ SACHEFL: acc=0.810, bytes=46628.399999999994, clients_used=793
+
+Round 9: participants=880
+ SACFL: acc=0.825, bytes=16758, clients_used=798
+ SACDAFL: acc=0.825, bytes=15246, clients_used=None
+ SACSAFL: acc=0.820, bytes=19199.25, clients_used=795
+ SACHEFL: acc=0.815, bytes=46628.399999999994, clients_used=793
+
+Round 10: participants=880
+ SACFL: acc=0.825, bytes=16443, clients_used=783
+ SACDAFL: acc=0.825, bytes=14994, clients_used=None
+ SACSAFL: acc=0.820, bytes=19199.25, clients_used=795
+ SACHEFL: acc=0.820, bytes=45628.799999999996, clients_used=776
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=1120
+ SACFL: acc=0.810, bytes=21063, clients_used=1003
+ SACDAFL: acc=0.810, bytes=15120, clients_used=None
+ SACSAFL: acc=0.810, bytes=24463.949999999997, clients_used=1013
+ SACHEFL: acc=0.810, bytes=59035.2, clients_used=1004
+
+Round 2: participants=1120
+ SACFL: acc=0.805, bytes=20958, clients_used=998
+ SACDAFL: acc=0.800, bytes=14805, clients_used=None
+ SACSAFL: acc=0.810, bytes=24512.249999999996, clients_used=1015
+ SACHEFL: acc=0.810, bytes=59917.2, clients_used=1019
+
+Round 3: participants=1120
+ SACFL: acc=0.810, bytes=21189, clients_used=1009
+ SACDAFL: acc=0.805, bytes=15015, clients_used=None
+ SACSAFL: acc=0.810, bytes=24415.649999999998, clients_used=1011
+ SACHEFL: acc=0.810, bytes=58917.6, clients_used=1002
+
+Round 4: participants=1120
+ SACFL: acc=0.810, bytes=20916, clients_used=996
+ SACDAFL: acc=0.805, bytes=14910, clients_used=None
+ SACSAFL: acc=0.810, bytes=23763.6, clients_used=984
+ SACHEFL: acc=0.810, bytes=59505.6, clients_used=1012
+
+Round 5: participants=1120
+ SACFL: acc=0.810, bytes=21252, clients_used=1012
+ SACDAFL: acc=0.810, bytes=15015, clients_used=None
+ SACSAFL: acc=0.810, bytes=24705.449999999997, clients_used=1023
+ SACHEFL: acc=0.810, bytes=59681.99999999999, clients_used=1015
+
+Round 6: participants=1120
+ SACFL: acc=0.805, bytes=21315, clients_used=1015
+ SACDAFL: acc=0.800, bytes=15288, clients_used=None
+ SACSAFL: acc=0.810, bytes=24632.999999999996, clients_used=1020
+ SACHEFL: acc=0.810, bytes=59152.799999999996, clients_used=1006
+
+Round 7: participants=1120
+ SACFL: acc=0.810, bytes=21189, clients_used=1009
+ SACDAFL: acc=0.805, bytes=15036, clients_used=None
+ SACSAFL: acc=0.810, bytes=24343.199999999997, clients_used=1008
+ SACHEFL: acc=0.810, bytes=58976.399999999994, clients_used=1003
+
+Round 8: participants=1120
+ SACFL: acc=0.805, bytes=21105, clients_used=1005
+ SACDAFL: acc=0.810, bytes=14889, clients_used=None
+ SACSAFL: acc=0.805, bytes=24270.749999999996, clients_used=1005
+ SACHEFL: acc=0.805, bytes=59681.99999999999, clients_used=1015
+
+Round 9: participants=1120
+ SACFL: acc=0.800, bytes=21294, clients_used=1014
+ SACDAFL: acc=0.805, bytes=15246, clients_used=None
+ SACSAFL: acc=0.805, bytes=24343.199999999997, clients_used=1008
+ SACHEFL: acc=0.800, bytes=59505.6, clients_used=1012
+
+Round 10: participants=1120
+ SACFL: acc=0.805, bytes=21336, clients_used=1016
+ SACDAFL: acc=0.805, bytes=15225, clients_used=None
+ SACSAFL: acc=0.805, bytes=24391.499999999996, clients_used=1010
+ SACHEFL: acc=0.800, bytes=59211.6, clients_used=1007
+=== Federated rounds end ===
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+=== Federated rounds start ===
+
+Round 1: participants=2400
+ SACFL: acc=0.570, bytes=45570, clients_used=2170
+ SACDAFL: acc=0.760, bytes=15162, clients_used=None
+ SACSAFL: acc=0.585, bytes=51922.49999999999, clients_used=2150
+ SACHEFL: acc=0.585, bytes=127301.99999999999, clients_used=2165
+
+Round 2: participants=2400
+ SACFL: acc=0.275, bytes=45444, clients_used=2164
+ SACDAFL: acc=0.765, bytes=15435, clients_used=None
+ SACSAFL: acc=0.275, bytes=51729.299999999996, clients_used=2142
+ SACHEFL: acc=0.275, bytes=128007.59999999999, clients_used=2177
+
+Round 3: participants=2400
+ SACFL: acc=0.285, bytes=45654, clients_used=2174
+ SACDAFL: acc=0.755, bytes=15477, clients_used=None
+ SACSAFL: acc=0.285, bytes=51970.799999999996, clients_used=2152
+ SACHEFL: acc=0.285, bytes=126772.79999999999, clients_used=2156
+
+Round 4: participants=2400
+ SACFL: acc=0.295, bytes=45150, clients_used=2150
+ SACDAFL: acc=0.780, bytes=14805, clients_used=None
+ SACSAFL: acc=0.290, bytes=51632.7, clients_used=2138
+ SACHEFL: acc=0.295, bytes=126949.2, clients_used=2159
+
+Round 5: participants=2400
+ SACFL: acc=0.285, bytes=45528, clients_used=2168
+ SACDAFL: acc=0.780, bytes=15372, clients_used=None
+ SACSAFL: acc=0.285, bytes=52405.49999999999, clients_used=2170
+ SACHEFL: acc=0.280, bytes=128889.59999999999, clients_used=2192
+
+Round 6: participants=2400
+ SACFL: acc=0.280, bytes=45213, clients_used=2153
+ SACDAFL: acc=0.780, bytes=14973, clients_used=None
+ SACSAFL: acc=0.280, bytes=51994.95, clients_used=2153
+ SACHEFL: acc=0.280, bytes=127125.59999999999, clients_used=2162
+
+Round 7: participants=2400
+ SACFL: acc=0.280, bytes=45087, clients_used=2147
+ SACDAFL: acc=0.780, bytes=15540, clients_used=None
+ SACSAFL: acc=0.280, bytes=51970.799999999996, clients_used=2152
+ SACHEFL: acc=0.280, bytes=128183.99999999999, clients_used=2180
+
+Round 8: participants=2400
+ SACFL: acc=0.285, bytes=45066, clients_used=2146
+ SACDAFL: acc=0.780, bytes=15120, clients_used=None
+ SACSAFL: acc=0.285, bytes=51970.799999999996, clients_used=2152
+ SACHEFL: acc=0.285, bytes=127125.59999999999, clients_used=2162
+
+Round 9: participants=2400
+ SACFL: acc=0.285, bytes=45276, clients_used=2156
+ SACDAFL: acc=0.780, bytes=15204, clients_used=None
+ SACSAFL: acc=0.285, bytes=52477.95, clients_used=2173
+ SACHEFL: acc=0.280, bytes=126713.99999999999, clients_used=2155
+
+Round 10: participants=2400
+ SACFL: acc=0.285, bytes=45528, clients_used=2168
+ SACDAFL: acc=0.780, bytes=15246, clients_used=None
+ SACSAFL: acc=0.280, bytes=52043.24999999999, clients_used=2155
+ SACHEFL: acc=0.280, bytes=126478.79999999999, clients_used=2151
+=== Federated rounds end ===
