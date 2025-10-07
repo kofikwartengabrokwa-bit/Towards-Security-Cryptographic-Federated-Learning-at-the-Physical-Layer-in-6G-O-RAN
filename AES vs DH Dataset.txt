@@ -1,0 +1,75 @@
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+Generating DH parameters (2048-bit) — this may take a second...
+Round 01: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 2 (0.40%)
+Round 02: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 1 (0.20%)
+Round 03: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 6 (1.20%)
+Round 04: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 5 (1.00%)
+Round 05: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 4 (0.80%)
+Round 06: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 7 (1.40%)
+Round 07: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 6 (1.20%)
+Round 08: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 15 (3.00%)
+Round 09: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 5 (1.00%)
+Round 10: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 13 (2.60%)
+Round 11: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 12 (2.40%)
+Round 12: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 16 (3.20%)
+Round 13: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 13 (2.60%)
+Round 14: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 11 (2.20%)
+Round 15: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 11 (2.20%)
+Round 16: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 15 (3.00%)
+Round 17: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 10 (2.00%)
+Round 18: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 16 (3.20%)
+Round 19: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 19 (3.80%)
+Round 20: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 25 (5.00%)
+Round 21: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 15 (3.00%)
+Round 22: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 18 (3.60%)
+Round 23: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 19 (3.80%)
+Round 24: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 22 (4.40%)
+Round 25: participants=500, malicious=50 | DH+AES compromised: 4 (0.80%) | AES-only compromised: 18 (3.60%)
+Round 26: participants=500, malicious=50 | DH+AES compromised: 4 (0.80%) | AES-only compromised: 19 (3.80%)
+Round 27: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 27 (5.40%)
+Round 28: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 27 (5.40%)
+Round 29: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 23 (4.60%)
+Round 30: participants=500, malicious=50 | DH+AES compromised: 4 (0.80%) | AES-only compromised: 17 (3.40%)
+
+=== Aggregate Summary ===
+DH+AES: mean compromised% = 0.25, max = 0.80
+AES-only: mean compromised% = 2.78, max = 5.40
+
+
+
+C:\Users\Abrokwa\PycharmProjects\pythonProject1\venv\Scripts\python.exe C:\Users\Abrokwa\PycharmProjects\pythonProject1\main.py 
+Generating DH parameters (2048-bit) — this may take a second...
+Round 01: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 2 (0.40%)
+Round 02: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 1 (0.20%)
+Round 03: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 6 (1.20%)
+Round 04: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 5 (1.00%)
+Round 05: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 4 (0.80%)
+Round 06: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 7 (1.40%)
+Round 07: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 6 (1.20%)
+Round 08: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 15 (3.00%)
+Round 09: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 5 (1.00%)
+Round 10: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 13 (2.60%)
+Round 11: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 12 (2.40%)
+Round 12: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 16 (3.20%)
+Round 13: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 13 (2.60%)
+Round 14: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 11 (2.20%)
+Round 15: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 11 (2.20%)
+Round 16: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 15 (3.00%)
+Round 17: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 10 (2.00%)
+Round 18: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 16 (3.20%)
+Round 19: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 19 (3.80%)
+Round 20: participants=500, malicious=50 | DH+AES compromised: 0 (0.00%) | AES-only compromised: 25 (5.00%)
+Round 21: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 15 (3.00%)
+Round 22: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 18 (3.60%)
+Round 23: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 19 (3.80%)
+Round 24: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 22 (4.40%)
+Round 25: participants=500, malicious=50 | DH+AES compromised: 4 (0.80%) | AES-only compromised: 18 (3.60%)
+Round 26: participants=500, malicious=50 | DH+AES compromised: 4 (0.80%) | AES-only compromised: 19 (3.80%)
+Round 27: participants=500, malicious=50 | DH+AES compromised: 2 (0.40%) | AES-only compromised: 27 (5.40%)
+Round 28: participants=500, malicious=50 | DH+AES compromised: 3 (0.60%) | AES-only compromised: 27 (5.40%)
+Round 29: participants=500, malicious=50 | DH+AES compromised: 1 (0.20%) | AES-only compromised: 23 (4.60%)
+Round 30: participants=500, malicious=50 | DH+AES compromised: 4 (0.80%) | AES-only compromised: 17 (3.40%)
+
+=== Aggregate Summary ===
+DH+AES: mean compromised% = 0.25, max = 0.80
+AES-only: mean compromised% = 2.78, max = 5.40

@@ -1,0 +1,373 @@
+"""
+sacdafl_attack_on_legal_demo.py
+
+Simulates malicious clients attacking the global model (targeting legal users' performance).
+Median-finding (elementwise median + MAD) used to detect outliers.
+Focus: analyze effect of attacks on legal users and median shift.
+
+Dependencies:
+  pip install numpy torch matplotlib
+"""
+
+import numpy as np
+import torch
+import random
+import matplotlib.pyplot as plt
+
+# -------------------------
+# Reproducibility
+# -------------------------
+seed = 42
+torch.manual_seed(seed)
+np.random.seed(seed)
+random.seed(seed)
+
+# -------------------------
+# Parameters
+# -------------------------
+num_legal = 2000
+num_malicious = 500
+num_clients = num_legal + num_malicious
+num_rounds = 6
+feature_dim = 20
+samples_per_client = 100
+val_samples = 400
+lr_local = 0.05
+
+channel_drop_prob = 0.02
+local_noise_std = 0.05
+partial_participation = 0.85
+
+malicious_attack_prob = 0.95    # fraction of malicious actively attacking
+malicious_strength_min = 2.0
+malicious_strength_max = 5.0
+
+median_mad_k = 1.5
+
+# Choose attack mode: "amplify" or "targeted_push"
+attack_mode = "targeted_push"
+
+# Adversarial target vector for "targeted_push" (this simulates a backdoor direction)
+adv_direction = torch.ones(feature_dim) * 3.0  # malicious try to push toward this vector
+
+# -------------------------
+# IP lists and true labels
+# -------------------------
+legal_ips = [f"192.168.0.{i}" for i in range(1, num_legal+1)]
+malicious_ips = [f"10.0.0.{i}" for i in range(1, num_malicious+1)]
+client_ips = legal_ips + malicious_ips  # index >= num_legal are malicious
+
+# helper to check true label
+def is_malicious_idx(i): return i >= num_legal
+
+# -------------------------
+# Synthetic client data (two separable clusters)
+# -------------------------
+def make_client_data(n_samples):
+    X0 = np.random.normal(loc=0.0, scale=0.8, size=(n_samples//2, feature_dim))
+    y0 = np.zeros((n_samples//2,))
+    X1 = np.random.normal(loc=5.0, scale=0.8, size=(n_samples - n_samples//2, feature_dim))
+    y1 = np.ones((n_samples - n_samples//2,))
+    X = np.vstack([X0, X1])
+    y = np.concatenate([y0, y1])
+    idx = np.arange(len(y)); np.random.shuffle(idx)
+    return torch.tensor(X[idx], dtype=torch.float32), torch.tensor(y[idx], dtype=torch.float32).unsqueeze(1)
+
+clients_data = [make_client_data(samples_per_client) for _ in range(num_clients)]
+
+# -------------------------
+# Validation set (global test)
+# -------------------------
+X_val = np.vstack([
+    np.random.normal(0.0, 0.8, (val_samples//2, feature_dim)),
+    np.random.normal(5.0, 0.8, (val_samples//2, feature_dim))
+])
+y_val = np.concatenate([np.zeros(val_samples//2), np.ones(val_samples//2)])
+perm = np.arange(val_samples); np.random.shuffle(perm)
+X_val = torch.tensor(X_val[perm], dtype=torch.float32)
+y_val = torch.tensor(y_val[perm], dtype=torch.float32).unsqueeze(1)
+
+# -------------------------
+# State helpers and initialization
+# -------------------------
+def vec_to_state(w: torch.Tensor, b: torch.Tensor):
+    return {"block1": {"weight": w.clone(), "bias": b.clone()}}
+
+def state_to_vec(state):
+    return state["block1"]["weight"].clone(), state["block1"]["bias"].clone()
+
+init_w = torch.randn(feature_dim) * 0.05
+init_b = torch.randn(1) * 0.05
+
+# -------------------------
+# Client local update (with capability to craft targeted attack)
+# -------------------------
+def client_local_update(global_w: torch.Tensor, global_b: torch.Tensor, client_idx: int, malicious: bool=False):
+    # simulate channel drop
+    if random.random() < channel_drop_prob:
+        return None, None
+
+    X, y = clients_data[client_idx]
+    # approximate gradient (vectorized)
+    logits = X @ global_w.unsqueeze(1) + global_b
+    probs = torch.sigmoid(logits).squeeze(1)
+    err = (probs - y.squeeze(1))
+    grad_w = (X.T @ err) / X.shape[0]
+    grad_b = err.mean().unsqueeze(0)
+
+    # normal update (genuine)
+    delta_w = -lr_local * grad_w + torch.randn_like(global_w) * local_noise_std
+    delta_b = -lr_local * grad_b + torch.randn_like(global_b) * local_noise_std
+
+    # malicious modification
+    if malicious and random.random() < malicious_attack_prob:
+        if attack_mode == "amplify":
+            # amplify gradient magnitude (push far in direction of grad)
+            strength = random.uniform(malicious_strength_min, malicious_strength_max)
+            delta_w = strength * (-lr_local * grad_w) + torch.randn_like(global_w) * (local_noise_std * 0.5)
+            delta_b = strength * (-lr_local * grad_b) + torch.randn_like(global_b) * (local_noise_std * 0.5)
+        elif attack_mode == "targeted_push":
+            # craft update that moves the client's weight toward adv_direction with a strong step
+            # create a vector that points from current global to adv_direction, scale large
+            push_vec = (adv_direction - global_w)
+            push_scale = random.uniform(malicious_strength_min, malicious_strength_max)
+            delta_w = push_scale * push_vec + torch.randn_like(global_w) * (local_noise_std * 0.2)
+            delta_b = torch.randn_like(global_b) * (local_noise_std * 0.2)
+        else:
+            # fallback to amplify
+            strength = random.uniform(malicious_strength_min, malicious_strength_max)
+            delta_w = strength * (-lr_local * grad_w)
+            delta_b = strength * (-lr_local * grad_b)
+
+    new_w = (global_w + delta_w).detach()
+    new_b = (global_b + delta_b).detach()
+    state = vec_to_state(new_w, new_b)
+    blob = state  # encryption omitted
+    return blob, state
+
+# -------------------------
+# Evaluation helper
+# -------------------------
+def eval_state(state):
+    w, b = state_to_vec(state)
+    logits = X_val @ w.unsqueeze(1) + b
+    preds = torch.sigmoid(logits) >= 0.5
+    return float((preds.float() == y_val).float().mean().item())
+
+# -------------------------
+# Median-based aggregator (MAD threshold) - focuses analysis on legal users
+# -------------------------
+class FedProxMedianAnalyzer:
+    def __init__(self, mu=0.0, k=median_mad_k):
+        self.mu = mu
+        self.k = k
+        self.bytes_history = []
+
+    def aggregate_and_analyze(self, blobs, ips, round_num=0, make_plot=True):
+        collected_states = []
+        collected_idxs = []  # preserve client indices
+        for s, ip_idx in zip(blobs, ips):
+            if s is None:
+                continue
+            collected_states.append(s)
+            collected_idxs.append(ip_idx)
+
+        if len(collected_states) == 0:
+            return vec_to_state(init_w, init_b)
+
+        # build weight matrix
+        weights = torch.stack([state_to_vec(s)[0] for s in collected_states], dim=0)
+        biases = torch.stack([state_to_vec(s)[1] for s in collected_states], dim=0).squeeze(1)
+
+        median_w = torch.median(weights, dim=0).values
+        mean_w = torch.mean(weights, dim=0)
+
+        d_to_median = torch.norm(weights - median_w.unsqueeze(0), dim=1)
+        d_to_mean = torch.norm(weights - mean_w.unsqueeze(0), dim=1)
+
+        med_dist = torch.median(d_to_median)
+        mad = torch.median(torch.abs(d_to_median - med_dist)) + 1e-9
+        threshold = med_dist + self.k * mad
+
+        pred_attacked = (d_to_median > threshold).long()  # predicted attacked=1
+
+        # True labels (0 legal, 1 malicious)
+        true_labels = np.array([1 if is_malicious_idx(idx) else 0 for idx in collected_idxs], dtype=int)
+
+        # median shift magnitude
+        median_norm = float(torch.norm(median_w))
+        mean_norm = float(torch.norm(mean_w))
+        mean_med_offset = float(torch.norm(mean_w - median_w))
+
+        # === Analysis focusing on legal users ===
+        legal_mask = (true_labels == 0)
+        num_legal_considered = int(legal_mask.sum())
+        legal_pred_attacked = int(pred_attacked[legal_mask].sum().item()) if num_legal_considered > 0 else 0
+
+        # Print per-round diagnostics
+        print(f"\n=== Round {round_num} Analysis ===")
+        print(
+            f"Clients considered this round: {len(collected_states)} (legal: {num_legal_considered}, malicious: {len(collected_states) - num_legal_considered})")
+        print(f"Median (first 6 dims): {median_w[:6].cpu().numpy()}")
+        print(
+            f"Median L2 norm: {median_norm:.6f}; Mean L2 norm: {mean_norm:.6f}; ||mean-median||: {mean_med_offset:.6f}")
+        print(
+            f"Median-distance median: {float(med_dist):.6f}; MAD: {float(mad):.6f}; threshold: {float(threshold):.6f}")
+        print(
+            f"Predicted attacked total: {int(pred_attacked.sum().item())}; of which legal flagged: {legal_pred_attacked}")
+
+        # Plotting
+        if make_plot:
+            self._plot_distances(
+                d_to_median.cpu().numpy(),
+                d_to_mean.cpu().numpy(),
+                true_labels,
+                pred_attacked.cpu().numpy(),
+                threshold,
+                mean_med_offset,
+                median_norm,
+                round_num
+            )
+
+        # Aggregate: average only predicted unattacked states
+        unattacked_states = [s for s, lab in zip(collected_states, pred_attacked) if int(lab.item()) == 0]
+        if len(unattacked_states) == 0:
+            unattacked_states = [vec_to_state(init_w, init_b)]
+        avg_state = BaseAggregator._avg_states(unattacked_states)
+
+        # Track total bytes
+        total_bytes = sum(state_to_vec(s)[0].numel() + state_to_vec(s)[1].numel() for s in collected_states)
+        self.bytes_history.append(total_bytes)
+
+        return avg_state
+
+    def _plot_distances(self, d_med, d_mean, true_labels, pred_labels,
+                        threshold, mean_med_offset, median_norm, round_num):
+        plt.figure(figsize=(8, 6))
+
+        # Define marker/color/label combinations
+        combos = [
+            (0, 0, 'blue', 'o', 'Legal / Pred Unattacked'),
+            (0, 1, 'blue', 'x', 'Legal / Pred Attacked'),
+            #(1, 0, 'red', 'o', 'Malicious / Pred Unattacked'),
+            #(1, 1, 'red', 'x', 'Malicious / Pred Attacked')
+        ]
+
+        # Plot each combination
+        for t, p, color, marker, label in combos:
+            mask = (true_labels == t) & (pred_labels == p)
+            if mask.sum() > 0:
+                plt.scatter(
+                    d_med[mask],
+                    d_mean[mask],
+                    c=color,
+                    marker=marker,
+                    label=label,
+                    alpha=0.75,
+                    edgecolors='k' if marker in ['o', 'x'] else None,
+                    s=60
+                )
+
+        # MAD threshold line
+        plt.axvline(x=threshold, color='gray', linestyle='--', label=f'MAD threshold = {threshold:.3f}')
+
+        # Median reference point
+        plt.scatter(
+            0.0,
+            mean_med_offset,
+            c='green',
+            marker='*',
+            s=200,
+            label=f'Median ref (0, ||mean-median|| = {mean_med_offset:.3f})'
+        )
+
+        # Invisible entry to show median L2 norm in legend
+        plt.scatter([], [], c='none', edgecolors='none', label=f'Median L2 norm = {median_norm:.3f}')
+
+        # Labels, ticks, legend
+        plt.xlabel('L2 distance to elementwise median', fontsize=18)
+        plt.ylabel('L2 distance to elementwise mean', fontsize=18)
+        plt.xticks(fontsize=14)
+        plt.yticks(fontsize=14)
+        plt.legend(loc='best', fontsize='large')
+        plt.tight_layout()
+        plt.show()
+
+        #plt.pause(0.1)
+        #plt.close()
+
+class BaseAggregator:
+    @staticmethod
+    def _avg_states(states):
+        w_sum = sum(state_to_vec(s)[0] for s in states)
+        b_sum = sum(state_to_vec(s)[1] for s in states)
+        n = len(states)
+        return vec_to_state(w_sum / n, b_sum / n)
+
+# -------------------------
+# Run simulation
+# -------------------------
+global_state = vec_to_state(init_w, init_b)
+analyzer = FedProxMedianAnalyzer(mu=0.0, k=median_mad_k)
+
+print("=== Federated rounds (attack simulation) ===")
+for r in range(1, num_rounds + 1):
+    # sample participants
+    participants = random.sample(range(num_clients), max(2, int(partial_participation * num_clients)))
+
+    blobs = []
+    ips = []
+    for i in participants:
+        is_mal = is_malicious_idx(i)
+        blob, state = client_local_update(
+            state_to_vec(global_state)[0],
+            state_to_vec(global_state)[1],
+            i,
+            malicious=is_mal
+        )
+        blobs.append(state)  # state or None
+        ips.append(i)        # store index so analyzer can know true label
+
+    # analyze and aggregate (median-based)
+    new_global = analyzer.aggregate_and_analyze(blobs, ips, round_num=r, make_plot=True)
+
+    # evaluate the new global model
+    acc = eval_state(new_global)
+
+    # === Collect stats for printing ===
+    weights = torch.stack([state_to_vec(s)[0] for s in blobs if s is not None], dim=0)
+    median_w = torch.median(weights, dim=0).values
+    mean_w = torch.mean(weights, dim=0)
+
+    d_to_median = torch.norm(weights - median_w.unsqueeze(0), dim=1)
+    d_to_mean = torch.norm(weights - mean_w.unsqueeze(0), dim=1)
+
+    med_dist = torch.median(d_to_median)
+    mad = torch.median(torch.abs(d_to_median - med_dist)) + 1e-9
+    threshold = med_dist + analyzer.k * mad
+
+    true_labels = np.array([1 if is_malicious_idx(idx) else 0 for idx in ips], dtype=int)
+    pred_attacked = (d_to_median > threshold).long()
+
+    # confusion matrix
+    TP = int(((true_labels == 1) & (pred_attacked.cpu().numpy() == 1)).sum())
+    FP = int(((true_labels == 0) & (pred_attacked.cpu().numpy() == 1)).sum())
+    FN = int(((true_labels == 1) & (pred_attacked.cpu().numpy() == 0)).sum())
+    TN = int(((true_labels == 0) & (pred_attacked.cpu().numpy() == 0)).sum())
+
+    avg_legal_d = float(d_to_median[true_labels == 0].mean().item()) if (true_labels == 0).any() else float('nan')
+    avg_mal_d = float(d_to_median[true_labels == 1].mean().item()) if (true_labels == 1).any() else float('nan')
+
+    print(f"\n=== Round {r} Summary ===")
+    print(f"Participants: {len(participants)} (legal={np.sum(true_labels==0)}, malicious={np.sum(true_labels==1)})")
+    print(f"Global accuracy after aggregation: {acc:.4f}")
+    print(f"Median norm: {torch.norm(median_w):.6f}; Mean norm: {torch.norm(mean_w):.6f}; ||mean-median||: {torch.norm(mean_w-median_w):.6f}")
+    print(f"Median distance: {float(med_dist):.6f}; MAD: {float(mad):.6f}; Threshold: {float(threshold):.6f}")
+    print(f"Confusion Matrix: TP={TP}, FP={FP}, FN={FN}, TN={TN}")
+    print(f"Avg distance to median — Legal: {avg_legal_d:.6f}; Malicious: {avg_mal_d:.6f}")
+
+    # for next round
+    global_state = new_global
+
+print("\n=== Simulation end ===")
+

@@ -1,0 +1,120 @@
+from cryptography.hazmat.primitives.asymmetric import dh
+from cryptography.hazmat.backends import default_backend
+from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+from hashlib import sha256
+import os
+import numpy as np
+import matplotlib.pyplot as plt
+import random
+
+# --- Simulation Parameters ---
+num_rounds = 30
+num_users = 100
+malicious_ratio = 0.5  # 30% of users are malicious
+weight_size = 16  # bytes
+np.random.seed(42)
+
+# --- Generate IP addresses for users ---
+legal_users = [f"192.168.0.{i}" for i in range(1, int(num_users * (1 - malicious_ratio)) + 1)]
+malicious_users = [f"10.0.0.{i}" for i in range(1, int(num_users * malicious_ratio) + 1)]
+all_users = legal_users + malicious_users
+
+# --- Helper Functions ---
+
+def generate_dh_key():
+    """Generate DH shared key between user and O-DU."""
+    parameters = dh.generate_parameters(generator=2, key_size=512, backend=default_backend())
+    private_key = parameters.generate_private_key()
+    peer_private_key = parameters.generate_private_key()
+
+    shared_key = private_key.exchange(peer_private_key.public_key())
+    derived_key = HKDF(
+        algorithm=hashes.SHA256(),
+        length=16,
+        salt=None,
+        info=b'handshake data',
+        backend=default_backend()
+    ).derive(shared_key)
+    return derived_key
+
+
+def encrypt_aes(key, plaintext):
+    """Encrypt weight using AES-CBC."""
+    iv = os.urandom(16)
+    cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=default_backend())
+    encryptor = cipher.encryptor()
+
+    # pad plaintext to block size
+    pad_len = 16 - len(plaintext) % 16
+    padded = plaintext + bytes([pad_len] * pad_len)
+
+    ciphertext = encryptor.update(padded) + encryptor.finalize()
+    return iv, ciphertext
+
+
+def simulate_attack(ip, scheme="DH+AES"):
+    """Simulate whether a user (malicious or not) can compromise the key."""
+    if ip.startswith("192.168"):  # legal user
+        return np.random.rand() < 0.01  # 1% accidental failure (false positive)
+    else:  # malicious user
+        if scheme == "AES-only":
+            return np.random.rand() < 0.25  # 25% chance to compromise AES-only
+        else:
+            return np.random.rand() < 0.03  # 3% chance to compromise DH+AES
+
+
+# --- Simulation ---
+attack_dh_aes = []
+attack_aes_only = []
+
+for r in range(1, num_rounds + 1):
+    compromised_dh = 0
+    compromised_aes = 0
+
+    for ip in all_users:
+        # Simulate local weight (random)
+        weight = os.urandom(weight_size)
+
+        # DH + AES encryption
+        dh_key = generate_dh_key()
+        iv_dh, ct_dh = encrypt_aes(dh_key, weight)
+
+        # AES-only encryption (no DH key management)
+        aes_key = os.urandom(16)
+        iv_aes, ct_aes = encrypt_aes(aes_key, weight)
+
+        # Malicious attempts
+        if simulate_attack(ip, "DH+AES"):
+            compromised_dh += 1
+        if simulate_attack(ip, "AES-only"):
+            compromised_aes += 1
+
+    # Record round statistics
+    rate_dh = (compromised_dh / len(all_users)) * 100
+    rate_aes = (compromised_aes / len(all_users)) * 100
+    attack_dh_aes.append(rate_dh)
+    attack_aes_only.append(rate_aes)
+
+# --- Summary statistics ---
+mean_dh = np.mean(attack_dh_aes)
+mean_aes = np.mean(attack_aes_only)
+
+print("=== Attack Compromise Statistics (%) ===")
+print(f"DH + AES: Mean={mean_dh:.2f}%, Min={np.min(attack_dh_aes):.2f}%, Max={np.max(attack_dh_aes):.2f}%")
+print(f"AES Only: Mean={mean_aes:.2f}%, Min={np.min(attack_aes_only):.2f}%, Max={np.max(attack_aes_only):.2f}%")
+
+# --- Plot ---
+rounds = np.arange(1, num_rounds + 1)
+plt.figure(figsize=(10, 6))
+plt.plot(rounds, attack_dh_aes, marker='o', linewidth=2, label=f"DH + AES (Mean SA={mean_dh:.2f}%)")
+plt.plot(rounds, attack_aes_only, marker='s', linestyle='--', linewidth=2, label=f"AES Only (Mean SA={mean_aes:.2f}%)")
+
+plt.xlabel("Rounds", fontsize=21)
+plt.ylabel("SA (%)", fontsize=21)
+plt.legend(fontsize=22)
+plt.xticks(fontsize=18)
+plt.yticks(fontsize=18)
+plt.ylim(-1, 100)
+plt.show()
