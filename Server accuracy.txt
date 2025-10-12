@@ -1,0 +1,344 @@
+# dynamic_fl_toy_sim.py
+import numpy as np
+import torch
+import torch.nn as nn
+import copy
+import random
+import matplotlib.pyplot as plt
+
+# -------------------------
+# Reproducibility (but still stochastic)
+# -------------------------
+seed = 1234
+torch.manual_seed(seed)
+np.random.seed(seed)
+random.seed(seed)
+
+# -------------------------
+# Simulation params (designed for visible dynamics)
+# -------------------------
+num_legal = 5            # small legal population -> malicious influence visible
+num_malicious = 10
+num_clients = num_legal + num_malicious
+num_rounds = 30
+feature_dim = 20         # moderate dim
+samples_per_client = 4   # few local samples -> noisy updates
+val_samples = 100        # small validation -> noisy accuracy
+lr_local = 0.05
+bce_filter_threshold = 1.2
+
+# Channel & noise parameters (increase to make dynamics)
+channel_drop_prob = 0.30   # 30% chance a client's update is dropped
+local_noise_std = 1.0      # noise added to local delta (on the order of gradient)
+partial_participation = 0.6  # fraction of clients participating each round
+
+# Malicious behavior params
+malicious_attack_prob = 0.8   # each malicious client attacks this round with this prob
+malicious_strength_min = 2.0
+malicious_strength_max = 12.0
+
+# -------------------------
+# IP lists
+# -------------------------
+legal_ips = [f"192.168.0.{i}" for i in range(1, num_legal+1)]
+malicious_ips = [f"10.0.0.{i}" for i in range(1, num_malicious+1)]
+client_ips = legal_ips + malicious_ips
+
+# -------------------------
+# Create client datasets (overlapping classes => non-trivial)
+# -------------------------
+def make_client_data(n_samples):
+    # make classes overlap strongly (hard)
+    X0 = np.random.normal(loc=0.0, scale=1.0, size=(n_samples//2, feature_dim))
+    y0 = np.zeros((n_samples//2,))
+    X1 = np.random.normal(loc=0.2, scale=1.0, size=(n_samples - n_samples//2, feature_dim))
+    y1 = np.ones((n_samples - n_samples//2,))
+    X = np.vstack([X0, X1])
+    y = np.concatenate([y0, y1])
+    idx = np.arange(len(y)); np.random.shuffle(idx)
+    return torch.tensor(X[idx], dtype=torch.float32), torch.tensor(y[idx], dtype=torch.float32).unsqueeze(1)
+
+clients_data = [make_client_data(samples_per_client) for _ in range(num_clients)]
+
+# -------------------------
+# Validation set (small -> noisy acc)
+# -------------------------
+X_val = np.vstack([
+    np.random.normal(0.0, 1.0, (val_samples//2, feature_dim)),
+    np.random.normal(0.2, 1.0, (val_samples//2, feature_dim))
+])
+y_val = np.concatenate([np.zeros(val_samples//2), np.ones(val_samples//2)])
+perm = np.arange(val_samples); np.random.shuffle(perm)
+X_val = torch.tensor(X_val[perm], dtype=torch.float32)
+y_val = torch.tensor(y_val[perm], dtype=torch.float32).unsqueeze(1)
+
+# -------------------------
+# State <-> vector helpers
+# -------------------------
+def vec_to_state(vec):
+    # store 1-D weight vector as block
+    return {"block1": {"weight": vec.reshape(-1).clone()}}
+
+def state_to_vec(state):
+    return state["block1"]["weight"].reshape(-1).clone()
+
+init_vec = torch.zeros(feature_dim)
+
+def encrypt_message(key, blob): return blob
+def decrypt_message(key, blob): return blob
+
+# -------------------------
+# Client local update: noisy gradients + possible malicious action
+# - benign: descent step + gaussian noise
+# - malicious: sometimes perform ascent with random strength + noise
+# - simulate packet loss by returning (None, None)
+# -------------------------
+def client_local_update(global_vec, client_idx, malicious=False):
+    # simulate packet loss
+    if random.random() < channel_drop_prob:
+        return None, None
+
+    X, y = clients_data[client_idx]
+    w = global_vec.clone().detach().requires_grad_(True)
+    logits = X @ w.unsqueeze(1)
+    loss = nn.BCEWithLogitsLoss()(logits, y)
+    loss.backward()
+    grad = w.grad.detach()
+
+    # benign delta (descent)
+    delta = - lr_local * grad
+
+    # add large-ish gaussian noise to make updates stochastic and possibly dominating
+    delta += torch.randn_like(delta) * local_noise_std
+
+    if malicious:
+        # malicious may choose to attack this round or not (stochastic)
+        if random.random() < malicious_attack_prob:
+            strength = random.uniform(malicious_strength_min, malicious_strength_max)
+            # malicious update pushes model *up* the gradient direction (increase loss)
+            delta = + strength * lr_local * grad
+            # add noise too (so attacks aren't perfect)
+            delta += torch.randn_like(delta) * (local_noise_std * 0.5)
+        else:
+            # sometimes malicious acts benignly (to be stealthy)
+            pass
+
+    new_vec = (global_vec + delta).detach()
+    state = vec_to_state(new_vec)
+    blob = encrypt_message(None, state)
+    return blob, state_to_vec(state)
+
+# -------------------------
+# Aggregators (adapted)
+# -------------------------
+class BaseAggregator:
+    def __init__(self, name):
+        self.name = name
+        self.metrics = {}
+        self.accuracy_history = []
+        self.bytes_history = []
+
+    @staticmethod
+    def _avg_nested_state(client_states, weights=None):
+        n = len(client_states)
+        if n == 0:
+            raise ValueError("No client states")
+        if weights is None:
+            weights = [1.0] * n
+        total_w = float(sum(weights))
+        out = copy.deepcopy(client_states[0])
+        for block in out.keys():
+            for p in out[block].keys():
+                acc = None
+                for cs, w in zip(client_states, weights):
+                    t = cs[block][p] * float(w)
+                    acc = t if acc is None else acc + t
+                out[block][p] = acc / total_w
+        return out
+
+class FedAvgAggregator(BaseAggregator):
+    def __init__(self): super().__init__("SACFL")
+    def aggregate(self, client_states):
+        avg = self._avg_nested_state(client_states)
+        bytes_upload = sum(state_to_vec(cs).numel() * state_to_vec(cs).element_size() for cs in client_states)
+        self.metrics = {"scheme": self.name, "bytes_upload": int(bytes_upload), "num_clients": len(client_states)}
+        self.bytes_history.append(self.metrics["bytes_upload"])
+        return avg
+
+class SecureAggregationAggregator(BaseAggregator):
+    def __init__(self, overhead=1.15): super().__init__("SACSAFL"); self.overhead = overhead
+    def aggregate(self, client_states):
+        avg = self._avg_nested_state(client_states)
+        bytes_upload = sum(state_to_vec(cs).numel() * state_to_vec(cs).element_size() for cs in client_states)
+        self.metrics = {"scheme": self.name, "bytes_upload": int(bytes_upload * self.overhead), "num_clients": len(client_states)}
+        self.bytes_history.append(self.metrics["bytes_upload"])
+        return avg
+
+class HomomorphicEncryptionAggregator(BaseAggregator):
+    def __init__(self, expansion=2.8): super().__init__("SACHEFL"); self.expansion = expansion
+    def aggregate(self, client_states):
+        avg = self._avg_nested_state(client_states)
+        bytes_upload = sum(state_to_vec(cs).numel() * state_to_vec(cs).element_size() for cs in client_states)
+        self.metrics = {"scheme": self.name, "bytes_upload": int(bytes_upload * self.expansion), "num_clients": len(client_states)}
+        self.bytes_history.append(self.metrics["bytes_upload"])
+        return avg
+
+class FedProxAggregator(BaseAggregator):
+    def __init__(self, mu=0.0): super().__init__("SACDAFL"); self.mu = mu
+    def aggregate(self, encrypted_blobs, client_ips):
+        # Access control: keep only legal IPs and non-dropped blobs
+        safe = [(blob, ip) for blob, ip in zip(encrypted_blobs, client_ips) if (blob is not None) and (ip in legal_ips)]
+        client_states = []
+        total_bytes = 0
+        for blob, ip in safe:
+            vec = state_to_vec(blob)
+            total_bytes += vec.numel() * vec.element_size()
+            state = decrypt_message(None, blob)
+            vec = state_to_vec(state)
+            # small validation set used to compute validation loss for this update
+            logits = X_val @ vec.unsqueeze(1)
+            val_loss = nn.BCEWithLogitsLoss()(logits, y_val)
+            if val_loss.item() > bce_filter_threshold:
+                # suspicious -> exclude
+                continue
+            client_states.append(state)
+        if len(client_states) == 0:
+            client_states = [vec_to_state(init_vec)]
+        avg = BaseAggregator._avg_nested_state(client_states)
+        if self.mu != 0.0:
+            for block in avg.values():
+                for p in block.keys():
+                    block[p] = block[p] * (1.0 - self.mu)
+        self.metrics = {"scheme": self.name, "bytes_upload": int(total_bytes), "num_clients": len(client_states)}
+        self.bytes_history.append(self.metrics["bytes_upload"])
+        return avg
+
+# -------------------------
+# Eval helper
+# -------------------------
+def eval_state(state):
+    vec = state_to_vec(state)
+    with torch.no_grad():
+        logits = X_val @ vec.unsqueeze(1)
+        preds = torch.sigmoid(logits) >= 0.5
+        acc = (preds.float() == y_val).float().mean().item()
+    return acc
+
+# -------------------------
+# Setup aggregators & initial global states
+# -------------------------
+global_states = {k: vec_to_state(init_vec) for k in ["SACFL","SACDAFL","SACSAFL","SACHEFL"]}
+sacfl = FedAvgAggregator()
+sacdafl = FedProxAggregator(mu=0.0)
+sachsa = SecureAggregationAggregator(overhead=1.15)
+sachefl = HomomorphicEncryptionAggregator(expansion=2.8)
+aggregators = {"SACFL": sacfl, "SACDAFL": sacdafl, "SACSAFL": sachsa, "SACHEFL": sachefl}
+
+accuracies = {k: [] for k in aggregators.keys()}
+bytes_hist = {k: [] for k in aggregators.keys()}
+
+# -------------------------
+# Federated rounds (partial participation + dynamics)
+# -------------------------
+print("=== Federated rounds start ===")
+for r in range(1, num_rounds+1):
+    encrypted_blobs = []
+    client_state_dicts = []
+
+    # choose participants this round
+    participants = random.sample(range(num_clients), max(2, int(partial_participation * num_clients)))
+
+    for i in participants:
+        is_mal = (i >= num_legal)
+        blob, vec = client_local_update(state_to_vec(global_states["SACFL"]), i, malicious=is_mal)
+        encrypted_blobs.append(blob)
+        if vec is not None:
+            client_state_dicts.append(vec_to_state(vec))
+        else:
+            # keep a placeholder for IP alignment (None means dropped)
+            encrypted_blobs[-1] = None
+            # we will align IPs by building a parallel list below
+
+    # Because participants is subset, build aligned IP list for those submissions:
+    aligned_ips = [client_ips[i] for i in participants]
+
+    # For aggregators that expect full client_state list, we pass only the collected (non-dropped) client_state_dicts
+    # 1) SACFL
+    if len(client_state_dicts) == 0:
+        client_state_dicts = [vec_to_state(init_vec)]
+    new_state_sacfl = sacfl.aggregate(client_state_dicts)
+    global_states["SACFL"] = new_state_sacfl
+    accuracies["SACFL"].append(eval_state(global_states["SACFL"]))
+    bytes_hist["SACFL"].append(sacfl.metrics["bytes_upload"])
+
+    # 2) SACSAFL
+    new_state_sachsa = sachsa.aggregate(client_state_dicts)
+    global_states["SACSAFL"] = new_state_sachsa
+    accuracies["SACSAFL"].append(eval_state(global_states["SACSAFL"]))
+    bytes_hist["SACSAFL"].append(sachsa.metrics["bytes_upload"])
+
+    # 3) SACHEFL
+    new_state_sachefl = sachefl.aggregate(client_state_dicts)
+    global_states["SACHEFL"] = new_state_sachefl
+    accuracies["SACHEFL"].append(eval_state(global_states["SACHEFL"]))
+    bytes_hist["SACHEFL"].append(sachefl.metrics["bytes_upload"])
+
+    # 4) SACDAFL uses encrypted_blobs aligned with participants and aligned_ips
+    # Build blobs aligned with IPs (drop None entries and keep ip alignment)
+    blobs_with_ips = []
+    blobs = []
+    ips_for_blobs = []
+    for blob, ip in zip(encrypted_blobs, aligned_ips):
+        # blob can be None (dropped) — skip those
+        if blob is None:
+            continue
+        blobs.append(blob)
+        ips_for_blobs.append(ip)
+    # Run SACDAFL
+    if len(blobs) == 0:
+        blobs = [vec_to_state(init_vec)]
+        ips_for_blobs = [legal_ips[0]]
+    new_state_sacdafl = sacdafl.aggregate(blobs, ips_for_blobs)
+    global_states["SACDAFL"] = new_state_sacdafl
+    accuracies["SACDAFL"].append(eval_state(global_states["SACDAFL"]))
+    bytes_hist["SACDAFL"].append(sacdafl.metrics["bytes_upload"])
+
+    # Print per-round
+    print(f"\nRound {r}: participants={len(participants)}")
+    for name in aggregators.keys():
+        clients_used = aggregators[name].metrics.get("num_clients", None)
+        acc = accuracies[name][-1] if accuracies[name] else None
+        print(f" {name:6s}: acc={acc:.3f}, bytes={bytes_hist[name][-1]}, clients_used={clients_used}")
+
+print("=== Federated rounds end ===\n")
+
+# -------------------------
+# Final summary
+# -------------------------
+print("Final accuracies:")
+for name in accuracies.keys():
+    hist = accuracies[name]
+    print(f" {name}: final={hist[-1]:.4f}, min={min(hist):.4f}, max={max(hist):.4f}")
+
+# -------------------------
+# Plot accuracies and bytes
+# -------------------------
+rounds = list(range(1, num_rounds+1))
+plt.figure(figsize=(12,5))
+plt.subplot(1,2,1)
+for name in accuracies.keys():
+    plt.plot(rounds, accuracies[name], marker='o', label=name)
+plt.title("Validation Accuracy (dynamic)")
+plt.xlabel("Round"); plt.ylabel("Accuracy")
+plt.ylim(0.0,1.0)
+plt.grid(True); plt.legend()
+
+plt.subplot(1,2,2)
+for name in bytes_hist.keys():
+    plt.plot(rounds, bytes_hist[name], marker='o', label=name)
+plt.title("Bytes uploaded per round")
+plt.xlabel("Round"); plt.ylabel("Bytes")
+plt.grid(True); plt.legend()
+
+plt.tight_layout()
+plt.show()
