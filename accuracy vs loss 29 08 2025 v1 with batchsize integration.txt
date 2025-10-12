@@ -1,15 +1,4 @@
-# federated_sac_fixed_with_batch.py
-"""
-Updated federated SAC script with replay buffer and proper batch_size integration.
-- Adds ReplayBuffer and uses mini-batch updates inside clients.
-- run_federated_learning accepts `batch_size` and passes it to Clients.
-- FedProx aggregator still uses AES (DH kept for completeness but not used per-client here).
 
-Notes:
-- This is a minimal, self-contained update to match your original structure.
-- It's not a drop-in production SAC implementation (no entropy term, action sampling noise, or target policy smoothing)
-  — but keeps the training flow consistent and uses batched gradient steps.
-"""
 
 import os
 import io
@@ -452,3 +441,4 @@ if __name__ == "__main__":
         seed=42,
         device="cpu"
     )
+
