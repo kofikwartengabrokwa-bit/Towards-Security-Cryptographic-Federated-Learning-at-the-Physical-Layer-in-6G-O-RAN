@@ -16,8 +16,8 @@ random.seed(seed)
 # -------------------------
 # Simulation parameters
 # -------------------------
-num_legal = 10
-num_malicious = 10
+num_legal = 2000
+num_malicious = 1000
 num_clients = num_legal + num_malicious
 num_rounds = 30
 feature_dim = 20
@@ -275,3 +275,4 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+
