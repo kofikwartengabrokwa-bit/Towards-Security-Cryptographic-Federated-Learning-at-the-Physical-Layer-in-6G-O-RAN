@@ -10,7 +10,7 @@ np.random.seed(42)
 device = torch.device("cpu")
 
 # -------------------- Hyperparameters --------------------
-n_clients = 8
+n_clients = 2000
 param_dim = 16
 rounds = 300  # reduce for faster experiments
 local_epochs = 3
@@ -247,3 +247,4 @@ for lr in learning_rates:
         # ---- Adjust layout ----
         plt.tight_layout(rect=[0, 0, 1, 0.95])
         plt.show()
+
