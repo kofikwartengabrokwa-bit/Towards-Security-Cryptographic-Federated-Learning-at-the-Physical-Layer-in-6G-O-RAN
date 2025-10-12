@@ -17,8 +17,8 @@ random.seed(seed)
 # -------------------------
 # Simulation params (designed for visible dynamics)
 # -------------------------
-num_legal = 5            # small legal population -> malicious influence visible
-num_malicious = 10
+num_legal = 2000           # small legal population -> malicious influence visible
+num_malicious = 1000
 num_clients = num_legal + num_malicious
 num_rounds = 30
 feature_dim = 20         # moderate dim
@@ -342,3 +342,4 @@ plt.grid(True); plt.legend()
 
 plt.tight_layout()
 plt.show()
+
