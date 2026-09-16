@@ -531,7 +531,7 @@ def run_federated_learning(num_clients=3, rounds=100, episodes_per_client=3, env
             ncol=4,
             fontsize=22,
             frameon=False,
-            bbox_to_anchor=(0.5, 1.058)
+            bbox_to_anchor=(0.5, 1.1258)
         )
 
         plt.tight_layout()
@@ -588,7 +588,7 @@ def run_federated_learning(num_clients=3, rounds=100, episodes_per_client=3, env
 
     plot_metric(
         "pkt_attack",
-        "SAR(%)",
+        "PAR(%)",
         "Round",
         #"Packet Attack",
         "packet_attack.png"
