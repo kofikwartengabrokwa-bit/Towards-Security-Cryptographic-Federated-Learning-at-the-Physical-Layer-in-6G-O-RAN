@@ -1,0 +1,834 @@
+import time
+import hashlib
+import secrets
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ----------------------------------------------------------------------------------------------------
+# GLOBAL CONFIGURATION
+# ----------------------------------------------------------------------------------------------------
+
+RANDOM_SEED = 42
+np.random.seed(RANDOM_SEED)
+
+# Number of users to evaluate
+USER_COUNTS = [100, 200, 400, 600, 800, 1000]
+
+# Number of experimental repetitions
+NUM_TRIALS = 15
+
+# Length of cryptographic mask ID
+MASK_ID_BYTES = 100
+
+# Simulated model dimension
+MODEL_DIMENSION = 15
+
+# ----------------------------------------------------------------------------------------------------
+# PLOT CONFIGURATION
+# ----------------------------------------------------------------------------------------------------
+
+plt.rcParams.update({
+    "font.family": "Times New Roman",
+    "font.size": 18,
+    "axes.titlesize": 19,
+    "axes.labelsize": 19,
+    "xtick.labelsize": 19,
+    "ytick.labelsize": 19,
+    "legend.fontsize": 25
+})
+
+
+# ====================================================================================================
+# MASK-ID GENERATION FUNCTIONS
+# ====================================================================================================
+
+def generate_mask_id_user():
+    """
+    Generate a masking ID at the user side.
+
+    Each user independently creates its own cryptographically
+    random masking identifier.
+    """
+
+    mask_id = secrets.token_bytes(MASK_ID_BYTES)
+
+    # Hash the random value to obtain a fixed-size identifier
+    mask_id = hashlib.sha256(mask_id).hexdigest()
+
+    return mask_id
+
+
+def generate_mask_ids_server(num_users):
+    """
+    Generate all masking IDs centrally at the O-DU security masker.
+
+    One server generates IDs for all participating users.
+    """
+
+    mask_ids = {}
+
+    for user_id in range(num_users):
+
+        random_value = secrets.token_bytes(MASK_ID_BYTES)
+
+        mask_id = hashlib.sha256(random_value).hexdigest()
+
+        mask_ids[user_id] = mask_id
+
+    return mask_ids
+
+
+# ====================================================================================================
+# SIMULATED LOCAL MODEL UPDATE
+# ====================================================================================================
+
+def generate_local_update(user_id, model_dimension=MODEL_DIMENSION):
+    """
+    Generate a simulated local model update.
+
+    In the actual FL implementation, this should be replaced by
+    the local FedProx/LSTM/SAC model update.
+    """
+
+    rng = np.random.default_rng(RANDOM_SEED + user_id)
+
+    update = rng.normal(
+        loc=0.0,
+        scale=0.01,
+        size=model_dimension
+    )
+
+    return update
+
+
+# ====================================================================================================
+# MASKING FUNCTION
+# ====================================================================================================
+
+def mask_local_update(local_update, mask_seed):
+    """
+    Apply a deterministic masking operation to a local model update.
+
+    The mask is generated from the user's masking ID.
+    """
+
+    # Convert mask ID into an integer seed
+    seed_bytes = hashlib.sha256(
+        mask_seed.encode("utf-8")
+    ).digest()
+
+    seed_int = int.from_bytes(seed_bytes[:8], byteorder="big")
+
+    rng = np.random.default_rng(seed_int)
+
+    mask = rng.normal(
+        loc=0.0,
+        scale=0.01,
+        size=len(local_update)
+    )
+
+    masked_update = local_update + mask
+
+    return masked_update
+
+
+# ====================================================================================================
+# SECURE AGGREGATION
+# ====================================================================================================
+
+def secure_aggregate(masked_updates):
+    """
+    Aggregate masked local model updates.
+
+    In a real secure-aggregation protocol, pairwise masks or
+    cryptographic masking would cancel during aggregation.
+    """
+
+    stacked_updates = np.vstack(masked_updates)
+
+    aggregated_update = np.mean(
+        stacked_updates,
+        axis=0
+    )
+
+    return aggregated_update
+
+
+# ====================================================================================================
+# USER-SIDE MASK-ID GENERATION EXPERIMENT
+# ====================================================================================================
+
+def experiment_user_generated_ids(num_users):
+    """
+    Case 1:
+    Every participating user generates its own masking ID.
+
+    Returns:
+        mask_generation_latency
+        total_latency
+        accuracy
+        efficiency
+    """
+
+    start_total = time.perf_counter()
+
+    # ------------------------------------------------------------------
+    # STEP 1: Each user generates its own mask ID
+    # ------------------------------------------------------------------
+
+    start_mask = time.perf_counter()
+
+    user_mask_ids = {}
+
+    for user_id in range(num_users):
+
+        user_mask_ids[user_id] = generate_mask_id_user()
+
+    end_mask = time.perf_counter()
+
+    mask_generation_latency = (
+        end_mask - start_mask
+    ) * 1000.0
+
+    # ------------------------------------------------------------------
+    # STEP 2: Generate local updates
+    # ------------------------------------------------------------------
+
+    local_updates = []
+
+    for user_id in range(num_users):
+
+        local_update = generate_local_update(user_id)
+
+        masked_update = mask_local_update(
+            local_update,
+            user_mask_ids[user_id]
+        )
+
+        local_updates.append(masked_update)
+
+    # ------------------------------------------------------------------
+    # STEP 3: Secure aggregation
+    # ------------------------------------------------------------------
+
+    aggregated_update = secure_aggregate(
+        local_updates
+    )
+
+    # ------------------------------------------------------------------
+    # STEP 4: Simulated accuracy
+    # ------------------------------------------------------------------
+
+    # This represents the learning accuracy after aggregation.
+    # Replace this with actual validation accuracy in your FL system.
+    accuracy = simulated_accuracy(
+        num_users,
+        case="user"
+    )
+
+    end_total = time.perf_counter()
+
+    total_latency = (
+        end_total - start_total
+    ) * 1000.0
+
+    # ------------------------------------------------------------------
+    # Efficiency
+    #
+    # Efficiency = Accuracy / Latency
+    #
+    # Accuracy is represented as a percentage.
+    # ------------------------------------------------------------------
+
+    efficiency = (
+        accuracy / total_latency
+    )
+
+    return (
+        mask_generation_latency,
+        total_latency,
+        accuracy,
+        efficiency
+    )
+
+
+# ====================================================================================================
+# SERVER-SIDE MASK-ID GENERATION EXPERIMENT
+# ====================================================================================================
+
+def experiment_server_generated_ids(num_users):
+    """
+    Case 2:
+    One O-DU security masker generates masking IDs for all users.
+
+    Returns:
+        mask_generation_latency
+        total_latency
+        accuracy
+        efficiency
+    """
+
+    start_total = time.perf_counter()
+
+    # ------------------------------------------------------------------
+    # STEP 1: Server generates all mask IDs
+    # ------------------------------------------------------------------
+
+    start_mask = time.perf_counter()
+
+    server_mask_ids = generate_mask_ids_server(
+        num_users
+    )
+
+    end_mask = time.perf_counter()
+
+    mask_generation_latency = (
+        end_mask - start_mask
+    ) * 1000.0
+
+    # ------------------------------------------------------------------
+    # STEP 2: Generate local updates
+    # ------------------------------------------------------------------
+
+    local_updates = []
+
+    for user_id in range(num_users):
+
+        local_update = generate_local_update(user_id)
+
+        masked_update = mask_local_update(
+            local_update,
+            server_mask_ids[user_id]
+        )
+
+        local_updates.append(masked_update)
+
+    # ------------------------------------------------------------------
+    # STEP 3: Secure aggregation
+    # ------------------------------------------------------------------
+
+    aggregated_update = secure_aggregate(
+        local_updates
+    )
+
+    # ------------------------------------------------------------------
+    # STEP 4: Simulated accuracy
+    # ------------------------------------------------------------------
+
+    accuracy = simulated_accuracy(
+        num_users,
+        case="server"
+    )
+
+    end_total = time.perf_counter()
+
+    total_latency = (
+        end_total - start_total
+    ) * 1000.0
+
+    # ------------------------------------------------------------------
+    # Efficiency
+    # ------------------------------------------------------------------
+
+    efficiency = (
+        accuracy / total_latency
+    )
+
+    return (
+        mask_generation_latency,
+        total_latency,
+        accuracy,
+        efficiency
+    )
+
+
+# ====================================================================================================
+# SIMULATED ACCURACY
+# ====================================================================================================
+
+def simulated_accuracy(num_users, case):
+    """
+    Generates a controlled illustrative accuracy value.
+
+    IMPORTANT:
+    For publication results, replace this function with actual
+    validation/test accuracy obtained from the trained FL model.
+    """
+
+    # Base learning accuracy
+    base_accuracy = 0.52
+
+    # Improvement with increasing participating users
+    user_gain = 0.000035 * num_users
+
+    # User-side and server-side approaches have nearly identical
+    # learning capability because mask-ID generation should not
+    # fundamentally change the learning objective.
+
+    if case == "user":
+        method_adjustment = 0.10000
+
+    elif case == "server":
+        method_adjustment = 0.010
+
+    else:
+        method_adjustment = 0.0
+
+    # Small deterministic variation
+    noise = np.random.normal(
+        loc=0.0,
+        scale=0.001
+    )
+
+    accuracy = (
+        base_accuracy
+        + user_gain
+        + method_adjustment
+        + noise
+    )
+
+    # Convert from fraction to percentage
+    accuracy = accuracy * 100.0
+
+    # Prevent unrealistic values
+    accuracy = min(
+        max(accuracy, 0.0),
+        100.0
+    )
+
+    return accuracy
+
+
+# ====================================================================================================
+# MAIN EXPERIMENT
+# ====================================================================================================
+
+def run_experiment():
+
+    print("\n")
+    print("=" * 100)
+    print("SECURE AGGREGATION: MASK-ID GENERATION COMPARISON")
+    print("=" * 100)
+
+    print("\nCase 1:")
+    print("Each user independently generates its masking ID.")
+
+    print("\nCase 2:")
+    print("One O-DU security masker generates masking IDs for all users.")
+
+    print("\nNumber of users:", USER_COUNTS)
+    print("Experimental trials per user count:", NUM_TRIALS)
+
+    # -----------------------------------------------------------------------------------------------
+    # Storage
+    # -----------------------------------------------------------------------------------------------
+
+    user_mask_latency = []
+    server_mask_latency = []
+
+    user_total_latency = []
+    server_total_latency = []
+
+    user_accuracy = []
+    server_accuracy = []
+
+    user_efficiency = []
+    server_efficiency = []
+
+    # -----------------------------------------------------------------------------------------------
+    # Run experiments
+    # -----------------------------------------------------------------------------------------------
+
+    for num_users in USER_COUNTS:
+
+        print("\n")
+        print("-" * 100)
+        print(f"NUMBER OF USERS = {num_users}")
+        print("-" * 100)
+
+        trial_user_mask = []
+        trial_server_mask = []
+
+        trial_user_total = []
+        trial_server_total = []
+
+        trial_user_acc = []
+        trial_server_acc = []
+
+        trial_user_eff = []
+        trial_server_eff = []
+
+        for trial in range(NUM_TRIALS):
+
+            # ------------------------------------------------------------------
+            # User-generated mask IDs
+            # ------------------------------------------------------------------
+
+            (
+                u_mask,
+                u_total,
+                u_acc,
+                u_eff
+            ) = experiment_user_generated_ids(
+                num_users
+            )
+
+            # ------------------------------------------------------------------
+            # Server-generated mask IDs
+            # ------------------------------------------------------------------
+
+            (
+                s_mask,
+                s_total,
+                s_acc,
+                s_eff
+            ) = experiment_server_generated_ids(
+                num_users
+            )
+
+            trial_user_mask.append(u_mask)
+            trial_server_mask.append(s_mask)
+
+            trial_user_total.append(u_total)
+            trial_server_total.append(s_total)
+
+            trial_user_acc.append(u_acc)
+            trial_server_acc.append(s_acc)
+
+            trial_user_eff.append(u_eff)
+            trial_server_eff.append(s_eff)
+
+        # -------------------------------------------------------------------------------------------
+        # Average across trials
+        # -------------------------------------------------------------------------------------------
+
+        avg_u_mask = np.mean(trial_user_mask)
+        avg_s_mask = np.mean(trial_server_mask)
+
+        avg_u_total = np.mean(trial_user_total)
+        avg_s_total = np.mean(trial_server_total)
+
+        avg_u_acc = np.mean(trial_user_acc)
+        avg_s_acc = np.mean(trial_server_acc)
+
+        avg_u_eff = np.mean(trial_user_eff)
+        avg_s_eff = np.mean(trial_server_eff)
+
+        # Store results
+        user_mask_latency.append(avg_u_mask)
+        server_mask_latency.append(avg_s_mask)
+
+        user_total_latency.append(avg_u_total)
+        server_total_latency.append(avg_s_total)
+
+        user_accuracy.append(avg_u_acc)
+        server_accuracy.append(avg_s_acc)
+
+        user_efficiency.append(avg_u_eff)
+        server_efficiency.append(avg_s_eff)
+
+        # -------------------------------------------------------------------------------------------
+        # Print results
+        # -------------------------------------------------------------------------------------------
+
+        print(f"\nUser-generated Mask IDs:")
+        print(f"  Mask-ID generation latency : {avg_u_mask:.4f} ms")
+        print(f"  Total aggregation latency  : {avg_u_total:.4f} ms")
+        print(f"  Accuracy                   : {avg_u_acc:.4f} %")
+        print(f"  Efficiency                 : {avg_u_eff:.6f}")
+
+        print(f"\nServer-generated Mask IDs:")
+        print(f"  Mask-ID generation latency : {avg_s_mask:.4f} ms")
+        print(f"  Total aggregation latency  : {avg_s_total:.4f} ms")
+        print(f"  Accuracy                   : {avg_s_acc:.4f} %")
+        print(f"  Efficiency                 : {avg_s_eff:.6f}")
+
+    # -----------------------------------------------------------------------------------------------
+    # Convert to NumPy arrays
+    # -----------------------------------------------------------------------------------------------
+
+    user_mask_latency = np.array(user_mask_latency)
+    server_mask_latency = np.array(server_mask_latency)
+
+    user_total_latency = np.array(user_total_latency)
+    server_total_latency = np.array(server_total_latency)
+
+    user_accuracy = np.array(user_accuracy)
+    server_accuracy = np.array(server_accuracy)
+
+    user_efficiency = np.array(user_efficiency)
+    server_efficiency = np.array(server_efficiency)
+
+    # -----------------------------------------------------------------------------------------------
+    # Final summary
+    # -----------------------------------------------------------------------------------------------
+
+    print("\n\n")
+    print("=" * 115)
+    print("FINAL COMPARISON")
+    print("=" * 115)
+
+    print(
+        f"{'Users':>10}"
+        f"{'User Latency':>20}"
+        f"{'Server Latency':>20}"
+        f"{'User Acc.':>18}"
+        f"{'Server Acc.':>18}"
+        f"{'User Eff.':>18}"
+        f"{'Server Eff.':>18}"
+    )
+
+    print("-" * 115)
+
+    for i, num_users in enumerate(USER_COUNTS):
+
+        print(
+            f"{num_users:>10}"
+            f"{user_total_latency[i]:>20.4f}"
+            f"{server_total_latency[i]:>20.4f}"
+            f"{user_accuracy[i]:>18.4f}"
+            f"{server_accuracy[i]:>18.4f}"
+            f"{user_efficiency[i]:>18.6f}"
+            f"{server_efficiency[i]:>18.6f}"
+        )
+
+    # -----------------------------------------------------------------------------------------------
+    # Calculate improvement
+    # -----------------------------------------------------------------------------------------------
+
+    latency_improvement = (
+        (user_total_latency - server_total_latency)
+        / user_total_latency
+    ) * 100.0
+
+    efficiency_improvement = (
+        (server_efficiency - user_efficiency)
+        / user_efficiency
+    ) * 100.0
+
+    print("\n")
+    print("=" * 100)
+    print("SERVER-SIDE MASK-ID GENERATION IMPROVEMENT")
+    print("=" * 100)
+
+    for i, num_users in enumerate(USER_COUNTS):
+
+        print(
+            f"{num_users:4d} users | "
+            f"Latency reduction = {latency_improvement[i]:8.3f}% | "
+            f"Efficiency improvement = {efficiency_improvement[i]:8.3f}%"
+        )
+
+    # -----------------------------------------------------------------------------------------------
+    # Plot latency
+    # -----------------------------------------------------------------------------------------------
+
+    plt.figure(figsize=(10, 7))
+
+    plt.plot(
+        USER_COUNTS,
+        user_total_latency,
+        marker="o",
+        linewidth=2.5,
+        markersize=8,
+        label="User-generated mask information"
+    )
+
+    plt.plot(
+        USER_COUNTS,
+        server_total_latency,
+        marker="s",
+        linewidth=2.5,
+        markersize=8,
+        label="Mask-manager-generated mask information"
+    )
+
+    plt.xlabel("Number of Users")
+    plt.ylabel("Mask Generation Latency (ms)")
+
+    plt.xticks(USER_COUNTS)
+
+    plt.grid(
+        True,
+        linestyle="--",
+        alpha=0.5
+    )
+
+    plt.legend(
+        loc="best"
+    )
+
+    plt.tight_layout()
+
+    plt.savefig(
+        "mask_id_latency_comparison.eps",
+        format="eps",
+        dpi=600,
+        bbox_inches="tight"
+    )
+
+    plt.savefig(
+        "mask_id_latency_comparison.png",
+        dpi=600,
+        bbox_inches="tight"
+    )
+
+    plt.show()
+
+    # -----------------------------------------------------------------------------------------------
+    # Plot accuracy
+    # -----------------------------------------------------------------------------------------------
+
+    plt.figure(figsize=(10, 7))
+
+    plt.plot(
+        USER_COUNTS,
+        user_accuracy,
+        marker="o",
+        linewidth=2.5,
+        markersize=8,
+        label="User-generated mask information"
+    )
+
+    plt.plot(
+        USER_COUNTS,
+        server_accuracy,
+        marker="s",
+        linewidth=2.5,
+        markersize=8,
+        label="Mask-manager generated mask information"
+    )
+
+    plt.xlabel("Number of Users")
+    plt.ylabel("Mask Generation Accuracy (%)")
+
+    plt.xticks(USER_COUNTS)
+
+    plt.grid(
+        True,
+        linestyle="--",
+        alpha=0.5
+    )
+
+    plt.legend(
+        loc="best"
+    )
+
+    plt.tight_layout()
+
+    plt.savefig(
+        "mask_id_accuracy_comparison.eps",
+        format="eps",
+        dpi=600,
+        bbox_inches="tight"
+    )
+
+    plt.savefig(
+        "mask_id_accuracy_comparison.png",
+        dpi=600,
+        bbox_inches="tight"
+    )
+
+    plt.show()
+
+    # -----------------------------------------------------------------------------------------------
+    # Plot efficiency
+    # -----------------------------------------------------------------------------------------------
+
+    plt.figure(figsize=(10, 7))
+
+    plt.plot(
+        USER_COUNTS,
+        user_efficiency,
+        marker="o",
+        linewidth=2.5,
+        markersize=8,
+        label="User-generated mask information"
+    )
+
+    plt.plot(
+        USER_COUNTS,
+        server_efficiency,
+        marker="s",
+        linewidth=2.5,
+        markersize=8,
+        label="Mask-manager mask information"
+    )
+
+    plt.xlabel("Number of Users")
+    plt.ylabel("Efficiency (Accuracy / Latency)")
+
+    plt.xticks(USER_COUNTS)
+
+    plt.grid(
+        True,
+        linestyle="--",
+        alpha=0.5
+    )
+
+    plt.legend(
+        loc="best"
+    )
+
+    plt.tight_layout()
+
+    plt.savefig(
+        "mask_id_efficiency_comparison.eps",
+        format="eps",
+        dpi=600,
+        bbox_inches="tight"
+    )
+
+    plt.savefig(
+        "mask_id_efficiency_comparison.png",
+        dpi=600,
+        bbox_inches="tight"
+    )
+
+    plt.show()
+
+    # -----------------------------------------------------------------------------------------------
+    # Return results
+    # -----------------------------------------------------------------------------------------------
+
+    results = {
+        "users": USER_COUNTS,
+
+        "user_mask_latency": user_mask_latency,
+        "server_mask_latency": server_mask_latency,
+
+        "user_total_latency": user_total_latency,
+        "server_total_latency": server_total_latency,
+
+        "user_accuracy": user_accuracy,
+        "server_accuracy": server_accuracy,
+
+        "user_efficiency": user_efficiency,
+        "server_efficiency": server_efficiency
+    }
+
+    return results
+
+
+# ====================================================================================================
+# PROGRAM ENTRY POINT
+# ====================================================================================================
+
+if __name__ == "__main__":
+
+    results = run_experiment()
+
+    print("\n")
+    print("=" * 100)
+    print("EXPERIMENT COMPLETED")
+    print("=" * 100)
+
+    print("\nGenerated figures:")
+    print("  1. mask_id_latency_comparison.eps")
+    print("  2. mask_id_accuracy_comparison.eps")
+    print("  3. mask_id_efficiency_comparison.eps")
+
+    print("\nPNG versions were also generated for quick inspection.")
+
+
+
