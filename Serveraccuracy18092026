@@ -1,0 +1,616 @@
+
+
+
+
+import re
+import os
+import matplotlib.pyplot as plt
+
+# ============================================================
+# File paths
+# ============================================================
+# ============================================================
+# File paths
+# ============================================================
+FILE_0 = r"E:/Abrokwa/PycharmProjects/pythonProject1/pythonProject1/legalmal0.txt"
+FILE_1 = r"E:/Abrokwa/PycharmProjects/pythonProject1/pythonProject1/legalmal1.txt"
+
+
+# ============================================================
+# Algorithm markers
+# ============================================================
+markers = {
+    "SACFL": "o",   # circle
+    "ICFL": "D",    # diamond
+    "FedGT": "s",   # square
+    "HEFL": "^"     # triangle
+}
+
+
+# ============================================================
+# Read and extract statistics
+# ============================================================
+def extract_stats(filename):
+    """
+    Extract round, accuracy, bytes, and clients_used
+    for each algorithm from a txt file.
+    """
+
+    if not os.path.exists(filename):
+        raise FileNotFoundError(
+            f"File not found: {os.path.abspath(filename)}"
+        )
+
+    with open(filename, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    results = {
+        "SACFL": {
+            "round": [],
+            "acc": [],
+            "bytes": [],
+            "clients_used": []
+        },
+        "ICFL": {
+            "round": [],
+            "acc": [],
+            "bytes": [],
+            "clients_used": []
+        },
+        "FedGT": {
+            "round": [],
+            "acc": [],
+            "bytes": [],
+            "clients_used": []
+        },
+        "HEFL": {
+            "round": [],
+            "acc": [],
+            "bytes": [],
+            "clients_used": []
+        }
+    }
+
+    # --------------------------------------------------------
+    # Match each round
+    # --------------------------------------------------------
+    round_pattern = re.compile(
+        r"Round\s+(\d+):\s*participants=(\d+)(.*?)(?=\n\s*Round\s+\d+:|\Z)",
+        re.DOTALL
+    )
+
+    # --------------------------------------------------------
+    # Match individual algorithm lines
+    # --------------------------------------------------------
+    algorithm_pattern = re.compile(
+        r"(SACFL|ICFL|FedGT|HEFL):\s*"
+        r"acc=([0-9.]+),\s*"
+        r"bytes=([0-9.eE+-]+),\s*"
+        r"clients_used=([0-9]+|None)"
+    )
+
+    for round_match in round_pattern.finditer(text):
+
+        round_number = int(round_match.group(1))
+        round_content = round_match.group(3)
+
+        algorithm_matches = algorithm_pattern.findall(round_content)
+
+        for algorithm, acc, byte_value, clients_used in algorithm_matches:
+
+            results[algorithm]["round"].append(round_number)
+            results[algorithm]["acc"].append(float(acc))
+            results[algorithm]["bytes"].append(float(byte_value))
+
+            if clients_used == "None":
+                results[algorithm]["clients_used"].append(None)
+            else:
+                results[algorithm]["clients_used"].append(
+                    int(clients_used)
+                )
+
+    return results
+
+
+# ============================================================
+# Extract both files
+# ============================================================
+stats_0 = extract_stats(FILE_0)
+stats_1 = extract_stats(FILE_1)
+
+
+# ============================================================
+# Print extracted statistics for verification
+# ============================================================
+print("\n" + "=" * 70)
+print("1000 LEGAL / 0 MALICIOUS")
+print("=" * 70)
+
+for algorithm in stats_0:
+    print(f"\n{algorithm}")
+    for i in range(len(stats_0[algorithm]["round"])):
+        print(
+            f"Round {stats_0[algorithm]['round'][i]}: "
+            f"acc={stats_0[algorithm]['acc'][i]:.3f}, "
+            f"bytes={stats_0[algorithm]['bytes'][i]:.2f}, "
+            f"clients_used={stats_0[algorithm]['clients_used'][i]}"
+        )
+
+
+print("\n" + "=" * 70)
+print("1000 LEGAL / 200 MALICIOUS")
+print("=" * 70)
+
+for algorithm in stats_1:
+    print(f"\n{algorithm}")
+    for i in range(len(stats_1[algorithm]["round"])):
+        print(
+            f"Round {stats_1[algorithm]['round'][i]}: "
+            f"acc={stats_1[algorithm]['acc'][i]:.3f}, "
+            f"bytes={stats_1[algorithm]['bytes'][i]:.2f}, "
+            f"clients_used={stats_1[algorithm]['clients_used'][i]}"
+        )
+
+
+# ============================================================
+# Function for plotting one metric
+# ============================================================
+def plot_metric(metric, ylabel, scale=1.0):
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    for algorithm in markers:
+
+        # ----------------------------------------------------
+        # 1000 legal / 0 malicious
+        # Filled marker + solid line
+        # ----------------------------------------------------
+        if len(stats_0[algorithm]["round"]) > 0:
+
+            rounds_0 = stats_0[algorithm]["round"]
+            values_0 = [
+                value * scale
+                for value in stats_0[algorithm][metric]
+            ]
+
+            ax.plot(
+                rounds_0,
+                values_0,
+                marker=markers[algorithm],
+                linestyle="-",
+                markersize=8,
+                markerfacecolor="black",
+                markeredgewidth=1.5,
+                linewidth=1.8,
+                label=f"{algorithm} — 1000/0"
+            )
+
+        # ----------------------------------------------------
+        # 1000 legal / 200 malicious
+        # Open marker + dashed line
+        # ----------------------------------------------------
+        if len(stats_1[algorithm]["round"]) > 0:
+
+            rounds_1 = stats_1[algorithm]["round"]
+            values_1 = [
+                value * scale
+                for value in stats_1[algorithm][metric]
+            ]
+
+            ax.plot(
+                rounds_1,
+                values_1,
+                marker=markers[algorithm],
+                linestyle="--",
+                markersize=8,
+                markerfacecolor="white",
+                markeredgewidth=1.8,
+                linewidth=1.8,
+                label=f"{algorithm} — 1000/200"
+            )
+
+    # --------------------------------------------------------
+    # Formatting
+    # --------------------------------------------------------
+    ax.set_xlabel("Rounds", fontsize=18)
+    ax.set_ylabel(ylabel, fontsize=20)
+
+    ax.tick_params(
+        axis="x",
+        labelsize=18
+    )
+
+    ax.tick_params(
+        axis="y",
+        labelsize=18
+    )
+
+    ax.grid(
+        True,
+        linestyle="--",
+        alpha=0.6
+    )
+
+    # Legend on top
+    fig.legend(
+        loc="upper center",
+        ncol=4,
+        prop={"size": 15},
+        frameon=False,
+        bbox_to_anchor=(0.5, 1.02)
+    )
+
+    plt.tight_layout(
+        rect=[0, 0, 1, 0.91]
+    )
+
+    plt.show()
+
+
+# ============================================================
+# 1. Accuracy
+# ============================================================
+plot_metric(
+    metric="acc",
+    ylabel="Accuracy (%)",
+    scale=100
+)
+
+
+# ============================================================
+# 2. Communication overhead
+# ============================================================
+plot_metric(
+    metric="bytes",
+    ylabel="Communication Overhead (Bytes)"
+)
+
+
+
+
+
+
+
+import numpy as np
+import torch
+import torch.nn as nn
+import copy
+import random
+import matplotlib.pyplot as plt
+
+# -------------------------
+# Reproducibility
+# -------------------------
+seed = 42
+torch.manual_seed(seed)
+np.random.seed(seed)
+random.seed(seed)
+
+# -------------------------
+# Simulation parameters
+# -------------------------
+num_legal = 1000
+num_malicious = 500
+num_clients = num_legal + num_malicious
+num_rounds = 100
+feature_dim = 20
+samples_per_client = 200   # stronger gradient signal
+val_samples = 200
+lr_local = 0.05
+
+# Noise and stochasticity
+channel_drop_prob = 0.1    # moderate
+local_noise_std = 0.05     # low noise
+partial_participation = 0.8
+
+# Malicious behavior
+malicious_attack_prob = 0.8
+malicious_strength_min = 2.0
+malicious_strength_max = 5.0
+
+# BCE filtering threshold for SACDAFL
+bce_filter_threshold = 2  # allow early updates
+
+# -------------------------
+# IP lists
+# -------------------------
+legal_ips = [f"192.168.0.{i}" for i in range(1, num_legal+1)]
+malicious_ips = [f"10.0.0.{i}" for i in range(1, num_malicious+1)]
+client_ips = legal_ips + malicious_ips
+
+# -------------------------
+# Client datasets
+# -------------------------
+def make_client_data(n_samples):
+    X0 = np.random.normal(loc=0.0, scale=0.8, size=(n_samples//2, feature_dim))
+    y0 = np.zeros((n_samples//2,))
+    X1 = np.random.normal(loc=5.0, scale=0.8, size=(n_samples - n_samples//2, feature_dim))
+    y1 = np.ones((n_samples - n_samples//2,))
+    X = np.vstack([X0, X1])
+    y = np.concatenate([y0, y1])
+    idx = np.arange(len(y))
+    np.random.shuffle(idx)
+    return torch.tensor(X[idx], dtype=torch.float32), torch.tensor(y[idx], dtype=torch.float32).unsqueeze(1)
+
+clients_data = [make_client_data(samples_per_client) for _ in range(num_clients)]
+
+# -------------------------
+# Validation set
+# -------------------------
+X_val = np.vstack([
+    np.random.normal(0.0, 0.8, (val_samples//2, feature_dim)),
+    np.random.normal(5.0, 0.8, (val_samples//2, feature_dim))
+])
+y_val = np.concatenate([np.zeros(val_samples//2), np.ones(val_samples//2)])
+perm = np.arange(val_samples)
+np.random.shuffle(perm)
+X_val = torch.tensor(X_val[perm], dtype=torch.float32)
+y_val = torch.tensor(y_val[perm], dtype=torch.float32).unsqueeze(1)
+
+# -------------------------
+# State helpers
+# -------------------------
+def vec_to_state(w, b):
+    return {"block1": {"weight": w.clone(), "bias": b.clone()}}
+
+def state_to_vec(state):
+    return state["block1"]["weight"].clone(), state["block1"]["bias"].clone()
+
+init_w = torch.randn(feature_dim) * 0.1  # small random init
+init_b = torch.randn(1) * 0.1
+
+def encrypt_message(key, blob): return blob
+def decrypt_message(key, blob): return blob
+
+# -------------------------
+# Client local update
+# -------------------------
+def client_local_update(global_w, global_b, client_idx, malicious=False):
+    if random.random() < channel_drop_prob:
+        return None, None
+    X, y = clients_data[client_idx]
+    w = global_w.clone().detach().requires_grad_(True)
+    b = global_b.clone().detach().requires_grad_(True)
+    logits = X @ w.unsqueeze(1) + b
+    loss = nn.BCEWithLogitsLoss()(logits, y)
+    loss.backward()
+    grad_w = w.grad.detach()
+    grad_b = b.grad.detach()
+
+    delta_w = -lr_local * grad_w + torch.randn_like(w) * local_noise_std
+    delta_b = -lr_local * grad_b + torch.randn_like(b) * local_noise_std
+
+    if malicious and random.random() < malicious_attack_prob:
+        strength = random.uniform(malicious_strength_min, malicious_strength_max)
+        delta_w = strength * lr_local * grad_w + torch.randn_like(w) * local_noise_std * 0.5
+        delta_b = strength * lr_local * grad_b + torch.randn_like(b) * local_noise_std * 0.5
+
+    new_w = (global_w + delta_w).detach()
+    new_b = (global_b + delta_b).detach()
+    state = vec_to_state(new_w, new_b)
+    blob = encrypt_message(None, state)
+    return blob, state
+
+# -------------------------
+# Aggregators
+# -------------------------
+class BaseAggregator:
+    def __init__(self, name):
+        self.name = name
+        self.metrics = {}
+        self.bytes_history = []
+
+    @staticmethod
+    def _avg_states(states):
+        w_sum = sum(state_to_vec(s)[0] for s in states)
+        b_sum = sum(state_to_vec(s)[1] for s in states)
+        n = len(states)
+        return vec_to_state(w_sum/n, b_sum/n)
+
+class FedAvgAggregator(BaseAggregator):
+    def __init__(self): super().__init__("SACFL")
+    def aggregate(self, states):
+        if len(states)==0: return vec_to_state(init_w, init_b)
+        avg = BaseAggregator._avg_states(states)
+        bytes_up = sum(state_to_vec(s)[0].numel() + state_to_vec(s)[1].numel() for s in states)
+        self.metrics = {"bytes_upload": int(bytes_up), "num_clients": len(states)}
+        self.bytes_history.append(bytes_up)
+        return avg
+
+class SecureAggregationAggregator(FedAvgAggregator):
+    def __init__(self, overhead=1.15):
+        super().__init__(); self.name="FedGT"; self.overhead=overhead
+    def aggregate(self, states):
+        avg = super().aggregate(states)
+        self.bytes_history[-1] *= self.overhead
+        return avg
+
+class HomomorphicEncryptionAggregator(FedAvgAggregator):
+    def __init__(self, expansion=2.8):
+        super().__init__(); self.name="HEFL"; self.expansion=expansion
+    def aggregate(self, states):
+        avg = super().aggregate(states)
+        self.bytes_history[-1] *= self.expansion
+        return avg
+
+class FedProxAggregator(BaseAggregator):
+    def __init__(self, mu=0.0): super().__init__("ICFL"); self.mu=mu
+    def aggregate(self, blobs, ips):
+        safe_states=[]
+        total_bytes=0
+        for s, ip in zip(blobs, ips):
+            if s is None or ip not in legal_ips: continue
+            w,b = state_to_vec(s)
+            total_bytes += w.numel()+b.numel()
+            logits = X_val @ w.unsqueeze(1)+b
+            val_loss = nn.BCEWithLogitsLoss()(logits, y_val)
+            if val_loss.item() > bce_filter_threshold: continue
+            safe_states.append(s)
+        if len(safe_states)==0: safe_states=[vec_to_state(init_w, init_b)]
+        avg = BaseAggregator._avg_states(safe_states)
+        if self.mu != 0:
+            w,b = state_to_vec(avg)
+            avg = vec_to_state(w*(1-self.mu), b*(1-self.mu))
+        self.bytes_history.append(total_bytes)
+        return avg
+
+# -------------------------
+# Evaluate accuracy
+# -------------------------
+def eval_state(state):
+    w,b = state_to_vec(state)
+    logits = X_val @ w.unsqueeze(1) + b
+    preds = torch.sigmoid(logits) >= 0.5
+    return (preds.float() == y_val).float().mean().item()
+
+# -------------------------
+# Initialize aggregators & global states
+# -------------------------
+global_states = {k: vec_to_state(init_w, init_b) for k in ["SACFL","ICFL","FedGT","HEFL"]}
+sacfl = FedAvgAggregator()
+sacdafl = FedProxAggregator()
+sachsa = SecureAggregationAggregator()
+sachefl = HomomorphicEncryptionAggregator()
+aggregators = {"SACFL":sacfl,"ICFL":sacdafl,"FedGT":sachsa,"HEFL":sachefl}
+accuracies = {k: [] for k in aggregators.keys()}
+bytes_hist = {k: [] for k in aggregators.keys()}
+
+# -------------------------
+# Federated rounds
+# -------------------------
+print("=== Federated rounds start ===")
+for r in range(1,num_rounds+1):
+    # select participants
+    participants = random.sample(range(num_clients), max(2,int(partial_participation*num_clients)))
+
+    blobs_baselines = {"SACFL": [], "FedGT": [], "HEFL": []}
+    states_baselines = {"SACFL": [], "FedGT": [], "HEFL": []}
+    ips_baselines = {"SACFL": [], "FedGT": [], "HEFL": []}
+
+    for baseline in ["SACFL","FedGT","HEFL"]:
+        for i in participants:
+            is_mal = (i >= num_legal)
+            blob,state = client_local_update(
+                state_to_vec(global_states[baseline])[0],
+                state_to_vec(global_states[baseline])[1],
+                i, malicious=is_mal
+            )
+            blobs_baselines[baseline].append(blob)
+            ips_baselines[baseline].append(client_ips[i])
+            if state: states_baselines[baseline].append(state)
+
+    # Aggregations
+    global_states["SACFL"] = sacfl.aggregate(states_baselines["SACFL"])
+    accuracies["SACFL"].append(eval_state(global_states["SACFL"]))
+    bytes_hist["SACFL"].append(sacfl.bytes_history[-1])
+
+    global_states["FedGT"] = sachsa.aggregate(states_baselines["FedGT"])
+    accuracies["FedGT"].append(eval_state(global_states["FedGT"]))
+    bytes_hist["FedGT"].append(sachsa.bytes_history[-1])
+
+    global_states["HEFL"] = sachefl.aggregate(states_baselines["HEFL"])
+    accuracies["HEFL"].append(eval_state(global_states["HEFL"]))
+    bytes_hist["HEFL"].append(sachefl.bytes_history[-1])
+
+    global_states["ICFL"] = sacdafl.aggregate(blobs_baselines["SACFL"], ips_baselines["SACFL"])
+    accuracies["ICFL"].append(eval_state(global_states["ICFL"]))
+    bytes_hist["ICFL"].append(sacdafl.bytes_history[-1])
+
+    # Print accuracies separately
+    print(f"\nRound {r}: participants={len(participants)}")
+    for k in aggregators.keys():
+        print(f" {k}: acc={accuracies[k][-1]:.3f}, bytes={bytes_hist[k][-1]}, clients_used={aggregators[k].metrics.get('num_clients',None)}")
+
+print("=== Federated rounds end ===")
+
+# -------------------------
+# Plot accuracy and bytes
+# -------------------------
+rounds = list(range(1, num_rounds+1))
+plt.figure(figsize=(10, 6))
+
+# Plot accuracies in percentage
+#for k in accuracies.keys():
+    #plt.plot(rounds, [a * 100 for a in accuracies[k]], marker='o', label=k)
+
+# Labels and formatting
+#plt.xlabel("Rounds", fontsize=18)
+#plt.ylabel("Accuracy (%)", fontsize=20)
+#plt.ylim(0, 105)
+#plt.xticks(fontsize=18)
+#plt.yticks(fontsize=18)
+
+# Legend on top
+
+rounds = list(range(0, num_rounds+1))  # include round 0
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Specific identifiable marker for each algorithm
+markers = {
+    "SACFL": "o",
+    "ICFL": "D",
+    "HEFL": "^",
+    "FedGT": "s"
+}
+
+# Plot accuracies in percentage (prepend 0 so lengths match)
+for k in accuracies.keys():
+    ax.plot(
+        rounds,
+        [0] + [a * 100 for a in accuracies[k]],
+        marker=markers.get(k, "o"),
+        label=k
+    )
+
+# Labels and formatting
+ax.set_xlabel("Rounds", fontsize=18)
+ax.set_ylabel("Accuracy (%)", fontsize=20)
+ax.set_ylim(0, 105)
+ax.tick_params(axis='x', labelsize=18)
+ax.tick_params(axis='y', labelsize=18)
+ax.grid(True, linestyle="--", alpha=0.6)
+
+# Legend as title bar (on top of figure)
+fig.legend(
+    [k for k in accuracies.keys()],
+    loc="upper center",
+    ncol=4,
+    prop={'size': 23},
+    frameon=False
+)
+
+plt.tight_layout(rect=[0, 0, 1, 0.92])  # leave space on top for legend
+plt.show()
+
+
+# Plot communication overhead
+rounds = list(range(0, num_rounds+1))  # include round 0
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot bytes uploaded (prepend 0 so lengths match)
+for k in bytes_hist.keys():
+    ax.plot(
+        rounds,
+        [0] + bytes_hist[k],
+        marker=markers.get(k, "o"),
+        label=k
+    )
+
+# Labels and formatting
+ax.set_xlabel("Rounds", fontsize=18)
+ax.set_ylabel("Communication Overhead (Bytes)", fontsize=20)
+ax.tick_params(axis='x', labelsize=18)
+ax.tick_params(axis='y', labelsize=18)
+ax.grid(True, linestyle="--", alpha=0.6)
+
+# Legend as title bar (on top of figure)
+fig.legend(
+    [k for k in bytes_hist.keys()],
+    loc="upper center",
+    ncol=4,
+    prop={'size': 22},
+    frameon=False
+)
+
+plt.tight_layout(rect=[0, 0, 1, 0.92])  # leave space for legend
+plt.show()
