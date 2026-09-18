@@ -1,0 +1,1182 @@
+# ============================================================
+# 11. IMPORT REQUIRED LIBRARIES
+# ============================================================
+
+import sqlite3
+import numpy as np
+import pandas as pd
+
+import torch
+import torch.nn as nn
+from torch.utils.data import Dataset, DataLoader
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+
+import matplotlib.pyplot as plt
+
+print("\nRequired libraries imported successfully.")
+
+# ============================================================
+# 1. CONFIGURATION
+# ============================================================
+
+import os
+
+import os
+
+SAVE_DIR = r"E:\Abrokwa\PycharmProjects\pythonProject1"
+os.makedirs(SAVE_DIR, exist_ok=True)
+
+DB_PATH = os.path.join(SAVE_DIR, "Lower_Layer_Data.db")
+
+# Create directory if it does not exist
+os.makedirs(SAVE_DIR, exist_ok=True)
+
+SEQUENCE_LENGTH = 10
+BATCH_SIZE = 128
+HIDDEN_SIZE = 128
+NUM_LAYERS = 2
+DROPOUT = 0.30
+
+LEARNING_RATE = 0.001
+EPOCHS = 1
+
+RANDOM_STATE = 42
+
+DEVICE = torch.device(
+    "cuda" if torch.cuda.is_available() else "cpu"
+)
+
+print("=" * 70)
+print("LSTM NETWORK TRAFFIC CLASSIFICATION")
+print("=" * 70)
+
+print(f"Database: {DB_PATH}")
+print(f"Device:   {DEVICE}")
+
+
+# ============================================================
+# 2. CHECK DATABASE
+# ============================================================
+
+if not os.path.exists(DB_PATH):
+    raise FileNotFoundError(
+        f"Could not find database:\n{DB_PATH}\n\n"
+        "Place Lower_Layer_Data.db in the specified folder."
+    )
+
+
+# ============================================================
+# 3. CONNECT TO SQLITE DATABASE
+# ============================================================
+
+connection = sqlite3.connect(DB_PATH)
+
+tables = pd.read_sql_query(
+    """
+    SELECT name
+    FROM sqlite_master
+    WHERE type = 'table'
+    ORDER BY name
+    """,
+    connection
+)
+
+print("\nAvailable tables:")
+print(tables)
+
+if tables.empty:
+    connection.close()
+    raise RuntimeError("No tables were found in the database.")
+
+
+# ============================================================
+# 4. SELECT TABLE
+# ============================================================
+
+# Use the first available table.
+# If required, replace this with the exact table name:
+#
+# TABLE_NAME = "lower_layer_data"
+
+TABLE_NAME = tables.iloc[0]["name"]
+
+print(f"\nUsing table: {TABLE_NAME}")
+
+
+# ============================================================
+# 5. LOAD DATA
+# ============================================================
+
+df = pd.read_sql_query(
+    f'SELECT * FROM "{TABLE_NAME}"',
+    connection
+)
+
+connection.close()
+
+print("\nDataset shape:")
+print(df.shape)
+
+print("\nColumns:")
+print(df.columns.tolist())
+
+print("\nFirst five rows:")
+print(df.head())
+
+
+# ============================================================
+# 6. SELECT SIX-CLASS ATTACK LABEL
+# ============================================================
+
+# IMPORTANT:
+# traffic_type contains only two classes (0 and 1).
+# attack_category contains the required six attack classes.
+
+label_column = "attack_category"
+
+if label_column not in df.columns:
+    raise ValueError(
+        f"\nRequired label column '{label_column}' was not found.\n"
+        "Available columns are:\n"
+        f"{df.columns.tolist()}"
+    )
+
+# Clean label names
+df[label_column] = (
+    df[label_column]
+    .astype(str)
+    .str.strip()
+)
+
+print(f"\nSelected label column: {label_column}")
+
+
+# ============================================================
+# 7. REMOVE MISSING VALUES
+# ============================================================
+
+df = df.replace([np.inf, -np.inf], np.nan)
+
+print("\nMissing values before cleaning:")
+print(df.isnull().sum())
+
+df = df.dropna(
+    subset=[label_column]
+).reset_index(drop=True)
+
+print(
+    f"\nDataset shape after removing "
+    f"missing labels: {df.shape}"
+)
+
+
+# ============================================================
+# 8. DISPLAY SIX ATTACK CLASSES
+# ============================================================
+
+print("\n" + "=" * 70)
+print("SIX-CLASS ATTACK DISTRIBUTION")
+print("=" * 70)
+
+class_distribution = df[label_column].value_counts()
+
+for attack_class, count in class_distribution.items():
+    print(f"{attack_class:20s}: {count}")
+
+print("=" * 70)
+
+print(f"Total classes: {df[label_column].nunique()}")
+print(f"Total samples: {len(df)}")
+
+
+# ============================================================
+# 9. VERIFY EXPECTED SIX CLASSES
+# ============================================================
+
+expected_classes = {
+    "Benign",
+    "BruteForce",
+    "DDoS",
+    "DoS",
+    "Probe",
+    "Web Attacks"
+}
+
+actual_classes = set(
+    df[label_column].unique()
+)
+
+if actual_classes != expected_classes:
+    print("\nWARNING: Detected classes differ from expected classes.")
+    print("Detected:", sorted(actual_classes))
+    print("Expected:", sorted(expected_classes))
+else:
+    print("\nSUCCESS: All six expected attack classes are present.")
+
+
+# ============================================================
+# 10. SEPARATE FEATURES AND LABEL
+# ============================================================
+
+X_df = df.drop(
+    columns=[label_column]
+)
+
+y_raw = df[label_column]
+
+
+# ============================================================
+# 11. KEEP NUMERIC FEATURES
+# ============================================================
+
+numeric_columns = X_df.select_dtypes(
+    include=[np.number]
+).columns.tolist()
+
+if len(numeric_columns) == 0:
+    raise ValueError(
+        "No numeric features were found in the database."
+    )
+
+X_df = X_df[numeric_columns]
+
+print("\nNumeric features used by LSTM:")
+for i, column in enumerate(numeric_columns, 1):
+    print(f"{i:2d}. {column}")
+
+print(f"\nNumber of features: {len(numeric_columns)}")
+
+
+# ============================================================
+# 12. ENCODE SIX ATTACK LABELS
+# ============================================================
+
+label_encoder = LabelEncoder()
+
+y_encoded = label_encoder.fit_transform(
+    y_raw
+)
+
+class_names = label_encoder.classes_
+num_classes = len(class_names)
+
+print("\n" + "=" * 70)
+print("ENCODED ATTACK CLASSES")
+print("=" * 70)
+
+for i, class_name in enumerate(class_names):
+    count = np.sum(y_encoded == i)
+    print(
+        f"{i}: {class_name:20s} "
+        f"Samples: {count}"
+    )
+
+print("=" * 70)
+print(f"Number of classes: {num_classes}")
+
+# ============================================================
+# 13. PREPARE FEATURE MATRIX
+# ============================================================
+
+X = X_df.astype(np.float32).values
+y = y_encoded.astype(np.int64)
+
+print("\nFeature matrix shape:")
+print(X.shape)
+
+print("\nLabel vector shape:")
+print(y.shape)
+
+print("\nNumber of features:")
+print(X.shape[1])
+
+
+# ============================================================
+# 14. TRAIN-TEST SPLIT
+# ============================================================
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X,
+    y,
+    test_size=0.20,
+    random_state=RANDOM_STATE,
+    stratify=y
+)
+
+print("\nTraining data:")
+print(X_train.shape)
+
+print("\nTesting data:")
+print(X_test.shape)
+
+print("\nTraining class distribution:")
+print(
+    pd.Series(
+        y_train
+    ).value_counts().sort_index()
+)
+
+print("\nTesting class distribution:")
+print(
+    pd.Series(
+        y_test
+    ).value_counts().sort_index()
+)
+
+
+# ============================================================
+# 15. FEATURE STANDARDIZATION
+# ============================================================
+
+scaler = StandardScaler()
+
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+X_train = X_train.astype(np.float32)
+X_test = X_test.astype(np.float32)
+
+print("\nFeature standardization completed.")
+
+print(
+    f"Training mean: {X_train.mean():.4f}"
+)
+
+print(
+    f"Training standard deviation: {X_train.std():.4f}"
+)
+
+
+# ============================================================
+# 16. CREATE LSTM SEQUENCES
+# ============================================================
+
+def create_sequences(X, y, sequence_length):
+    sequences = []
+    labels = []
+
+    for i in range(len(X) - sequence_length + 1):
+
+        sequence = X[
+            i:i + sequence_length
+        ]
+
+        # Use the label of the final observation
+        # in the sequence as the sequence label.
+        label = y[
+            i + sequence_length - 1
+        ]
+
+        sequences.append(sequence)
+        labels.append(label)
+
+    return (
+        np.asarray(sequences, dtype=np.float32),
+        np.asarray(labels, dtype=np.int64)
+    )
+
+
+X_train_seq, y_train_seq = create_sequences(
+    X_train,
+    y_train,
+    SEQUENCE_LENGTH
+)
+
+X_test_seq, y_test_seq = create_sequences(
+    X_test,
+    y_test,
+    SEQUENCE_LENGTH
+)
+
+print("\nLSTM training sequences:")
+print(X_train_seq.shape)
+
+print("\nLSTM testing sequences:")
+print(X_test_seq.shape)
+
+print("\nExpected format:")
+print("(samples, sequence_length, features)")
+
+
+
+# ============================================================
+# 17. PYTORCH DATASET
+# ============================================================
+
+class TrafficDataset(Dataset):
+
+    def __init__(self, X, y):
+        self.X = torch.tensor(
+            X,
+            dtype=torch.float32
+        )
+
+        self.y = torch.tensor(
+            y,
+            dtype=torch.long
+        )
+
+    def __len__(self):
+        return len(self.y)
+
+    def __getitem__(self, index):
+        return (
+            self.X[index],
+            self.y[index]
+        )
+
+
+train_dataset = TrafficDataset(
+    X_train_seq,
+    y_train_seq
+)
+
+test_dataset = TrafficDataset(
+    X_test_seq,
+    y_test_seq
+)
+
+
+train_loader = DataLoader(
+    train_dataset,
+    batch_size=BATCH_SIZE,
+    shuffle=True
+)
+
+test_loader = DataLoader(
+    test_dataset,
+    batch_size=BATCH_SIZE,
+    shuffle=False
+)
+
+print("\nDataset objects created.")
+print(f"Training samples: {len(train_dataset)}")
+print(f"Testing samples:  {len(test_dataset)}")
+
+
+
+# ============================================================
+# 18. DEFINE LSTM MODEL
+# ============================================================
+
+class LSTMClassifier(nn.Module):
+
+    def __init__(
+        self,
+        input_size,
+        hidden_size,
+        num_layers,
+        num_classes,
+        dropout
+    ):
+
+        super().__init__()
+
+        self.lstm = nn.LSTM(
+            input_size=input_size,
+            hidden_size=hidden_size,
+            num_layers=num_layers,
+            batch_first=True,
+            dropout=dropout if num_layers > 1 else 0.0
+        )
+
+        self.dropout = nn.Dropout(dropout)
+
+        self.fc = nn.Linear(
+            hidden_size,
+            num_classes
+        )
+
+    def forward(self, x):
+
+        output, (hidden, cell) = self.lstm(x)
+
+        # Use the final time-step representation
+        final_output = output[:, -1, :]
+
+        final_output = self.dropout(
+            final_output
+        )
+
+        logits = self.fc(final_output)
+
+        return logits
+
+
+INPUT_SIZE = X_train_seq.shape[2]
+
+model = LSTMClassifier(
+    input_size=INPUT_SIZE,
+    hidden_size=HIDDEN_SIZE,
+    num_layers=NUM_LAYERS,
+    num_classes=num_classes,
+    dropout=DROPOUT
+).to(DEVICE)
+
+
+print("\nLSTM architecture:")
+print(model)
+
+print(f"\nInput size:   {INPUT_SIZE}")
+print(f"Hidden size:  {HIDDEN_SIZE}")
+print(f"LSTM layers:  {NUM_LAYERS}")
+print(f"Classes:      {num_classes}")
+print(f"Device:       {DEVICE}")
+
+
+# ============================================================
+# 19. LOSS FUNCTION AND OPTIMIZER
+# ============================================================
+
+criterion = nn.CrossEntropyLoss()
+
+optimizer = torch.optim.Adam(
+    model.parameters(),
+    lr=LEARNING_RATE
+)
+
+print("\nLoss function:")
+print(criterion)
+
+print("\nOptimizer:")
+print(optimizer)
+
+
+# ============================================================
+# 20. TRAIN LSTM
+# ============================================================
+
+print("\n" + "=" * 70)
+print("TRAINING LSTM")
+print("=" * 70)
+
+model.train()
+
+for epoch in range(EPOCHS):
+
+    running_loss = 0.0
+    correct = 0
+    total = 0
+
+    for batch_X, batch_y in train_loader:
+
+        batch_X = batch_X.to(DEVICE)
+        batch_y = batch_y.to(DEVICE)
+
+        optimizer.zero_grad()
+
+        outputs = model(batch_X)
+
+        loss = criterion(
+            outputs,
+            batch_y
+        )
+
+        loss.backward()
+
+        optimizer.step()
+
+        running_loss += (
+            loss.item() * batch_X.size(0)
+        )
+
+        predictions = torch.argmax(
+            outputs,
+            dim=1
+        )
+
+        correct += (
+            predictions == batch_y
+        ).sum().item()
+
+        total += batch_y.size(0)
+
+    epoch_loss = running_loss / total
+    epoch_accuracy = correct / total
+
+    print(
+        f"Epoch [{epoch + 1}/{EPOCHS}] | "
+        f"Loss: {epoch_loss:.4f} | "
+        f"Accuracy: {epoch_accuracy:.4f}"
+    )
+
+print("\nLSTM training completed.")
+
+
+# ============================================================
+# 21. GENERATE TEST PREDICTIONS AND CONFIDENCE SCORES
+# ============================================================
+
+model.eval()
+
+all_predictions = []
+all_true_labels = []
+all_confidences = []
+all_probabilities = []
+
+with torch.no_grad():
+
+    for batch_X, batch_y in test_loader:
+
+        batch_X = batch_X.to(DEVICE)
+
+        logits = model(batch_X)
+
+        probabilities = torch.softmax(
+            logits,
+            dim=1
+        )
+
+        confidence, predictions = torch.max(
+            probabilities,
+            dim=1
+        )
+
+        all_predictions.extend(
+            predictions.cpu().numpy()
+        )
+
+        all_true_labels.extend(
+            batch_y.numpy()
+        )
+
+        all_confidences.extend(
+            confidence.cpu().numpy()
+        )
+
+        all_probabilities.extend(
+            probabilities.cpu().numpy()
+        )
+
+
+all_predictions = np.asarray(
+    all_predictions
+)
+
+all_true_labels = np.asarray(
+    all_true_labels
+)
+
+all_confidences = np.asarray(
+    all_confidences
+)
+
+all_probabilities = np.asarray(
+    all_probabilities
+)
+
+
+print("\nPrediction results generated.")
+
+print(
+    f"Number of predictions: "
+    f"{len(all_predictions)}"
+)
+
+print(
+    f"Mean overall confidence: "
+    f"{all_confidences.mean() * 100:.2f}%"
+)
+
+print(
+    f"Minimum confidence: "
+    f"{all_confidences.min() * 100:.2f}%"
+)
+
+print(
+    f"Maximum confidence: "
+    f"{all_confidences.max() * 100:.2f}%"
+)
+
+
+# ============================================================
+# 22. OVERALL LSTM PERFORMANCE
+# ============================================================
+
+overall_accuracy = np.mean(
+    all_predictions == all_true_labels
+)
+
+print("\n" + "=" * 70)
+print("LSTM TEST PERFORMANCE")
+print("=" * 70)
+
+print(
+    f"Test Accuracy: "
+    f"{overall_accuracy * 100:.2f}%"
+)
+
+print(
+    f"Mean Prediction Confidence: "
+    f"{all_confidences.mean() * 100:.2f}%"
+)
+
+
+# ============================================================
+# 23. CONFIDENCE THRESHOLDS
+# ============================================================
+
+HIGH_CONFIDENCE_THRESHOLD = 0.80
+LOW_CONFIDENCE_THRESHOLD = 0.50
+
+print("\nConfidence thresholds:")
+print(
+    f"High confidence: >= "
+    f"{HIGH_CONFIDENCE_THRESHOLD * 100:.0f}%"
+)
+
+print(
+    f"Low confidence: < "
+    f"{LOW_CONFIDENCE_THRESHOLD * 100:.0f}%"
+)
+
+print(
+    "\nConfidence between 50% and 80% "
+    "is treated as moderate confidence."
+)
+
+
+# ============================================================
+# 24. CALCULATE CLASS-WISE CONFIDENCE METRICS
+# ============================================================
+
+mean_confidence = []
+high_confidence_rate = []
+low_confidence_rate = []
+sample_counts = []
+
+for class_id in range(num_classes):
+
+    # Select predictions belonging to this class
+    class_mask = (
+        all_predictions == class_id
+    )
+
+    class_confidences = (
+        all_confidences[class_mask]
+    )
+
+    sample_count = len(
+        class_confidences
+    )
+
+    sample_counts.append(
+        sample_count
+    )
+
+    if sample_count == 0:
+
+        mean_confidence.append(
+            np.nan
+        )
+
+        high_confidence_rate.append(
+            np.nan
+        )
+
+        low_confidence_rate.append(
+            np.nan
+        )
+
+        continue
+
+    # Mean confidence
+    mean_value = (
+        np.mean(class_confidences)
+    )
+
+    # High-confidence percentage
+    high_value = (
+        np.mean(
+            class_confidences
+            >= HIGH_CONFIDENCE_THRESHOLD
+        )
+        * 100
+    )
+
+    # Low-confidence percentage
+    low_value = (
+        np.mean(
+            class_confidences
+            < LOW_CONFIDENCE_THRESHOLD
+        )
+        * 100
+    )
+
+    mean_confidence.append(
+        mean_value * 100
+    )
+
+    high_confidence_rate.append(
+        high_value
+    )
+
+    low_confidence_rate.append(
+        low_value
+    )
+
+
+confidence_results = pd.DataFrame({
+
+    "Attack": class_names,
+
+    "Samples": sample_counts,
+
+    "Mean Confidence (%)":
+        mean_confidence,
+
+    "High Confidence (%)":
+        high_confidence_rate,
+
+    "Low Confidence (%)":
+        low_confidence_rate
+})
+
+
+print("\n" + "=" * 90)
+print("CLASS-WISE LSTM CONFIDENCE ANALYSIS")
+print("=" * 90)
+
+print(
+    confidence_results.to_string(
+        index=False,
+        float_format=lambda x: f"{x:.2f}"
+    )
+)
+
+# ============================================================
+# 25. SAVE CONFIDENCE RESULTS
+# ============================================================
+
+RESULT_FILE = os.path.join(
+    SAVE_DIR,
+    "lstm_confidence_results.csv"
+)
+
+confidence_results.to_csv(
+    RESULT_FILE,
+    index=False
+)
+
+print(
+    f"\nConfidence results saved to:\n"
+    f"{RESULT_FILE}"
+)
+
+
+
+# ============================================================
+# 26. LIST ALL DETECTED THREAT CLASSES
+# ============================================================
+
+print("\n" + "=" * 70)
+print("DETECTED THREAT CLASSES")
+print("=" * 70)
+
+for i, threat in enumerate(class_names, start=1):
+    print(f"{i}. {threat}")
+
+print("=" * 70)
+
+print(f"\nTotal detected classes: {len(class_names)}")
+
+
+# ============================================================
+# 27. DISPLAY CONFIDENCE METRICS FOR ALL THREATS
+# ============================================================
+
+print("\n" + "=" * 100)
+print("LSTM THREAT-PREDICTION CONFIDENCE")
+print("=" * 100)
+
+print(
+    f"{'Threat':<25}"
+    f"{'Mean Confidence':>20}"
+    f"{'High Confidence':>20}"
+    f"{'Low Confidence':>20}"
+)
+
+print("-" * 100)
+
+for i, threat in enumerate(class_names):
+
+    print(
+        f"{threat:<25}"
+        f"{mean_confidence[i]:>18.2f}%"
+        f"{high_confidence_rate[i]:>19.2f}%"
+        f"{low_confidence_rate[i]:>19.2f}%"
+    )
+
+print("=" * 100)
+# ============================================================
+# BLOCK 36 — INSPECT ALL COLUMNS FOR THE SIX-CLASS LABEL
+# ============================================================
+
+print("=" * 80)
+print("UNIQUE VALUES IN CATEGORICAL / OBJECT COLUMNS")
+print("=" * 80)
+
+for col in df.columns:
+    unique_count = df[col].nunique(dropna=True)
+
+    # Show columns that may contain class/attack information
+    if df[col].dtype == "object" or unique_count <= 20:
+        print(f"\nColumn: {col}")
+        print(f"Data type: {df[col].dtype}")
+        print(f"Unique values: {unique_count}")
+
+        values = df[col].dropna().unique()
+
+        if len(values) <= 20:
+            print("Values:")
+            for value in values:
+                count = (df[col] == value).sum()
+                print(f"   {repr(value)} : {count}")
+        else:
+            print("First 20 values:")
+            print(values[:20])
+
+print("\n" + "=" * 80)
+
+
+# ============================================================
+# BLOCK 28 — MEAN CONFIDENCE BAR CHART
+# ============================================================
+
+fig, ax = plt.subplots(figsize=(12, 7))
+
+# ------------------------------------------------------------
+# Explicit x-axis positions
+# ------------------------------------------------------------
+
+x = np.arange(len(confidence_results))
+
+values = confidence_results["Mean Confidence (%)"].values
+labels = confidence_results["Attack"].values
+
+bars = ax.bar(
+    x + 0.5,
+    values,
+    width=0.65
+)
+
+# ------------------------------------------------------------
+# Axis labels
+# ------------------------------------------------------------
+
+ax.set_ylabel(
+    "Mean Confidence (%)",
+    fontsize=22,
+    #fontweight="bold"
+)
+
+# ------------------------------------------------------------
+# Explicit x-axis tick labels
+# ------------------------------------------------------------
+
+ax.set_xticks(x + 0.5)
+ax.set_xticklabels(
+    labels,
+    fontsize=25,
+    fontweight="bold",
+    rotation=20,
+    ha="right"
+)
+
+# ------------------------------------------------------------
+# Enlarged y-axis tick labels
+# ------------------------------------------------------------
+
+ax.tick_params(
+    axis="y",
+    labelsize=23
+)
+
+# Make x-axis tick marks larger
+ax.tick_params(
+    axis="x",
+    labelsize=23,
+    length=6,
+    width=1.2
+)
+
+# ------------------------------------------------------------
+# Axis limits
+# ------------------------------------------------------------
+
+ax.set_xlim(0, len(x))
+ax.set_ylim(0, 105)
+
+# ------------------------------------------------------------
+# Clean and square axis frame
+# ------------------------------------------------------------
+
+ax.spines["left"].set_position(("axes", 0.0))
+ax.spines["bottom"].set_position(("axes", 0.0))
+ax.spines["right"].set_position(("axes", 1.0))
+ax.spines["top"].set_position(("axes", 1.0))
+
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(1.2)
+
+# ------------------------------------------------------------
+# Percentage values above bars
+# ------------------------------------------------------------
+
+for bar, value in zip(bars, values):
+    ax.text(
+        bar.get_x() + bar.get_width() / 2,
+        value + 1.5,
+        f"{value:.2f}%",
+        ha="center",
+        va="bottom",
+        fontsize=18,
+        # fontweight="bold"
+    )
+
+# ------------------------------------------------------------
+# Figure spacing
+# ------------------------------------------------------------
+
+plt.subplots_adjust(
+    left=0.16,
+    right=0.98,
+    bottom=0.3,
+    top=0.995
+)
+
+# ------------------------------------------------------------
+# Save figure
+# ------------------------------------------------------------
+
+plt.savefig(
+    os.path.join(SAVE_DIR, "LSTM_Mean_Confidence.png"),
+    dpi=600,
+    bbox_inches="tight"
+)
+
+plt.savefig(
+    os.path.join(SAVE_DIR, "LSTM_Mean_Confidence.eps"),
+    dpi=600,
+    bbox_inches="tight"
+)
+
+plt.show()
+
+
+# ============================================================
+# BLOCK 29 — HIGH CONFIDENCE BAR CHART
+# ============================================================
+
+plt.figure(figsize=(12, 7))
+
+bars = plt.bar(
+    confidence_results["Attack"],
+    confidence_results["High Confidence (%)"],
+    width=0.65
+)
+
+#plt.xlabel("Threat Category", fontsize=20, fontweight="bold")
+plt.ylabel("High Confidence (%)", fontsize=20)
+
+plt.xticks(
+    fontsize=17,
+    rotation=20,
+    ha="right"
+)
+
+plt.yticks(fontsize=17)
+plt.ylim(0, 105)
+
+# Confidence percentage above each bar
+for bar, value in zip(
+    bars,
+    confidence_results["High Confidence (%)"]
+):
+    plt.text(
+        bar.get_x() + bar.get_width() / 2,
+        value + 1.5,
+        f"{value:.2f}%",
+        ha="center",
+        va="bottom",
+        fontsize=17,
+        fontweight="bold"
+    )
+
+plt.tight_layout()
+
+plt.savefig(
+    os.path.join(SAVE_DIR, "LSTM_High_Confidence.png"),
+    dpi=600,
+    bbox_inches="tight"
+)
+
+plt.savefig(
+    os.path.join(SAVE_DIR, "LSTM_High_Confidence.eps"),
+    dpi=600,
+    bbox_inches="tight"
+)
+
+plt.show()
+
+
+# ============================================================
+# BLOCK 30 — LOW CONFIDENCE BAR CHART
+# ============================================================
+
+plt.figure(figsize=(12, 7))
+
+bars = plt.bar(
+    confidence_results["Attack"],
+    confidence_results["Low Confidence (%)"],
+    width=0.65
+)
+
+#plt.xlabel("Threat Category", fontsize=20, fontweight="bold")
+plt.ylabel("Low Confidence (%)", fontsize=22)
+
+plt.xticks(
+    fontsize=17,
+    rotation=20,
+    ha="right"
+)
+
+plt.yticks(fontsize=19)
+plt.ylim(0, 105)
+
+# Confidence percentage above each bar
+for bar, value in zip(
+    bars,
+    confidence_results["Low Confidence (%)"]
+):
+    # Keep labels visible even for very small/zero values
+    label_position = value + 1.5
+
+    plt.text(
+        bar.get_x() + bar.get_width() / 2,
+        label_position,
+        f"{value:.2f}%",
+        ha="center",
+        va="bottom",
+        fontsize=17,
+        fontweight="bold"
+    )
+
+plt.tight_layout()
+
+plt.savefig(
+    os.path.join(SAVE_DIR, "LSTM_Low_Confidence.png"),
+    dpi=600,
+    bbox_inches="tight"
+)
+
+plt.savefig(
+    os.path.join(SAVE_DIR, "LSTM_Low_Confidence.eps"),
+    dpi=600,
+    bbox_inches="tight"
+)
+
+plt.show()
